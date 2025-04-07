@@ -1,0 +1,2237 @@
+{
+  "Files": [
+    {
+      "Id": "D:\\Download\\Dart\\KDKMenShop\\obj\\Debug\\net6.0\\scopedcss\\projectbundle\\KDKMenShop.bundle.scp.css",
+      "PackagePath": "staticwebassets\\KDKMenShop.bundle.scp.css"
+    },
+    {
+      "Id": "D:\\Download\\Dart\\KDKMenShop\\wwwroot\\KDKTrangChu\\TemplateCheckout\\send1.html",
+      "PackagePath": "staticwebassets\\KDKTrangChu\\TemplateCheckout\\send1.html"
+    },
+    {
+      "Id": "D:\\Download\\Dart\\KDKMenShop\\wwwroot\\KDKTrangChu\\TemplateCheckout\\send2.html",
+      "PackagePath": "staticwebassets\\KDKTrangChu\\TemplateCheckout\\send2.html"
+    },
+    {
+      "Id": "D:\\Download\\Dart\\KDKMenShop\\wwwroot\\KDKTrangChu\\css\\PageList.css",
+      "PackagePath": "staticwebassets\\KDKTrangChu\\css\\PageList.css"
+    },
+    {
+      "Id": "D:\\Download\\Dart\\KDKMenShop\\wwwroot\\KDKTrangChu\\css\\bootstrap.min.css",
+      "PackagePath": "staticwebassets\\KDKTrangChu\\css\\bootstrap.min.css"
+    },
+    {
+      "Id": "D:\\Download\\Dart\\KDKMenShop\\wwwroot\\KDKTrangChu\\css\\dropdownlayout.css",
+      "PackagePath": "staticwebassets\\KDKTrangChu\\css\\dropdownlayout.css"
+    },
+    {
+      "Id": "D:\\Download\\Dart\\KDKMenShop\\wwwroot\\KDKTrangChu\\css\\elegant-icons.css",
+      "PackagePath": "staticwebassets\\KDKTrangChu\\css\\elegant-icons.css"
+    },
+    {
+      "Id": "D:\\Download\\Dart\\KDKMenShop\\wwwroot\\KDKTrangChu\\css\\font-awesome.min.css",
+      "PackagePath": "staticwebassets\\KDKTrangChu\\css\\font-awesome.min.css"
+    },
+    {
+      "Id": "D:\\Download\\Dart\\KDKMenShop\\wwwroot\\KDKTrangChu\\css\\jquery-ui.min.css",
+      "PackagePath": "staticwebassets\\KDKTrangChu\\css\\jquery-ui.min.css"
+    },
+    {
+      "Id": "D:\\Download\\Dart\\KDKMenShop\\wwwroot\\KDKTrangChu\\css\\login.css",
+      "PackagePath": "staticwebassets\\KDKTrangChu\\css\\login.css"
+    },
+    {
+      "Id": "D:\\Download\\Dart\\KDKMenShop\\wwwroot\\KDKTrangChu\\css\\nice-select.css",
+      "PackagePath": "staticwebassets\\KDKTrangChu\\css\\nice-select.css"
+    },
+    {
+      "Id": "D:\\Download\\Dart\\KDKMenShop\\wwwroot\\KDKTrangChu\\css\\owl.carousel.min.css",
+      "PackagePath": "staticwebassets\\KDKTrangChu\\css\\owl.carousel.min.css"
+    },
+    {
+      "Id": "D:\\Download\\Dart\\KDKMenShop\\wwwroot\\KDKTrangChu\\css\\profile.css",
+      "PackagePath": "staticwebassets\\KDKTrangChu\\css\\profile.css"
+    },
+    {
+      "Id": "D:\\Download\\Dart\\KDKMenShop\\wwwroot\\KDKTrangChu\\css\\slicknav.min.css",
+      "PackagePath": "staticwebassets\\KDKTrangChu\\css\\slicknav.min.css"
+    },
+    {
+      "Id": "D:\\Download\\Dart\\KDKMenShop\\wwwroot\\KDKTrangChu\\css\\style.css",
+      "PackagePath": "staticwebassets\\KDKTrangChu\\css\\style.css"
+    },
+    {
+      "Id": "D:\\Download\\Dart\\KDKMenShop\\wwwroot\\KDKTrangChu\\fonts\\ElegantIcons.eot",
+      "PackagePath": "staticwebassets\\KDKTrangChu\\fonts\\ElegantIcons.eot"
+    },
+    {
+      "Id": "D:\\Download\\Dart\\KDKMenShop\\wwwroot\\KDKTrangChu\\fonts\\ElegantIcons.svg",
+      "PackagePath": "staticwebassets\\KDKTrangChu\\fonts\\ElegantIcons.svg"
+    },
+    {
+      "Id": "D:\\Download\\Dart\\KDKMenShop\\wwwroot\\KDKTrangChu\\fonts\\ElegantIcons.ttf",
+      "PackagePath": "staticwebassets\\KDKTrangChu\\fonts\\ElegantIcons.ttf"
+    },
+    {
+      "Id": "D:\\Download\\Dart\\KDKMenShop\\wwwroot\\KDKTrangChu\\fonts\\ElegantIcons.woff",
+      "PackagePath": "staticwebassets\\KDKTrangChu\\fonts\\ElegantIcons.woff"
+    },
+    {
+      "Id": "D:\\Download\\Dart\\KDKMenShop\\wwwroot\\KDKTrangChu\\fonts\\FontAwesome.otf",
+      "PackagePath": "staticwebassets\\KDKTrangChu\\fonts\\FontAwesome.otf"
+    },
+    {
+      "Id": "D:\\Download\\Dart\\KDKMenShop\\wwwroot\\KDKTrangChu\\fonts\\fontawesome-webfont.eot",
+      "PackagePath": "staticwebassets\\KDKTrangChu\\fonts\\fontawesome-webfont.eot"
+    },
+    {
+      "Id": "D:\\Download\\Dart\\KDKMenShop\\wwwroot\\KDKTrangChu\\fonts\\fontawesome-webfont.svg",
+      "PackagePath": "staticwebassets\\KDKTrangChu\\fonts\\fontawesome-webfont.svg"
+    },
+    {
+      "Id": "D:\\Download\\Dart\\KDKMenShop\\wwwroot\\KDKTrangChu\\fonts\\fontawesome-webfont.ttf",
+      "PackagePath": "staticwebassets\\KDKTrangChu\\fonts\\fontawesome-webfont.ttf"
+    },
+    {
+      "Id": "D:\\Download\\Dart\\KDKMenShop\\wwwroot\\KDKTrangChu\\fonts\\fontawesome-webfont.woff",
+      "PackagePath": "staticwebassets\\KDKTrangChu\\fonts\\fontawesome-webfont.woff"
+    },
+    {
+      "Id": "D:\\Download\\Dart\\KDKMenShop\\wwwroot\\KDKTrangChu\\fonts\\fontawesome-webfont.woff2",
+      "PackagePath": "staticwebassets\\KDKTrangChu\\fonts\\fontawesome-webfont.woff2"
+    },
+    {
+      "Id": "D:\\Download\\Dart\\KDKMenShop\\wwwroot\\KDKTrangChu\\img\\LogoKDK.png",
+      "PackagePath": "staticwebassets\\KDKTrangChu\\img\\LogoKDK.png"
+    },
+    {
+      "Id": "D:\\Download\\Dart\\KDKMenShop\\wwwroot\\KDKTrangChu\\img\\aothunBTS.jpg",
+      "PackagePath": "staticwebassets\\KDKTrangChu\\img\\aothunBTS.jpg"
+    },
+    {
+      "Id": "D:\\Download\\Dart\\KDKMenShop\\wwwroot\\KDKTrangChu\\img\\aothundentron.jpg",
+      "PackagePath": "staticwebassets\\KDKTrangChu\\img\\aothundentron.jpg"
+    },
+    {
+      "Id": "D:\\Download\\Dart\\KDKMenShop\\wwwroot\\KDKTrangChu\\img\\aothuntrangtron.jpg",
+      "PackagePath": "staticwebassets\\KDKTrangChu\\img\\aothuntrangtron.jpg"
+    },
+    {
+      "Id": "D:\\Download\\Dart\\KDKMenShop\\wwwroot\\KDKTrangChu\\img\\banner\\DiSan.jpg",
+      "PackagePath": "staticwebassets\\KDKTrangChu\\img\\banner\\DiSan.jpg"
+    },
+    {
+      "Id": "D:\\Download\\Dart\\KDKMenShop\\wwwroot\\KDKTrangChu\\img\\banner\\Seafarer.jpg",
+      "PackagePath": "staticwebassets\\KDKTrangChu\\img\\banner\\Seafarer.jpg"
+    },
+    {
+      "Id": "D:\\Download\\Dart\\KDKMenShop\\wwwroot\\KDKTrangChu\\img\\banner\\miencatgio.jpg",
+      "PackagePath": "staticwebassets\\KDKTrangChu\\img\\banner\\miencatgio.jpg"
+    },
+    {
+      "Id": "D:\\Download\\Dart\\KDKMenShop\\wwwroot\\KDKTrangChu\\img\\blog\\blog-1.jpg",
+      "PackagePath": "staticwebassets\\KDKTrangChu\\img\\blog\\blog-1.jpg"
+    },
+    {
+      "Id": "D:\\Download\\Dart\\KDKMenShop\\wwwroot\\KDKTrangChu\\img\\blog\\blog-2.jpg",
+      "PackagePath": "staticwebassets\\KDKTrangChu\\img\\blog\\blog-2.jpg"
+    },
+    {
+      "Id": "D:\\Download\\Dart\\KDKMenShop\\wwwroot\\KDKTrangChu\\img\\blog\\blog-3.jpg",
+      "PackagePath": "staticwebassets\\KDKTrangChu\\img\\blog\\blog-3.jpg"
+    },
+    {
+      "Id": "D:\\Download\\Dart\\KDKMenShop\\wwwroot\\KDKTrangChu\\img\\blog\\blog-4.jpg",
+      "PackagePath": "staticwebassets\\KDKTrangChu\\img\\blog\\blog-4.jpg"
+    },
+    {
+      "Id": "D:\\Download\\Dart\\KDKMenShop\\wwwroot\\KDKTrangChu\\img\\blog\\blog-5.jpg",
+      "PackagePath": "staticwebassets\\KDKTrangChu\\img\\blog\\blog-5.jpg"
+    },
+    {
+      "Id": "D:\\Download\\Dart\\KDKMenShop\\wwwroot\\KDKTrangChu\\img\\blog\\blog-6.jpg",
+      "PackagePath": "staticwebassets\\KDKTrangChu\\img\\blog\\blog-6.jpg"
+    },
+    {
+      "Id": "D:\\Download\\Dart\\KDKMenShop\\wwwroot\\KDKTrangChu\\img\\blog\\details\\details-author.jpg",
+      "PackagePath": "staticwebassets\\KDKTrangChu\\img\\blog\\details\\details-author.jpg"
+    },
+    {
+      "Id": "D:\\Download\\Dart\\KDKMenShop\\wwwroot\\KDKTrangChu\\img\\blog\\details\\details-hero.jpg",
+      "PackagePath": "staticwebassets\\KDKTrangChu\\img\\blog\\details\\details-hero.jpg"
+    },
+    {
+      "Id": "D:\\Download\\Dart\\KDKMenShop\\wwwroot\\KDKTrangChu\\img\\blog\\details\\details-pic.jpg",
+      "PackagePath": "staticwebassets\\KDKTrangChu\\img\\blog\\details\\details-pic.jpg"
+    },
+    {
+      "Id": "D:\\Download\\Dart\\KDKMenShop\\wwwroot\\KDKTrangChu\\img\\blog\\sidebar\\sr-1.jpg",
+      "PackagePath": "staticwebassets\\KDKTrangChu\\img\\blog\\sidebar\\sr-1.jpg"
+    },
+    {
+      "Id": "D:\\Download\\Dart\\KDKMenShop\\wwwroot\\KDKTrangChu\\img\\blog\\sidebar\\sr-2.jpg",
+      "PackagePath": "staticwebassets\\KDKTrangChu\\img\\blog\\sidebar\\sr-2.jpg"
+    },
+    {
+      "Id": "D:\\Download\\Dart\\KDKMenShop\\wwwroot\\KDKTrangChu\\img\\blog\\sidebar\\sr-3.jpg",
+      "PackagePath": "staticwebassets\\KDKTrangChu\\img\\blog\\sidebar\\sr-3.jpg"
+    },
+    {
+      "Id": "D:\\Download\\Dart\\KDKMenShop\\wwwroot\\KDKTrangChu\\img\\breadcrumb.jpg",
+      "PackagePath": "staticwebassets\\KDKTrangChu\\img\\breadcrumb.jpg"
+    },
+    {
+      "Id": "D:\\Download\\Dart\\KDKMenShop\\wwwroot\\KDKTrangChu\\img\\cart\\cart-1.jpg",
+      "PackagePath": "staticwebassets\\KDKTrangChu\\img\\cart\\cart-1.jpg"
+    },
+    {
+      "Id": "D:\\Download\\Dart\\KDKMenShop\\wwwroot\\KDKTrangChu\\img\\cart\\cart-2.jpg",
+      "PackagePath": "staticwebassets\\KDKTrangChu\\img\\cart\\cart-2.jpg"
+    },
+    {
+      "Id": "D:\\Download\\Dart\\KDKMenShop\\wwwroot\\KDKTrangChu\\img\\cart\\cart-3.jpg",
+      "PackagePath": "staticwebassets\\KDKTrangChu\\img\\cart\\cart-3.jpg"
+    },
+    {
+      "Id": "D:\\Download\\Dart\\KDKMenShop\\wwwroot\\KDKTrangChu\\img\\categories\\cat-1.jpg",
+      "PackagePath": "staticwebassets\\KDKTrangChu\\img\\categories\\cat-1.jpg"
+    },
+    {
+      "Id": "D:\\Download\\Dart\\KDKMenShop\\wwwroot\\KDKTrangChu\\img\\categories\\cat-2.jpg",
+      "PackagePath": "staticwebassets\\KDKTrangChu\\img\\categories\\cat-2.jpg"
+    },
+    {
+      "Id": "D:\\Download\\Dart\\KDKMenShop\\wwwroot\\KDKTrangChu\\img\\categories\\cat-3.jpg",
+      "PackagePath": "staticwebassets\\KDKTrangChu\\img\\categories\\cat-3.jpg"
+    },
+    {
+      "Id": "D:\\Download\\Dart\\KDKMenShop\\wwwroot\\KDKTrangChu\\img\\categories\\cat-4.jpg",
+      "PackagePath": "staticwebassets\\KDKTrangChu\\img\\categories\\cat-4.jpg"
+    },
+    {
+      "Id": "D:\\Download\\Dart\\KDKMenShop\\wwwroot\\KDKTrangChu\\img\\categories\\cat-5.jpg",
+      "PackagePath": "staticwebassets\\KDKTrangChu\\img\\categories\\cat-5.jpg"
+    },
+    {
+      "Id": "D:\\Download\\Dart\\KDKMenShop\\wwwroot\\KDKTrangChu\\img\\featured\\feature-1.jpg",
+      "PackagePath": "staticwebassets\\KDKTrangChu\\img\\featured\\feature-1.jpg"
+    },
+    {
+      "Id": "D:\\Download\\Dart\\KDKMenShop\\wwwroot\\KDKTrangChu\\img\\featured\\feature-2.jpg",
+      "PackagePath": "staticwebassets\\KDKTrangChu\\img\\featured\\feature-2.jpg"
+    },
+    {
+      "Id": "D:\\Download\\Dart\\KDKMenShop\\wwwroot\\KDKTrangChu\\img\\featured\\feature-3.jpg",
+      "PackagePath": "staticwebassets\\KDKTrangChu\\img\\featured\\feature-3.jpg"
+    },
+    {
+      "Id": "D:\\Download\\Dart\\KDKMenShop\\wwwroot\\KDKTrangChu\\img\\featured\\feature-4.jpg",
+      "PackagePath": "staticwebassets\\KDKTrangChu\\img\\featured\\feature-4.jpg"
+    },
+    {
+      "Id": "D:\\Download\\Dart\\KDKMenShop\\wwwroot\\KDKTrangChu\\img\\featured\\feature-5.jpg",
+      "PackagePath": "staticwebassets\\KDKTrangChu\\img\\featured\\feature-5.jpg"
+    },
+    {
+      "Id": "D:\\Download\\Dart\\KDKMenShop\\wwwroot\\KDKTrangChu\\img\\featured\\feature-6.jpg",
+      "PackagePath": "staticwebassets\\KDKTrangChu\\img\\featured\\feature-6.jpg"
+    },
+    {
+      "Id": "D:\\Download\\Dart\\KDKMenShop\\wwwroot\\KDKTrangChu\\img\\featured\\feature-7.jpg",
+      "PackagePath": "staticwebassets\\KDKTrangChu\\img\\featured\\feature-7.jpg"
+    },
+    {
+      "Id": "D:\\Download\\Dart\\KDKMenShop\\wwwroot\\KDKTrangChu\\img\\featured\\feature-8.jpg",
+      "PackagePath": "staticwebassets\\KDKTrangChu\\img\\featured\\feature-8.jpg"
+    },
+    {
+      "Id": "D:\\Download\\Dart\\KDKMenShop\\wwwroot\\KDKTrangChu\\img\\hero\\Premium.jpg",
+      "PackagePath": "staticwebassets\\KDKTrangChu\\img\\hero\\Premium.jpg"
+    },
+    {
+      "Id": "D:\\Download\\Dart\\KDKMenShop\\wwwroot\\KDKTrangChu\\img\\hero\\Seventy_Seven.jpg",
+      "PackagePath": "staticwebassets\\KDKTrangChu\\img\\hero\\Seventy_Seven.jpg"
+    },
+    {
+      "Id": "D:\\Download\\Dart\\KDKMenShop\\wwwroot\\KDKTrangChu\\img\\hero\\Wrinkle.jpg",
+      "PackagePath": "staticwebassets\\KDKTrangChu\\img\\hero\\Wrinkle.jpg"
+    },
+    {
+      "Id": "D:\\Download\\Dart\\KDKMenShop\\wwwroot\\KDKTrangChu\\img\\language.png",
+      "PackagePath": "staticwebassets\\KDKTrangChu\\img\\language.png"
+    },
+    {
+      "Id": "D:\\Download\\Dart\\KDKMenShop\\wwwroot\\KDKTrangChu\\img\\latest-product\\lp-1.jpg",
+      "PackagePath": "staticwebassets\\KDKTrangChu\\img\\latest-product\\lp-1.jpg"
+    },
+    {
+      "Id": "D:\\Download\\Dart\\KDKMenShop\\wwwroot\\KDKTrangChu\\img\\latest-product\\lp-2.jpg",
+      "PackagePath": "staticwebassets\\KDKTrangChu\\img\\latest-product\\lp-2.jpg"
+    },
+    {
+      "Id": "D:\\Download\\Dart\\KDKMenShop\\wwwroot\\KDKTrangChu\\img\\latest-product\\lp-3.jpg",
+      "PackagePath": "staticwebassets\\KDKTrangChu\\img\\latest-product\\lp-3.jpg"
+    },
+    {
+      "Id": "D:\\Download\\Dart\\KDKMenShop\\wwwroot\\KDKTrangChu\\img\\payment-item.png",
+      "PackagePath": "staticwebassets\\KDKTrangChu\\img\\payment-item.png"
+    },
+    {
+      "Id": "D:\\Download\\Dart\\KDKMenShop\\wwwroot\\KDKTrangChu\\img\\product\\details\\product-details-1.jpg",
+      "PackagePath": "staticwebassets\\KDKTrangChu\\img\\product\\details\\product-details-1.jpg"
+    },
+    {
+      "Id": "D:\\Download\\Dart\\KDKMenShop\\wwwroot\\KDKTrangChu\\img\\product\\details\\product-details-2.jpg",
+      "PackagePath": "staticwebassets\\KDKTrangChu\\img\\product\\details\\product-details-2.jpg"
+    },
+    {
+      "Id": "D:\\Download\\Dart\\KDKMenShop\\wwwroot\\KDKTrangChu\\img\\product\\details\\product-details-3.jpg",
+      "PackagePath": "staticwebassets\\KDKTrangChu\\img\\product\\details\\product-details-3.jpg"
+    },
+    {
+      "Id": "D:\\Download\\Dart\\KDKMenShop\\wwwroot\\KDKTrangChu\\img\\product\\details\\product-details-4.jpg",
+      "PackagePath": "staticwebassets\\KDKTrangChu\\img\\product\\details\\product-details-4.jpg"
+    },
+    {
+      "Id": "D:\\Download\\Dart\\KDKMenShop\\wwwroot\\KDKTrangChu\\img\\product\\details\\product-details-5.jpg",
+      "PackagePath": "staticwebassets\\KDKTrangChu\\img\\product\\details\\product-details-5.jpg"
+    },
+    {
+      "Id": "D:\\Download\\Dart\\KDKMenShop\\wwwroot\\KDKTrangChu\\img\\product\\details\\thumb-1.jpg",
+      "PackagePath": "staticwebassets\\KDKTrangChu\\img\\product\\details\\thumb-1.jpg"
+    },
+    {
+      "Id": "D:\\Download\\Dart\\KDKMenShop\\wwwroot\\KDKTrangChu\\img\\product\\details\\thumb-2.jpg",
+      "PackagePath": "staticwebassets\\KDKTrangChu\\img\\product\\details\\thumb-2.jpg"
+    },
+    {
+      "Id": "D:\\Download\\Dart\\KDKMenShop\\wwwroot\\KDKTrangChu\\img\\product\\details\\thumb-3.jpg",
+      "PackagePath": "staticwebassets\\KDKTrangChu\\img\\product\\details\\thumb-3.jpg"
+    },
+    {
+      "Id": "D:\\Download\\Dart\\KDKMenShop\\wwwroot\\KDKTrangChu\\img\\product\\details\\thumb-4.jpg",
+      "PackagePath": "staticwebassets\\KDKTrangChu\\img\\product\\details\\thumb-4.jpg"
+    },
+    {
+      "Id": "D:\\Download\\Dart\\KDKMenShop\\wwwroot\\KDKTrangChu\\img\\product\\discount\\pd-1.jpg",
+      "PackagePath": "staticwebassets\\KDKTrangChu\\img\\product\\discount\\pd-1.jpg"
+    },
+    {
+      "Id": "D:\\Download\\Dart\\KDKMenShop\\wwwroot\\KDKTrangChu\\img\\product\\discount\\pd-2.jpg",
+      "PackagePath": "staticwebassets\\KDKTrangChu\\img\\product\\discount\\pd-2.jpg"
+    },
+    {
+      "Id": "D:\\Download\\Dart\\KDKMenShop\\wwwroot\\KDKTrangChu\\img\\product\\discount\\pd-3.jpg",
+      "PackagePath": "staticwebassets\\KDKTrangChu\\img\\product\\discount\\pd-3.jpg"
+    },
+    {
+      "Id": "D:\\Download\\Dart\\KDKMenShop\\wwwroot\\KDKTrangChu\\img\\product\\discount\\pd-4.jpg",
+      "PackagePath": "staticwebassets\\KDKTrangChu\\img\\product\\discount\\pd-4.jpg"
+    },
+    {
+      "Id": "D:\\Download\\Dart\\KDKMenShop\\wwwroot\\KDKTrangChu\\img\\product\\discount\\pd-5.jpg",
+      "PackagePath": "staticwebassets\\KDKTrangChu\\img\\product\\discount\\pd-5.jpg"
+    },
+    {
+      "Id": "D:\\Download\\Dart\\KDKMenShop\\wwwroot\\KDKTrangChu\\img\\product\\discount\\pd-6.jpg",
+      "PackagePath": "staticwebassets\\KDKTrangChu\\img\\product\\discount\\pd-6.jpg"
+    },
+    {
+      "Id": "D:\\Download\\Dart\\KDKMenShop\\wwwroot\\KDKTrangChu\\img\\product\\product-1.jpg",
+      "PackagePath": "staticwebassets\\KDKTrangChu\\img\\product\\product-1.jpg"
+    },
+    {
+      "Id": "D:\\Download\\Dart\\KDKMenShop\\wwwroot\\KDKTrangChu\\img\\product\\product-10.jpg",
+      "PackagePath": "staticwebassets\\KDKTrangChu\\img\\product\\product-10.jpg"
+    },
+    {
+      "Id": "D:\\Download\\Dart\\KDKMenShop\\wwwroot\\KDKTrangChu\\img\\product\\product-11.jpg",
+      "PackagePath": "staticwebassets\\KDKTrangChu\\img\\product\\product-11.jpg"
+    },
+    {
+      "Id": "D:\\Download\\Dart\\KDKMenShop\\wwwroot\\KDKTrangChu\\img\\product\\product-12.jpg",
+      "PackagePath": "staticwebassets\\KDKTrangChu\\img\\product\\product-12.jpg"
+    },
+    {
+      "Id": "D:\\Download\\Dart\\KDKMenShop\\wwwroot\\KDKTrangChu\\img\\product\\product-2.jpg",
+      "PackagePath": "staticwebassets\\KDKTrangChu\\img\\product\\product-2.jpg"
+    },
+    {
+      "Id": "D:\\Download\\Dart\\KDKMenShop\\wwwroot\\KDKTrangChu\\img\\product\\product-3.jpg",
+      "PackagePath": "staticwebassets\\KDKTrangChu\\img\\product\\product-3.jpg"
+    },
+    {
+      "Id": "D:\\Download\\Dart\\KDKMenShop\\wwwroot\\KDKTrangChu\\img\\product\\product-4.jpg",
+      "PackagePath": "staticwebassets\\KDKTrangChu\\img\\product\\product-4.jpg"
+    },
+    {
+      "Id": "D:\\Download\\Dart\\KDKMenShop\\wwwroot\\KDKTrangChu\\img\\product\\product-5.jpg",
+      "PackagePath": "staticwebassets\\KDKTrangChu\\img\\product\\product-5.jpg"
+    },
+    {
+      "Id": "D:\\Download\\Dart\\KDKMenShop\\wwwroot\\KDKTrangChu\\img\\product\\product-6.jpg",
+      "PackagePath": "staticwebassets\\KDKTrangChu\\img\\product\\product-6.jpg"
+    },
+    {
+      "Id": "D:\\Download\\Dart\\KDKMenShop\\wwwroot\\KDKTrangChu\\img\\product\\product-7.jpg",
+      "PackagePath": "staticwebassets\\KDKTrangChu\\img\\product\\product-7.jpg"
+    },
+    {
+      "Id": "D:\\Download\\Dart\\KDKMenShop\\wwwroot\\KDKTrangChu\\img\\product\\product-8.jpg",
+      "PackagePath": "staticwebassets\\KDKTrangChu\\img\\product\\product-8.jpg"
+    },
+    {
+      "Id": "D:\\Download\\Dart\\KDKMenShop\\wwwroot\\KDKTrangChu\\img\\product\\product-9.jpg",
+      "PackagePath": "staticwebassets\\KDKTrangChu\\img\\product\\product-9.jpg"
+    },
+    {
+      "Id": "D:\\Download\\Dart\\KDKMenShop\\wwwroot\\KDKTrangChu\\img\\sominau.jpg",
+      "PackagePath": "staticwebassets\\KDKTrangChu\\img\\sominau.jpg"
+    },
+    {
+      "Id": "D:\\Download\\Dart\\KDKMenShop\\wwwroot\\KDKTrangChu\\js\\bootstrap.min.js",
+      "PackagePath": "staticwebassets\\KDKTrangChu\\js\\bootstrap.min.js"
+    },
+    {
+      "Id": "D:\\Download\\Dart\\KDKMenShop\\wwwroot\\KDKTrangChu\\js\\jquery-3.3.1.min.js",
+      "PackagePath": "staticwebassets\\KDKTrangChu\\js\\jquery-3.3.1.min.js"
+    },
+    {
+      "Id": "D:\\Download\\Dart\\KDKMenShop\\wwwroot\\KDKTrangChu\\js\\jquery-ui.min.js",
+      "PackagePath": "staticwebassets\\KDKTrangChu\\js\\jquery-ui.min.js"
+    },
+    {
+      "Id": "D:\\Download\\Dart\\KDKMenShop\\wwwroot\\KDKTrangChu\\js\\jquery.nice-select.min.js",
+      "PackagePath": "staticwebassets\\KDKTrangChu\\js\\jquery.nice-select.min.js"
+    },
+    {
+      "Id": "D:\\Download\\Dart\\KDKMenShop\\wwwroot\\KDKTrangChu\\js\\jquery.slicknav.js",
+      "PackagePath": "staticwebassets\\KDKTrangChu\\js\\jquery.slicknav.js"
+    },
+    {
+      "Id": "D:\\Download\\Dart\\KDKMenShop\\wwwroot\\KDKTrangChu\\js\\main.js",
+      "PackagePath": "staticwebassets\\KDKTrangChu\\js\\main.js"
+    },
+    {
+      "Id": "D:\\Download\\Dart\\KDKMenShop\\wwwroot\\KDKTrangChu\\js\\mixitup.min.js",
+      "PackagePath": "staticwebassets\\KDKTrangChu\\js\\mixitup.min.js"
+    },
+    {
+      "Id": "D:\\Download\\Dart\\KDKMenShop\\wwwroot\\KDKTrangChu\\js\\owl.carousel.min.js",
+      "PackagePath": "staticwebassets\\KDKTrangChu\\js\\owl.carousel.min.js"
+    },
+    {
+      "Id": "D:\\Download\\Dart\\KDKMenShop\\wwwroot\\KDKadmin\\.gitignore",
+      "PackagePath": "staticwebassets\\KDKadmin\\.gitignore"
+    },
+    {
+      "Id": "D:\\Download\\Dart\\KDKMenShop\\wwwroot\\KDKadmin\\CHANGELOG.md",
+      "PackagePath": "staticwebassets\\KDKadmin\\CHANGELOG.md"
+    },
+    {
+      "Id": "D:\\Download\\Dart\\KDKMenShop\\wwwroot\\KDKadmin\\DangNhap\\css\\DangNhapAdmin.css",
+      "PackagePath": "staticwebassets\\KDKadmin\\DangNhap\\css\\DangNhapAdmin.css"
+    },
+    {
+      "Id": "D:\\Download\\Dart\\KDKMenShop\\wwwroot\\KDKadmin\\DangNhap\\css\\Dropdown.css",
+      "PackagePath": "staticwebassets\\KDKadmin\\DangNhap\\css\\Dropdown.css"
+    },
+    {
+      "Id": "D:\\Download\\Dart\\KDKMenShop\\wwwroot\\KDKadmin\\DangNhap\\css\\bootstrap-social.css",
+      "PackagePath": "staticwebassets\\KDKadmin\\DangNhap\\css\\bootstrap-social.css"
+    },
+    {
+      "Id": "D:\\Download\\Dart\\KDKMenShop\\wwwroot\\KDKadmin\\DangNhap\\css\\bootstrap-theme.min.css",
+      "PackagePath": "staticwebassets\\KDKadmin\\DangNhap\\css\\bootstrap-theme.min.css"
+    },
+    {
+      "Id": "D:\\Download\\Dart\\KDKMenShop\\wwwroot\\KDKadmin\\DangNhap\\css\\bootstrap.min.css",
+      "PackagePath": "staticwebassets\\KDKadmin\\DangNhap\\css\\bootstrap.min.css"
+    },
+    {
+      "Id": "D:\\Download\\Dart\\KDKMenShop\\wwwroot\\KDKadmin\\DangNhap\\css\\dataTables\\dataTables.bootstrap.css",
+      "PackagePath": "staticwebassets\\KDKadmin\\DangNhap\\css\\dataTables\\dataTables.bootstrap.css"
+    },
+    {
+      "Id": "D:\\Download\\Dart\\KDKMenShop\\wwwroot\\KDKadmin\\DangNhap\\css\\dataTables\\dataTables.responsive.css",
+      "PackagePath": "staticwebassets\\KDKadmin\\DangNhap\\css\\dataTables\\dataTables.responsive.css"
+    },
+    {
+      "Id": "D:\\Download\\Dart\\KDKMenShop\\wwwroot\\KDKadmin\\DangNhap\\css\\font-awesome.min.css",
+      "PackagePath": "staticwebassets\\KDKadmin\\DangNhap\\css\\font-awesome.min.css"
+    },
+    {
+      "Id": "D:\\Download\\Dart\\KDKMenShop\\wwwroot\\KDKadmin\\DangNhap\\css\\metisMenu.min.css",
+      "PackagePath": "staticwebassets\\KDKadmin\\DangNhap\\css\\metisMenu.min.css"
+    },
+    {
+      "Id": "D:\\Download\\Dart\\KDKMenShop\\wwwroot\\KDKadmin\\DangNhap\\css\\morris.css",
+      "PackagePath": "staticwebassets\\KDKadmin\\DangNhap\\css\\morris.css"
+    },
+    {
+      "Id": "D:\\Download\\Dart\\KDKMenShop\\wwwroot\\KDKadmin\\DangNhap\\css\\startmin.css",
+      "PackagePath": "staticwebassets\\KDKadmin\\DangNhap\\css\\startmin.css"
+    },
+    {
+      "Id": "D:\\Download\\Dart\\KDKMenShop\\wwwroot\\KDKadmin\\DangNhap\\css\\timeline.css",
+      "PackagePath": "staticwebassets\\KDKadmin\\DangNhap\\css\\timeline.css"
+    },
+    {
+      "Id": "D:\\Download\\Dart\\KDKMenShop\\wwwroot\\KDKadmin\\DangNhap\\fonts\\FontAwesome.otf",
+      "PackagePath": "staticwebassets\\KDKadmin\\DangNhap\\fonts\\FontAwesome.otf"
+    },
+    {
+      "Id": "D:\\Download\\Dart\\KDKMenShop\\wwwroot\\KDKadmin\\DangNhap\\fonts\\fontawesome-webfont.eot",
+      "PackagePath": "staticwebassets\\KDKadmin\\DangNhap\\fonts\\fontawesome-webfont.eot"
+    },
+    {
+      "Id": "D:\\Download\\Dart\\KDKMenShop\\wwwroot\\KDKadmin\\DangNhap\\fonts\\fontawesome-webfont.svg",
+      "PackagePath": "staticwebassets\\KDKadmin\\DangNhap\\fonts\\fontawesome-webfont.svg"
+    },
+    {
+      "Id": "D:\\Download\\Dart\\KDKMenShop\\wwwroot\\KDKadmin\\DangNhap\\fonts\\fontawesome-webfont.ttf",
+      "PackagePath": "staticwebassets\\KDKadmin\\DangNhap\\fonts\\fontawesome-webfont.ttf"
+    },
+    {
+      "Id": "D:\\Download\\Dart\\KDKMenShop\\wwwroot\\KDKadmin\\DangNhap\\fonts\\fontawesome-webfont.woff",
+      "PackagePath": "staticwebassets\\KDKadmin\\DangNhap\\fonts\\fontawesome-webfont.woff"
+    },
+    {
+      "Id": "D:\\Download\\Dart\\KDKMenShop\\wwwroot\\KDKadmin\\DangNhap\\fonts\\fontawesome-webfont.woff2",
+      "PackagePath": "staticwebassets\\KDKadmin\\DangNhap\\fonts\\fontawesome-webfont.woff2"
+    },
+    {
+      "Id": "D:\\Download\\Dart\\KDKMenShop\\wwwroot\\KDKadmin\\DangNhap\\fonts\\glyphicons-halflings-regular.eot",
+      "PackagePath": "staticwebassets\\KDKadmin\\DangNhap\\fonts\\glyphicons-halflings-regular.eot"
+    },
+    {
+      "Id": "D:\\Download\\Dart\\KDKMenShop\\wwwroot\\KDKadmin\\DangNhap\\fonts\\glyphicons-halflings-regular.svg",
+      "PackagePath": "staticwebassets\\KDKadmin\\DangNhap\\fonts\\glyphicons-halflings-regular.svg"
+    },
+    {
+      "Id": "D:\\Download\\Dart\\KDKMenShop\\wwwroot\\KDKadmin\\DangNhap\\fonts\\glyphicons-halflings-regular.ttf",
+      "PackagePath": "staticwebassets\\KDKadmin\\DangNhap\\fonts\\glyphicons-halflings-regular.ttf"
+    },
+    {
+      "Id": "D:\\Download\\Dart\\KDKMenShop\\wwwroot\\KDKadmin\\DangNhap\\fonts\\glyphicons-halflings-regular.woff",
+      "PackagePath": "staticwebassets\\KDKadmin\\DangNhap\\fonts\\glyphicons-halflings-regular.woff"
+    },
+    {
+      "Id": "D:\\Download\\Dart\\KDKMenShop\\wwwroot\\KDKadmin\\DangNhap\\fonts\\glyphicons-halflings-regular.woff2",
+      "PackagePath": "staticwebassets\\KDKadmin\\DangNhap\\fonts\\glyphicons-halflings-regular.woff2"
+    },
+    {
+      "Id": "D:\\Download\\Dart\\KDKMenShop\\wwwroot\\KDKadmin\\DangNhap\\js\\Dropdown.js",
+      "PackagePath": "staticwebassets\\KDKadmin\\DangNhap\\js\\Dropdown.js"
+    },
+    {
+      "Id": "D:\\Download\\Dart\\KDKMenShop\\wwwroot\\KDKadmin\\DangNhap\\js\\bootstrap.min.js",
+      "PackagePath": "staticwebassets\\KDKadmin\\DangNhap\\js\\bootstrap.min.js"
+    },
+    {
+      "Id": "D:\\Download\\Dart\\KDKMenShop\\wwwroot\\KDKadmin\\DangNhap\\js\\dataTables\\dataTables.bootstrap.min.js",
+      "PackagePath": "staticwebassets\\KDKadmin\\DangNhap\\js\\dataTables\\dataTables.bootstrap.min.js"
+    },
+    {
+      "Id": "D:\\Download\\Dart\\KDKMenShop\\wwwroot\\KDKadmin\\DangNhap\\js\\dataTables\\jquery.dataTables.min.js",
+      "PackagePath": "staticwebassets\\KDKadmin\\DangNhap\\js\\dataTables\\jquery.dataTables.min.js"
+    },
+    {
+      "Id": "D:\\Download\\Dart\\KDKMenShop\\wwwroot\\KDKadmin\\DangNhap\\js\\flot-data.js",
+      "PackagePath": "staticwebassets\\KDKadmin\\DangNhap\\js\\flot-data.js"
+    },
+    {
+      "Id": "D:\\Download\\Dart\\KDKMenShop\\wwwroot\\KDKadmin\\DangNhap\\js\\flot\\excanvas.min.js",
+      "PackagePath": "staticwebassets\\KDKadmin\\DangNhap\\js\\flot\\excanvas.min.js"
+    },
+    {
+      "Id": "D:\\Download\\Dart\\KDKMenShop\\wwwroot\\KDKadmin\\DangNhap\\js\\flot\\jquery.colorhelpers.js",
+      "PackagePath": "staticwebassets\\KDKadmin\\DangNhap\\js\\flot\\jquery.colorhelpers.js"
+    },
+    {
+      "Id": "D:\\Download\\Dart\\KDKMenShop\\wwwroot\\KDKadmin\\DangNhap\\js\\flot\\jquery.flot.canvas.js",
+      "PackagePath": "staticwebassets\\KDKadmin\\DangNhap\\js\\flot\\jquery.flot.canvas.js"
+    },
+    {
+      "Id": "D:\\Download\\Dart\\KDKMenShop\\wwwroot\\KDKadmin\\DangNhap\\js\\flot\\jquery.flot.categories.js",
+      "PackagePath": "staticwebassets\\KDKadmin\\DangNhap\\js\\flot\\jquery.flot.categories.js"
+    },
+    {
+      "Id": "D:\\Download\\Dart\\KDKMenShop\\wwwroot\\KDKadmin\\DangNhap\\js\\flot\\jquery.flot.crosshair.js",
+      "PackagePath": "staticwebassets\\KDKadmin\\DangNhap\\js\\flot\\jquery.flot.crosshair.js"
+    },
+    {
+      "Id": "D:\\Download\\Dart\\KDKMenShop\\wwwroot\\KDKadmin\\DangNhap\\js\\flot\\jquery.flot.errorbars.js",
+      "PackagePath": "staticwebassets\\KDKadmin\\DangNhap\\js\\flot\\jquery.flot.errorbars.js"
+    },
+    {
+      "Id": "D:\\Download\\Dart\\KDKMenShop\\wwwroot\\KDKadmin\\DangNhap\\js\\flot\\jquery.flot.fillbetween.js",
+      "PackagePath": "staticwebassets\\KDKadmin\\DangNhap\\js\\flot\\jquery.flot.fillbetween.js"
+    },
+    {
+      "Id": "D:\\Download\\Dart\\KDKMenShop\\wwwroot\\KDKadmin\\DangNhap\\js\\flot\\jquery.flot.image.js",
+      "PackagePath": "staticwebassets\\KDKadmin\\DangNhap\\js\\flot\\jquery.flot.image.js"
+    },
+    {
+      "Id": "D:\\Download\\Dart\\KDKMenShop\\wwwroot\\KDKadmin\\DangNhap\\js\\flot\\jquery.flot.js",
+      "PackagePath": "staticwebassets\\KDKadmin\\DangNhap\\js\\flot\\jquery.flot.js"
+    },
+    {
+      "Id": "D:\\Download\\Dart\\KDKMenShop\\wwwroot\\KDKadmin\\DangNhap\\js\\flot\\jquery.flot.navigate.js",
+      "PackagePath": "staticwebassets\\KDKadmin\\DangNhap\\js\\flot\\jquery.flot.navigate.js"
+    },
+    {
+      "Id": "D:\\Download\\Dart\\KDKMenShop\\wwwroot\\KDKadmin\\DangNhap\\js\\flot\\jquery.flot.pie.js",
+      "PackagePath": "staticwebassets\\KDKadmin\\DangNhap\\js\\flot\\jquery.flot.pie.js"
+    },
+    {
+      "Id": "D:\\Download\\Dart\\KDKMenShop\\wwwroot\\KDKadmin\\DangNhap\\js\\flot\\jquery.flot.resize.js",
+      "PackagePath": "staticwebassets\\KDKadmin\\DangNhap\\js\\flot\\jquery.flot.resize.js"
+    },
+    {
+      "Id": "D:\\Download\\Dart\\KDKMenShop\\wwwroot\\KDKadmin\\DangNhap\\js\\flot\\jquery.flot.selection.js",
+      "PackagePath": "staticwebassets\\KDKadmin\\DangNhap\\js\\flot\\jquery.flot.selection.js"
+    },
+    {
+      "Id": "D:\\Download\\Dart\\KDKMenShop\\wwwroot\\KDKadmin\\DangNhap\\js\\flot\\jquery.flot.stack.js",
+      "PackagePath": "staticwebassets\\KDKadmin\\DangNhap\\js\\flot\\jquery.flot.stack.js"
+    },
+    {
+      "Id": "D:\\Download\\Dart\\KDKMenShop\\wwwroot\\KDKadmin\\DangNhap\\js\\flot\\jquery.flot.symbol.js",
+      "PackagePath": "staticwebassets\\KDKadmin\\DangNhap\\js\\flot\\jquery.flot.symbol.js"
+    },
+    {
+      "Id": "D:\\Download\\Dart\\KDKMenShop\\wwwroot\\KDKadmin\\DangNhap\\js\\flot\\jquery.flot.threshold.js",
+      "PackagePath": "staticwebassets\\KDKadmin\\DangNhap\\js\\flot\\jquery.flot.threshold.js"
+    },
+    {
+      "Id": "D:\\Download\\Dart\\KDKMenShop\\wwwroot\\KDKadmin\\DangNhap\\js\\flot\\jquery.flot.time.js",
+      "PackagePath": "staticwebassets\\KDKadmin\\DangNhap\\js\\flot\\jquery.flot.time.js"
+    },
+    {
+      "Id": "D:\\Download\\Dart\\KDKMenShop\\wwwroot\\KDKadmin\\DangNhap\\js\\flot\\jquery.flot.tooltip.min.js",
+      "PackagePath": "staticwebassets\\KDKadmin\\DangNhap\\js\\flot\\jquery.flot.tooltip.min.js"
+    },
+    {
+      "Id": "D:\\Download\\Dart\\KDKMenShop\\wwwroot\\KDKadmin\\DangNhap\\js\\jquery.min.js",
+      "PackagePath": "staticwebassets\\KDKadmin\\DangNhap\\js\\jquery.min.js"
+    },
+    {
+      "Id": "D:\\Download\\Dart\\KDKMenShop\\wwwroot\\KDKadmin\\DangNhap\\js\\metisMenu.min.js",
+      "PackagePath": "staticwebassets\\KDKadmin\\DangNhap\\js\\metisMenu.min.js"
+    },
+    {
+      "Id": "D:\\Download\\Dart\\KDKMenShop\\wwwroot\\KDKadmin\\DangNhap\\js\\morris-data.js",
+      "PackagePath": "staticwebassets\\KDKadmin\\DangNhap\\js\\morris-data.js"
+    },
+    {
+      "Id": "D:\\Download\\Dart\\KDKMenShop\\wwwroot\\KDKadmin\\DangNhap\\js\\morris.min.js",
+      "PackagePath": "staticwebassets\\KDKadmin\\DangNhap\\js\\morris.min.js"
+    },
+    {
+      "Id": "D:\\Download\\Dart\\KDKMenShop\\wwwroot\\KDKadmin\\DangNhap\\js\\raphael.min.js",
+      "PackagePath": "staticwebassets\\KDKadmin\\DangNhap\\js\\raphael.min.js"
+    },
+    {
+      "Id": "D:\\Download\\Dart\\KDKMenShop\\wwwroot\\KDKadmin\\DangNhap\\js\\startmin.js",
+      "PackagePath": "staticwebassets\\KDKadmin\\DangNhap\\js\\startmin.js"
+    },
+    {
+      "Id": "D:\\Download\\Dart\\KDKMenShop\\wwwroot\\KDKadmin\\LICENSE",
+      "PackagePath": "staticwebassets\\KDKadmin"
+    },
+    {
+      "Id": "D:\\Download\\Dart\\KDKMenShop\\wwwroot\\KDKadmin\\PSD\\Purple_dashboard_free.psd",
+      "PackagePath": "staticwebassets\\KDKadmin\\PSD\\Purple_dashboard_free.psd"
+    },
+    {
+      "Id": "D:\\Download\\Dart\\KDKMenShop\\wwwroot\\KDKadmin\\README.md",
+      "PackagePath": "staticwebassets\\KDKadmin\\README.md"
+    },
+    {
+      "Id": "D:\\Download\\Dart\\KDKMenShop\\wwwroot\\KDKadmin\\assets\\css\\style.css",
+      "PackagePath": "staticwebassets\\KDKadmin\\assets\\css\\style.css"
+    },
+    {
+      "Id": "D:\\Download\\Dart\\KDKMenShop\\wwwroot\\KDKadmin\\assets\\css\\style.css.map",
+      "PackagePath": "staticwebassets\\KDKadmin\\assets\\css\\style.css.map"
+    },
+    {
+      "Id": "D:\\Download\\Dart\\KDKMenShop\\wwwroot\\KDKadmin\\assets\\fonts\\Ubuntu\\Ubuntu-Bold.eot",
+      "PackagePath": "staticwebassets\\KDKadmin\\assets\\fonts\\Ubuntu\\Ubuntu-Bold.eot"
+    },
+    {
+      "Id": "D:\\Download\\Dart\\KDKMenShop\\wwwroot\\KDKadmin\\assets\\fonts\\Ubuntu\\Ubuntu-Bold.ttf",
+      "PackagePath": "staticwebassets\\KDKadmin\\assets\\fonts\\Ubuntu\\Ubuntu-Bold.ttf"
+    },
+    {
+      "Id": "D:\\Download\\Dart\\KDKMenShop\\wwwroot\\KDKadmin\\assets\\fonts\\Ubuntu\\Ubuntu-Bold.woff",
+      "PackagePath": "staticwebassets\\KDKadmin\\assets\\fonts\\Ubuntu\\Ubuntu-Bold.woff"
+    },
+    {
+      "Id": "D:\\Download\\Dart\\KDKMenShop\\wwwroot\\KDKadmin\\assets\\fonts\\Ubuntu\\Ubuntu-Bold.woff2",
+      "PackagePath": "staticwebassets\\KDKadmin\\assets\\fonts\\Ubuntu\\Ubuntu-Bold.woff2"
+    },
+    {
+      "Id": "D:\\Download\\Dart\\KDKMenShop\\wwwroot\\KDKadmin\\assets\\fonts\\Ubuntu\\Ubuntu-Light.eot",
+      "PackagePath": "staticwebassets\\KDKadmin\\assets\\fonts\\Ubuntu\\Ubuntu-Light.eot"
+    },
+    {
+      "Id": "D:\\Download\\Dart\\KDKMenShop\\wwwroot\\KDKadmin\\assets\\fonts\\Ubuntu\\Ubuntu-Light.ttf",
+      "PackagePath": "staticwebassets\\KDKadmin\\assets\\fonts\\Ubuntu\\Ubuntu-Light.ttf"
+    },
+    {
+      "Id": "D:\\Download\\Dart\\KDKMenShop\\wwwroot\\KDKadmin\\assets\\fonts\\Ubuntu\\Ubuntu-Light.woff",
+      "PackagePath": "staticwebassets\\KDKadmin\\assets\\fonts\\Ubuntu\\Ubuntu-Light.woff"
+    },
+    {
+      "Id": "D:\\Download\\Dart\\KDKMenShop\\wwwroot\\KDKadmin\\assets\\fonts\\Ubuntu\\Ubuntu-Light.woff2",
+      "PackagePath": "staticwebassets\\KDKadmin\\assets\\fonts\\Ubuntu\\Ubuntu-Light.woff2"
+    },
+    {
+      "Id": "D:\\Download\\Dart\\KDKMenShop\\wwwroot\\KDKadmin\\assets\\fonts\\Ubuntu\\Ubuntu-Medium.eot",
+      "PackagePath": "staticwebassets\\KDKadmin\\assets\\fonts\\Ubuntu\\Ubuntu-Medium.eot"
+    },
+    {
+      "Id": "D:\\Download\\Dart\\KDKMenShop\\wwwroot\\KDKadmin\\assets\\fonts\\Ubuntu\\Ubuntu-Medium.ttf",
+      "PackagePath": "staticwebassets\\KDKadmin\\assets\\fonts\\Ubuntu\\Ubuntu-Medium.ttf"
+    },
+    {
+      "Id": "D:\\Download\\Dart\\KDKMenShop\\wwwroot\\KDKadmin\\assets\\fonts\\Ubuntu\\Ubuntu-Medium.woff",
+      "PackagePath": "staticwebassets\\KDKadmin\\assets\\fonts\\Ubuntu\\Ubuntu-Medium.woff"
+    },
+    {
+      "Id": "D:\\Download\\Dart\\KDKMenShop\\wwwroot\\KDKadmin\\assets\\fonts\\Ubuntu\\Ubuntu-Medium.woff2",
+      "PackagePath": "staticwebassets\\KDKadmin\\assets\\fonts\\Ubuntu\\Ubuntu-Medium.woff2"
+    },
+    {
+      "Id": "D:\\Download\\Dart\\KDKMenShop\\wwwroot\\KDKadmin\\assets\\fonts\\Ubuntu\\Ubuntu-Regular.eot",
+      "PackagePath": "staticwebassets\\KDKadmin\\assets\\fonts\\Ubuntu\\Ubuntu-Regular.eot"
+    },
+    {
+      "Id": "D:\\Download\\Dart\\KDKMenShop\\wwwroot\\KDKadmin\\assets\\fonts\\Ubuntu\\Ubuntu-Regular.ttf",
+      "PackagePath": "staticwebassets\\KDKadmin\\assets\\fonts\\Ubuntu\\Ubuntu-Regular.ttf"
+    },
+    {
+      "Id": "D:\\Download\\Dart\\KDKMenShop\\wwwroot\\KDKadmin\\assets\\fonts\\Ubuntu\\Ubuntu-Regular.woff",
+      "PackagePath": "staticwebassets\\KDKadmin\\assets\\fonts\\Ubuntu\\Ubuntu-Regular.woff"
+    },
+    {
+      "Id": "D:\\Download\\Dart\\KDKMenShop\\wwwroot\\KDKadmin\\assets\\fonts\\Ubuntu\\Ubuntu-Regular.woff2",
+      "PackagePath": "staticwebassets\\KDKadmin\\assets\\fonts\\Ubuntu\\Ubuntu-Regular.woff2"
+    },
+    {
+      "Id": "D:\\Download\\Dart\\KDKMenShop\\wwwroot\\KDKadmin\\assets\\images\\dashboard\\circle.png",
+      "PackagePath": "staticwebassets\\KDKadmin\\assets\\images\\dashboard\\circle.png"
+    },
+    {
+      "Id": "D:\\Download\\Dart\\KDKMenShop\\wwwroot\\KDKadmin\\assets\\images\\dashboard\\circle.svg",
+      "PackagePath": "staticwebassets\\KDKadmin\\assets\\images\\dashboard\\circle.svg"
+    },
+    {
+      "Id": "D:\\Download\\Dart\\KDKMenShop\\wwwroot\\KDKadmin\\assets\\images\\dashboard\\img_1.jpg",
+      "PackagePath": "staticwebassets\\KDKadmin\\assets\\images\\dashboard\\img_1.jpg"
+    },
+    {
+      "Id": "D:\\Download\\Dart\\KDKMenShop\\wwwroot\\KDKadmin\\assets\\images\\dashboard\\img_2.jpg",
+      "PackagePath": "staticwebassets\\KDKadmin\\assets\\images\\dashboard\\img_2.jpg"
+    },
+    {
+      "Id": "D:\\Download\\Dart\\KDKMenShop\\wwwroot\\KDKadmin\\assets\\images\\dashboard\\img_3.jpg",
+      "PackagePath": "staticwebassets\\KDKadmin\\assets\\images\\dashboard\\img_3.jpg"
+    },
+    {
+      "Id": "D:\\Download\\Dart\\KDKMenShop\\wwwroot\\KDKadmin\\assets\\images\\dashboard\\img_4.jpg",
+      "PackagePath": "staticwebassets\\KDKadmin\\assets\\images\\dashboard\\img_4.jpg"
+    },
+    {
+      "Id": "D:\\Download\\Dart\\KDKMenShop\\wwwroot\\KDKadmin\\assets\\images\\faces-clipart\\pic-1.png",
+      "PackagePath": "staticwebassets\\KDKadmin\\assets\\images\\faces-clipart\\pic-1.png"
+    },
+    {
+      "Id": "D:\\Download\\Dart\\KDKMenShop\\wwwroot\\KDKadmin\\assets\\images\\faces-clipart\\pic-2.png",
+      "PackagePath": "staticwebassets\\KDKadmin\\assets\\images\\faces-clipart\\pic-2.png"
+    },
+    {
+      "Id": "D:\\Download\\Dart\\KDKMenShop\\wwwroot\\KDKadmin\\assets\\images\\faces-clipart\\pic-3.png",
+      "PackagePath": "staticwebassets\\KDKadmin\\assets\\images\\faces-clipart\\pic-3.png"
+    },
+    {
+      "Id": "D:\\Download\\Dart\\KDKMenShop\\wwwroot\\KDKadmin\\assets\\images\\faces-clipart\\pic-4.png",
+      "PackagePath": "staticwebassets\\KDKadmin\\assets\\images\\faces-clipart\\pic-4.png"
+    },
+    {
+      "Id": "D:\\Download\\Dart\\KDKMenShop\\wwwroot\\KDKadmin\\assets\\images\\faces\\face1.jpg",
+      "PackagePath": "staticwebassets\\KDKadmin\\assets\\images\\faces\\face1.jpg"
+    },
+    {
+      "Id": "D:\\Download\\Dart\\KDKMenShop\\wwwroot\\KDKadmin\\assets\\images\\faces\\face10.jpg",
+      "PackagePath": "staticwebassets\\KDKadmin\\assets\\images\\faces\\face10.jpg"
+    },
+    {
+      "Id": "D:\\Download\\Dart\\KDKMenShop\\wwwroot\\KDKadmin\\assets\\images\\faces\\face11.jpg",
+      "PackagePath": "staticwebassets\\KDKadmin\\assets\\images\\faces\\face11.jpg"
+    },
+    {
+      "Id": "D:\\Download\\Dart\\KDKMenShop\\wwwroot\\KDKadmin\\assets\\images\\faces\\face12.jpg",
+      "PackagePath": "staticwebassets\\KDKadmin\\assets\\images\\faces\\face12.jpg"
+    },
+    {
+      "Id": "D:\\Download\\Dart\\KDKMenShop\\wwwroot\\KDKadmin\\assets\\images\\faces\\face13.jpg",
+      "PackagePath": "staticwebassets\\KDKadmin\\assets\\images\\faces\\face13.jpg"
+    },
+    {
+      "Id": "D:\\Download\\Dart\\KDKMenShop\\wwwroot\\KDKadmin\\assets\\images\\faces\\face14.jpg",
+      "PackagePath": "staticwebassets\\KDKadmin\\assets\\images\\faces\\face14.jpg"
+    },
+    {
+      "Id": "D:\\Download\\Dart\\KDKMenShop\\wwwroot\\KDKadmin\\assets\\images\\faces\\face15.jpg",
+      "PackagePath": "staticwebassets\\KDKadmin\\assets\\images\\faces\\face15.jpg"
+    },
+    {
+      "Id": "D:\\Download\\Dart\\KDKMenShop\\wwwroot\\KDKadmin\\assets\\images\\faces\\face16.jpg",
+      "PackagePath": "staticwebassets\\KDKadmin\\assets\\images\\faces\\face16.jpg"
+    },
+    {
+      "Id": "D:\\Download\\Dart\\KDKMenShop\\wwwroot\\KDKadmin\\assets\\images\\faces\\face17.jpg",
+      "PackagePath": "staticwebassets\\KDKadmin\\assets\\images\\faces\\face17.jpg"
+    },
+    {
+      "Id": "D:\\Download\\Dart\\KDKMenShop\\wwwroot\\KDKadmin\\assets\\images\\faces\\face18.jpg",
+      "PackagePath": "staticwebassets\\KDKadmin\\assets\\images\\faces\\face18.jpg"
+    },
+    {
+      "Id": "D:\\Download\\Dart\\KDKMenShop\\wwwroot\\KDKadmin\\assets\\images\\faces\\face19.jpg",
+      "PackagePath": "staticwebassets\\KDKadmin\\assets\\images\\faces\\face19.jpg"
+    },
+    {
+      "Id": "D:\\Download\\Dart\\KDKMenShop\\wwwroot\\KDKadmin\\assets\\images\\faces\\face2.jpg",
+      "PackagePath": "staticwebassets\\KDKadmin\\assets\\images\\faces\\face2.jpg"
+    },
+    {
+      "Id": "D:\\Download\\Dart\\KDKMenShop\\wwwroot\\KDKadmin\\assets\\images\\faces\\face20.jpg",
+      "PackagePath": "staticwebassets\\KDKadmin\\assets\\images\\faces\\face20.jpg"
+    },
+    {
+      "Id": "D:\\Download\\Dart\\KDKMenShop\\wwwroot\\KDKadmin\\assets\\images\\faces\\face21.jpg",
+      "PackagePath": "staticwebassets\\KDKadmin\\assets\\images\\faces\\face21.jpg"
+    },
+    {
+      "Id": "D:\\Download\\Dart\\KDKMenShop\\wwwroot\\KDKadmin\\assets\\images\\faces\\face22.jpg",
+      "PackagePath": "staticwebassets\\KDKadmin\\assets\\images\\faces\\face22.jpg"
+    },
+    {
+      "Id": "D:\\Download\\Dart\\KDKMenShop\\wwwroot\\KDKadmin\\assets\\images\\faces\\face23.jpg",
+      "PackagePath": "staticwebassets\\KDKadmin\\assets\\images\\faces\\face23.jpg"
+    },
+    {
+      "Id": "D:\\Download\\Dart\\KDKMenShop\\wwwroot\\KDKadmin\\assets\\images\\faces\\face24.jpg",
+      "PackagePath": "staticwebassets\\KDKadmin\\assets\\images\\faces\\face24.jpg"
+    },
+    {
+      "Id": "D:\\Download\\Dart\\KDKMenShop\\wwwroot\\KDKadmin\\assets\\images\\faces\\face25.jpg",
+      "PackagePath": "staticwebassets\\KDKadmin\\assets\\images\\faces\\face25.jpg"
+    },
+    {
+      "Id": "D:\\Download\\Dart\\KDKMenShop\\wwwroot\\KDKadmin\\assets\\images\\faces\\face26.jpg",
+      "PackagePath": "staticwebassets\\KDKadmin\\assets\\images\\faces\\face26.jpg"
+    },
+    {
+      "Id": "D:\\Download\\Dart\\KDKMenShop\\wwwroot\\KDKadmin\\assets\\images\\faces\\face27.jpg",
+      "PackagePath": "staticwebassets\\KDKadmin\\assets\\images\\faces\\face27.jpg"
+    },
+    {
+      "Id": "D:\\Download\\Dart\\KDKMenShop\\wwwroot\\KDKadmin\\assets\\images\\faces\\face3.jpg",
+      "PackagePath": "staticwebassets\\KDKadmin\\assets\\images\\faces\\face3.jpg"
+    },
+    {
+      "Id": "D:\\Download\\Dart\\KDKMenShop\\wwwroot\\KDKadmin\\assets\\images\\faces\\face4.jpg",
+      "PackagePath": "staticwebassets\\KDKadmin\\assets\\images\\faces\\face4.jpg"
+    },
+    {
+      "Id": "D:\\Download\\Dart\\KDKMenShop\\wwwroot\\KDKadmin\\assets\\images\\faces\\face5.jpg",
+      "PackagePath": "staticwebassets\\KDKadmin\\assets\\images\\faces\\face5.jpg"
+    },
+    {
+      "Id": "D:\\Download\\Dart\\KDKMenShop\\wwwroot\\KDKadmin\\assets\\images\\faces\\face6.jpg",
+      "PackagePath": "staticwebassets\\KDKadmin\\assets\\images\\faces\\face6.jpg"
+    },
+    {
+      "Id": "D:\\Download\\Dart\\KDKMenShop\\wwwroot\\KDKadmin\\assets\\images\\faces\\face7.jpg",
+      "PackagePath": "staticwebassets\\KDKadmin\\assets\\images\\faces\\face7.jpg"
+    },
+    {
+      "Id": "D:\\Download\\Dart\\KDKMenShop\\wwwroot\\KDKadmin\\assets\\images\\faces\\face8.jpg",
+      "PackagePath": "staticwebassets\\KDKadmin\\assets\\images\\faces\\face8.jpg"
+    },
+    {
+      "Id": "D:\\Download\\Dart\\KDKMenShop\\wwwroot\\KDKadmin\\assets\\images\\faces\\face9.jpg",
+      "PackagePath": "staticwebassets\\KDKadmin\\assets\\images\\faces\\face9.jpg"
+    },
+    {
+      "Id": "D:\\Download\\Dart\\KDKMenShop\\wwwroot\\KDKadmin\\assets\\images\\favicon.ico",
+      "PackagePath": "staticwebassets\\KDKadmin\\assets\\images\\favicon.ico"
+    },
+    {
+      "Id": "D:\\Download\\Dart\\KDKMenShop\\wwwroot\\KDKadmin\\assets\\images\\favicon.png",
+      "PackagePath": "staticwebassets\\KDKadmin\\assets\\images\\favicon.png"
+    },
+    {
+      "Id": "D:\\Download\\Dart\\KDKMenShop\\wwwroot\\KDKadmin\\assets\\images\\logo-mini.svg",
+      "PackagePath": "staticwebassets\\KDKadmin\\assets\\images\\logo-mini.svg"
+    },
+    {
+      "Id": "D:\\Download\\Dart\\KDKMenShop\\wwwroot\\KDKadmin\\assets\\images\\logo.svg",
+      "PackagePath": "staticwebassets\\KDKadmin\\assets\\images\\logo.svg"
+    },
+    {
+      "Id": "D:\\Download\\Dart\\KDKMenShop\\wwwroot\\KDKadmin\\assets\\images\\sprites\\blue.png",
+      "PackagePath": "staticwebassets\\KDKadmin\\assets\\images\\sprites\\blue.png"
+    },
+    {
+      "Id": "D:\\Download\\Dart\\KDKMenShop\\wwwroot\\KDKadmin\\assets\\images\\sprites\\dark.png",
+      "PackagePath": "staticwebassets\\KDKadmin\\assets\\images\\sprites\\dark.png"
+    },
+    {
+      "Id": "D:\\Download\\Dart\\KDKMenShop\\wwwroot\\KDKadmin\\assets\\images\\sprites\\flag.png",
+      "PackagePath": "staticwebassets\\KDKadmin\\assets\\images\\sprites\\flag.png"
+    },
+    {
+      "Id": "D:\\Download\\Dart\\KDKMenShop\\wwwroot\\KDKadmin\\assets\\images\\sprites\\green.png",
+      "PackagePath": "staticwebassets\\KDKadmin\\assets\\images\\sprites\\green.png"
+    },
+    {
+      "Id": "D:\\Download\\Dart\\KDKMenShop\\wwwroot\\KDKadmin\\assets\\images\\sprites\\jsgrid-icons.png",
+      "PackagePath": "staticwebassets\\KDKadmin\\assets\\images\\sprites\\jsgrid-icons.png"
+    },
+    {
+      "Id": "D:\\Download\\Dart\\KDKMenShop\\wwwroot\\KDKadmin\\assets\\images\\sprites\\red.png",
+      "PackagePath": "staticwebassets\\KDKadmin\\assets\\images\\sprites\\red.png"
+    },
+    {
+      "Id": "D:\\Download\\Dart\\KDKMenShop\\wwwroot\\KDKadmin\\assets\\images\\sprites\\yellow.png",
+      "PackagePath": "staticwebassets\\KDKadmin\\assets\\images\\sprites\\yellow.png"
+    },
+    {
+      "Id": "D:\\Download\\Dart\\KDKMenShop\\wwwroot\\KDKadmin\\assets\\js\\chart.js",
+      "PackagePath": "staticwebassets\\KDKadmin\\assets\\js\\chart.js"
+    },
+    {
+      "Id": "D:\\Download\\Dart\\KDKMenShop\\wwwroot\\KDKadmin\\assets\\js\\dashboard.js",
+      "PackagePath": "staticwebassets\\KDKadmin\\assets\\js\\dashboard.js"
+    },
+    {
+      "Id": "D:\\Download\\Dart\\KDKMenShop\\wwwroot\\KDKadmin\\assets\\js\\file-upload.js",
+      "PackagePath": "staticwebassets\\KDKadmin\\assets\\js\\file-upload.js"
+    },
+    {
+      "Id": "D:\\Download\\Dart\\KDKMenShop\\wwwroot\\KDKadmin\\assets\\js\\hoverable-collapse.js",
+      "PackagePath": "staticwebassets\\KDKadmin\\assets\\js\\hoverable-collapse.js"
+    },
+    {
+      "Id": "D:\\Download\\Dart\\KDKMenShop\\wwwroot\\KDKadmin\\assets\\js\\jquery.cookie.js",
+      "PackagePath": "staticwebassets\\KDKadmin\\assets\\js\\jquery.cookie.js"
+    },
+    {
+      "Id": "D:\\Download\\Dart\\KDKMenShop\\wwwroot\\KDKadmin\\assets\\js\\misc.js",
+      "PackagePath": "staticwebassets\\KDKadmin\\assets\\js\\misc.js"
+    },
+    {
+      "Id": "D:\\Download\\Dart\\KDKMenShop\\wwwroot\\KDKadmin\\assets\\js\\off-canvas.js",
+      "PackagePath": "staticwebassets\\KDKadmin\\assets\\js\\off-canvas.js"
+    },
+    {
+      "Id": "D:\\Download\\Dart\\KDKMenShop\\wwwroot\\KDKadmin\\assets\\js\\todo.js",
+      "PackagePath": "staticwebassets\\KDKadmin\\assets\\js\\todo.js"
+    },
+    {
+      "Id": "D:\\Download\\Dart\\KDKMenShop\\wwwroot\\KDKadmin\\assets\\js\\todolist.js",
+      "PackagePath": "staticwebassets\\KDKadmin\\assets\\js\\todolist.js"
+    },
+    {
+      "Id": "D:\\Download\\Dart\\KDKMenShop\\wwwroot\\KDKadmin\\assets\\scss\\_dashboard.scss",
+      "PackagePath": "staticwebassets\\KDKadmin\\assets\\scss\\_dashboard.scss"
+    },
+    {
+      "Id": "D:\\Download\\Dart\\KDKMenShop\\wwwroot\\KDKadmin\\assets\\scss\\_demo.scss",
+      "PackagePath": "staticwebassets\\KDKadmin\\assets\\scss\\_demo.scss"
+    },
+    {
+      "Id": "D:\\Download\\Dart\\KDKMenShop\\wwwroot\\KDKadmin\\assets\\scss\\_fonts.scss",
+      "PackagePath": "staticwebassets\\KDKadmin\\assets\\scss\\_fonts.scss"
+    },
+    {
+      "Id": "D:\\Download\\Dart\\KDKMenShop\\wwwroot\\KDKadmin\\assets\\scss\\_footer.scss",
+      "PackagePath": "staticwebassets\\KDKadmin\\assets\\scss\\_footer.scss"
+    },
+    {
+      "Id": "D:\\Download\\Dart\\KDKMenShop\\wwwroot\\KDKadmin\\assets\\scss\\_functions.scss",
+      "PackagePath": "staticwebassets\\KDKadmin\\assets\\scss\\_functions.scss"
+    },
+    {
+      "Id": "D:\\Download\\Dart\\KDKMenShop\\wwwroot\\KDKadmin\\assets\\scss\\_layouts.scss",
+      "PackagePath": "staticwebassets\\KDKadmin\\assets\\scss\\_layouts.scss"
+    },
+    {
+      "Id": "D:\\Download\\Dart\\KDKMenShop\\wwwroot\\KDKadmin\\assets\\scss\\_misc.scss",
+      "PackagePath": "staticwebassets\\KDKadmin\\assets\\scss\\_misc.scss"
+    },
+    {
+      "Id": "D:\\Download\\Dart\\KDKMenShop\\wwwroot\\KDKadmin\\assets\\scss\\_navbar.scss",
+      "PackagePath": "staticwebassets\\KDKadmin\\assets\\scss\\_navbar.scss"
+    },
+    {
+      "Id": "D:\\Download\\Dart\\KDKMenShop\\wwwroot\\KDKadmin\\assets\\scss\\_reset.scss",
+      "PackagePath": "staticwebassets\\KDKadmin\\assets\\scss\\_reset.scss"
+    },
+    {
+      "Id": "D:\\Download\\Dart\\KDKMenShop\\wwwroot\\KDKadmin\\assets\\scss\\_sidebar.scss",
+      "PackagePath": "staticwebassets\\KDKadmin\\assets\\scss\\_sidebar.scss"
+    },
+    {
+      "Id": "D:\\Download\\Dart\\KDKMenShop\\wwwroot\\KDKadmin\\assets\\scss\\_typography.scss",
+      "PackagePath": "staticwebassets\\KDKadmin\\assets\\scss\\_typography.scss"
+    },
+    {
+      "Id": "D:\\Download\\Dart\\KDKMenShop\\wwwroot\\KDKadmin\\assets\\scss\\_utilities.scss",
+      "PackagePath": "staticwebassets\\KDKadmin\\assets\\scss\\_utilities.scss"
+    },
+    {
+      "Id": "D:\\Download\\Dart\\KDKMenShop\\wwwroot\\KDKadmin\\assets\\scss\\_variables.scss",
+      "PackagePath": "staticwebassets\\KDKadmin\\assets\\scss\\_variables.scss"
+    },
+    {
+      "Id": "D:\\Download\\Dart\\KDKMenShop\\wwwroot\\KDKadmin\\assets\\scss\\_vertical-wrapper.scss",
+      "PackagePath": "staticwebassets\\KDKadmin\\assets\\scss\\_vertical-wrapper.scss"
+    },
+    {
+      "Id": "D:\\Download\\Dart\\KDKMenShop\\wwwroot\\KDKadmin\\assets\\scss\\_widget-grid.scss",
+      "PackagePath": "staticwebassets\\KDKadmin\\assets\\scss\\_widget-grid.scss"
+    },
+    {
+      "Id": "D:\\Download\\Dart\\KDKMenShop\\wwwroot\\KDKadmin\\assets\\scss\\components\\_badges.scss",
+      "PackagePath": "staticwebassets\\KDKadmin\\assets\\scss\\components\\_badges.scss"
+    },
+    {
+      "Id": "D:\\Download\\Dart\\KDKMenShop\\wwwroot\\KDKadmin\\assets\\scss\\components\\_bootstrap-progress.scss",
+      "PackagePath": "staticwebassets\\KDKadmin\\assets\\scss\\components\\_bootstrap-progress.scss"
+    },
+    {
+      "Id": "D:\\Download\\Dart\\KDKMenShop\\wwwroot\\KDKadmin\\assets\\scss\\components\\_breadcrumbs.scss",
+      "PackagePath": "staticwebassets\\KDKadmin\\assets\\scss\\components\\_breadcrumbs.scss"
+    },
+    {
+      "Id": "D:\\Download\\Dart\\KDKMenShop\\wwwroot\\KDKadmin\\assets\\scss\\components\\_buttons.scss",
+      "PackagePath": "staticwebassets\\KDKadmin\\assets\\scss\\components\\_buttons.scss"
+    },
+    {
+      "Id": "D:\\Download\\Dart\\KDKMenShop\\wwwroot\\KDKadmin\\assets\\scss\\components\\_cards.scss",
+      "PackagePath": "staticwebassets\\KDKadmin\\assets\\scss\\components\\_cards.scss"
+    },
+    {
+      "Id": "D:\\Download\\Dart\\KDKMenShop\\wwwroot\\KDKadmin\\assets\\scss\\components\\_checkbox-radio.scss",
+      "PackagePath": "staticwebassets\\KDKadmin\\assets\\scss\\components\\_checkbox-radio.scss"
+    },
+    {
+      "Id": "D:\\Download\\Dart\\KDKMenShop\\wwwroot\\KDKadmin\\assets\\scss\\components\\_dropdown.scss",
+      "PackagePath": "staticwebassets\\KDKadmin\\assets\\scss\\components\\_dropdown.scss"
+    },
+    {
+      "Id": "D:\\Download\\Dart\\KDKMenShop\\wwwroot\\KDKadmin\\assets\\scss\\components\\_forms.scss",
+      "PackagePath": "staticwebassets\\KDKadmin\\assets\\scss\\components\\_forms.scss"
+    },
+    {
+      "Id": "D:\\Download\\Dart\\KDKMenShop\\wwwroot\\KDKadmin\\assets\\scss\\components\\_icons.scss",
+      "PackagePath": "staticwebassets\\KDKadmin\\assets\\scss\\components\\_icons.scss"
+    },
+    {
+      "Id": "D:\\Download\\Dart\\KDKMenShop\\wwwroot\\KDKadmin\\assets\\scss\\components\\_lists.scss",
+      "PackagePath": "staticwebassets\\KDKadmin\\assets\\scss\\components\\_lists.scss"
+    },
+    {
+      "Id": "D:\\Download\\Dart\\KDKMenShop\\wwwroot\\KDKadmin\\assets\\scss\\components\\_preview.scss",
+      "PackagePath": "staticwebassets\\KDKadmin\\assets\\scss\\components\\_preview.scss"
+    },
+    {
+      "Id": "D:\\Download\\Dart\\KDKMenShop\\wwwroot\\KDKadmin\\assets\\scss\\components\\_tables.scss",
+      "PackagePath": "staticwebassets\\KDKadmin\\assets\\scss\\components\\_tables.scss"
+    },
+    {
+      "Id": "D:\\Download\\Dart\\KDKMenShop\\wwwroot\\KDKadmin\\assets\\scss\\components\\_todo-list.scss",
+      "PackagePath": "staticwebassets\\KDKadmin\\assets\\scss\\components\\_todo-list.scss"
+    },
+    {
+      "Id": "D:\\Download\\Dart\\KDKMenShop\\wwwroot\\KDKadmin\\assets\\scss\\landing-screens\\_auth.scss",
+      "PackagePath": "staticwebassets\\KDKadmin\\assets\\scss\\landing-screens\\_auth.scss"
+    },
+    {
+      "Id": "D:\\Download\\Dart\\KDKMenShop\\wwwroot\\KDKadmin\\assets\\scss\\mixins\\_animation.scss",
+      "PackagePath": "staticwebassets\\KDKadmin\\assets\\scss\\mixins\\_animation.scss"
+    },
+    {
+      "Id": "D:\\Download\\Dart\\KDKMenShop\\wwwroot\\KDKadmin\\assets\\scss\\mixins\\_background.scss",
+      "PackagePath": "staticwebassets\\KDKadmin\\assets\\scss\\mixins\\_background.scss"
+    },
+    {
+      "Id": "D:\\Download\\Dart\\KDKMenShop\\wwwroot\\KDKadmin\\assets\\scss\\mixins\\_badges.scss",
+      "PackagePath": "staticwebassets\\KDKadmin\\assets\\scss\\mixins\\_badges.scss"
+    },
+    {
+      "Id": "D:\\Download\\Dart\\KDKMenShop\\wwwroot\\KDKadmin\\assets\\scss\\mixins\\_blockqoute.scss",
+      "PackagePath": "staticwebassets\\KDKadmin\\assets\\scss\\mixins\\_blockqoute.scss"
+    },
+    {
+      "Id": "D:\\Download\\Dart\\KDKMenShop\\wwwroot\\KDKadmin\\assets\\scss\\mixins\\_breadcrumbs.scss",
+      "PackagePath": "staticwebassets\\KDKadmin\\assets\\scss\\mixins\\_breadcrumbs.scss"
+    },
+    {
+      "Id": "D:\\Download\\Dart\\KDKMenShop\\wwwroot\\KDKadmin\\assets\\scss\\mixins\\_buttons.scss",
+      "PackagePath": "staticwebassets\\KDKadmin\\assets\\scss\\mixins\\_buttons.scss"
+    },
+    {
+      "Id": "D:\\Download\\Dart\\KDKMenShop\\wwwroot\\KDKadmin\\assets\\scss\\mixins\\_cards.scss",
+      "PackagePath": "staticwebassets\\KDKadmin\\assets\\scss\\mixins\\_cards.scss"
+    },
+    {
+      "Id": "D:\\Download\\Dart\\KDKMenShop\\wwwroot\\KDKadmin\\assets\\scss\\mixins\\_misc.scss",
+      "PackagePath": "staticwebassets\\KDKadmin\\assets\\scss\\mixins\\_misc.scss"
+    },
+    {
+      "Id": "D:\\Download\\Dart\\KDKMenShop\\wwwroot\\KDKadmin\\assets\\scss\\mixins\\_pagination.scss",
+      "PackagePath": "staticwebassets\\KDKadmin\\assets\\scss\\mixins\\_pagination.scss"
+    },
+    {
+      "Id": "D:\\Download\\Dart\\KDKMenShop\\wwwroot\\KDKadmin\\assets\\scss\\mixins\\_popovers.scss",
+      "PackagePath": "staticwebassets\\KDKadmin\\assets\\scss\\mixins\\_popovers.scss"
+    },
+    {
+      "Id": "D:\\Download\\Dart\\KDKMenShop\\wwwroot\\KDKadmin\\assets\\scss\\mixins\\_text.scss",
+      "PackagePath": "staticwebassets\\KDKadmin\\assets\\scss\\mixins\\_text.scss"
+    },
+    {
+      "Id": "D:\\Download\\Dart\\KDKMenShop\\wwwroot\\KDKadmin\\assets\\scss\\mixins\\_tooltips.scss",
+      "PackagePath": "staticwebassets\\KDKadmin\\assets\\scss\\mixins\\_tooltips.scss"
+    },
+    {
+      "Id": "D:\\Download\\Dart\\KDKMenShop\\wwwroot\\KDKadmin\\assets\\scss\\style.scss",
+      "PackagePath": "staticwebassets\\KDKadmin\\assets\\scss\\style.scss"
+    },
+    {
+      "Id": "D:\\Download\\Dart\\KDKMenShop\\wwwroot\\KDKadmin\\assets\\vendors\\chart.js\\Chart.min.js",
+      "PackagePath": "staticwebassets\\KDKadmin\\assets\\vendors\\chart.js\\Chart.min.js"
+    },
+    {
+      "Id": "D:\\Download\\Dart\\KDKMenShop\\wwwroot\\KDKadmin\\assets\\vendors\\css\\vendor.bundle.base.css",
+      "PackagePath": "staticwebassets\\KDKadmin\\assets\\vendors\\css\\vendor.bundle.base.css"
+    },
+    {
+      "Id": "D:\\Download\\Dart\\KDKMenShop\\wwwroot\\KDKadmin\\assets\\vendors\\js\\bootstrap.min.js.map",
+      "PackagePath": "staticwebassets\\KDKadmin\\assets\\vendors\\js\\bootstrap.min.js.map"
+    },
+    {
+      "Id": "D:\\Download\\Dart\\KDKMenShop\\wwwroot\\KDKadmin\\assets\\vendors\\js\\vendor.bundle.base.js",
+      "PackagePath": "staticwebassets\\KDKadmin\\assets\\vendors\\js\\vendor.bundle.base.js"
+    },
+    {
+      "Id": "D:\\Download\\Dart\\KDKMenShop\\wwwroot\\KDKadmin\\assets\\vendors\\mdi\\css\\materialdesignicons.min.css",
+      "PackagePath": "staticwebassets\\KDKadmin\\assets\\vendors\\mdi\\css\\materialdesignicons.min.css"
+    },
+    {
+      "Id": "D:\\Download\\Dart\\KDKMenShop\\wwwroot\\KDKadmin\\assets\\vendors\\mdi\\css\\materialdesignicons.min.css.map",
+      "PackagePath": "staticwebassets\\KDKadmin\\assets\\vendors\\mdi\\css\\materialdesignicons.min.css.map"
+    },
+    {
+      "Id": "D:\\Download\\Dart\\KDKMenShop\\wwwroot\\KDKadmin\\assets\\vendors\\mdi\\fonts\\materialdesignicons-webfont.eot",
+      "PackagePath": "staticwebassets\\KDKadmin\\assets\\vendors\\mdi\\fonts\\materialdesignicons-webfont.eot"
+    },
+    {
+      "Id": "D:\\Download\\Dart\\KDKMenShop\\wwwroot\\KDKadmin\\assets\\vendors\\mdi\\fonts\\materialdesignicons-webfont.ttf",
+      "PackagePath": "staticwebassets\\KDKadmin\\assets\\vendors\\mdi\\fonts\\materialdesignicons-webfont.ttf"
+    },
+    {
+      "Id": "D:\\Download\\Dart\\KDKMenShop\\wwwroot\\KDKadmin\\assets\\vendors\\mdi\\fonts\\materialdesignicons-webfont.woff",
+      "PackagePath": "staticwebassets\\KDKadmin\\assets\\vendors\\mdi\\fonts\\materialdesignicons-webfont.woff"
+    },
+    {
+      "Id": "D:\\Download\\Dart\\KDKMenShop\\wwwroot\\KDKadmin\\assets\\vendors\\mdi\\fonts\\materialdesignicons-webfont.woff2",
+      "PackagePath": "staticwebassets\\KDKadmin\\assets\\vendors\\mdi\\fonts\\materialdesignicons-webfont.woff2"
+    },
+    {
+      "Id": "D:\\Download\\Dart\\KDKMenShop\\wwwroot\\KDKadmin\\gulp-tasks\\inject.js",
+      "PackagePath": "staticwebassets\\KDKadmin\\gulp-tasks\\inject.js"
+    },
+    {
+      "Id": "D:\\Download\\Dart\\KDKMenShop\\wwwroot\\KDKadmin\\gulp-tasks\\serve.js",
+      "PackagePath": "staticwebassets\\KDKadmin\\gulp-tasks\\serve.js"
+    },
+    {
+      "Id": "D:\\Download\\Dart\\KDKMenShop\\wwwroot\\KDKadmin\\gulp-tasks\\vendors.js",
+      "PackagePath": "staticwebassets\\KDKadmin\\gulp-tasks\\vendors.js"
+    },
+    {
+      "Id": "D:\\Download\\Dart\\KDKMenShop\\wwwroot\\KDKadmin\\gulpfile.js",
+      "PackagePath": "staticwebassets\\KDKadmin\\gulpfile.js"
+    },
+    {
+      "Id": "D:\\Download\\Dart\\KDKMenShop\\wwwroot\\KDKadmin\\index.html",
+      "PackagePath": "staticwebassets\\KDKadmin\\index.html"
+    },
+    {
+      "Id": "D:\\Download\\Dart\\KDKMenShop\\wwwroot\\KDKadmin\\package.json",
+      "PackagePath": "staticwebassets\\KDKadmin\\package.json"
+    },
+    {
+      "Id": "D:\\Download\\Dart\\KDKMenShop\\wwwroot\\KDKadmin\\pages\\charts\\chartjs.html",
+      "PackagePath": "staticwebassets\\KDKadmin\\pages\\charts\\chartjs.html"
+    },
+    {
+      "Id": "D:\\Download\\Dart\\KDKMenShop\\wwwroot\\KDKadmin\\pages\\forms\\basic_elements.html",
+      "PackagePath": "staticwebassets\\KDKadmin\\pages\\forms\\basic_elements.html"
+    },
+    {
+      "Id": "D:\\Download\\Dart\\KDKMenShop\\wwwroot\\KDKadmin\\pages\\icons\\mdi.html",
+      "PackagePath": "staticwebassets\\KDKadmin\\pages\\icons\\mdi.html"
+    },
+    {
+      "Id": "D:\\Download\\Dart\\KDKMenShop\\wwwroot\\KDKadmin\\pages\\samples\\blank-page.html",
+      "PackagePath": "staticwebassets\\KDKadmin\\pages\\samples\\blank-page.html"
+    },
+    {
+      "Id": "D:\\Download\\Dart\\KDKMenShop\\wwwroot\\KDKadmin\\pages\\samples\\error-404.html",
+      "PackagePath": "staticwebassets\\KDKadmin\\pages\\samples\\error-404.html"
+    },
+    {
+      "Id": "D:\\Download\\Dart\\KDKMenShop\\wwwroot\\KDKadmin\\pages\\samples\\error-500.html",
+      "PackagePath": "staticwebassets\\KDKadmin\\pages\\samples\\error-500.html"
+    },
+    {
+      "Id": "D:\\Download\\Dart\\KDKMenShop\\wwwroot\\KDKadmin\\pages\\samples\\login.html",
+      "PackagePath": "staticwebassets\\KDKadmin\\pages\\samples\\login.html"
+    },
+    {
+      "Id": "D:\\Download\\Dart\\KDKMenShop\\wwwroot\\KDKadmin\\pages\\samples\\register.html",
+      "PackagePath": "staticwebassets\\KDKadmin\\pages\\samples\\register.html"
+    },
+    {
+      "Id": "D:\\Download\\Dart\\KDKMenShop\\wwwroot\\KDKadmin\\pages\\tables\\basic-table.html",
+      "PackagePath": "staticwebassets\\KDKadmin\\pages\\tables\\basic-table.html"
+    },
+    {
+      "Id": "D:\\Download\\Dart\\KDKMenShop\\wwwroot\\KDKadmin\\pages\\ui-features\\buttons.html",
+      "PackagePath": "staticwebassets\\KDKadmin\\pages\\ui-features\\buttons.html"
+    },
+    {
+      "Id": "D:\\Download\\Dart\\KDKMenShop\\wwwroot\\KDKadmin\\pages\\ui-features\\typography.html",
+      "PackagePath": "staticwebassets\\KDKadmin\\pages\\ui-features\\typography.html"
+    },
+    {
+      "Id": "D:\\Download\\Dart\\KDKMenShop\\wwwroot\\KDKadmin\\partials\\_footer.html",
+      "PackagePath": "staticwebassets\\KDKadmin\\partials\\_footer.html"
+    },
+    {
+      "Id": "D:\\Download\\Dart\\KDKMenShop\\wwwroot\\KDKadmin\\partials\\_navbar.html",
+      "PackagePath": "staticwebassets\\KDKadmin\\partials\\_navbar.html"
+    },
+    {
+      "Id": "D:\\Download\\Dart\\KDKMenShop\\wwwroot\\KDKadmin\\partials\\_sidebar.html",
+      "PackagePath": "staticwebassets\\KDKadmin\\partials\\_sidebar.html"
+    },
+    {
+      "Id": "D:\\Download\\Dart\\KDKMenShop\\wwwroot\\KDKadmin\\screenshot.jpg",
+      "PackagePath": "staticwebassets\\KDKadmin\\screenshot.jpg"
+    },
+    {
+      "Id": "D:\\Download\\Dart\\KDKMenShop\\wwwroot\\KDKadmin\\site.js",
+      "PackagePath": "staticwebassets\\KDKadmin\\site.js"
+    },
+    {
+      "Id": "D:\\Download\\Dart\\KDKMenShop\\wwwroot\\css\\DashBoard-admin.css",
+      "PackagePath": "staticwebassets\\css\\DashBoard-admin.css"
+    },
+    {
+      "Id": "D:\\Download\\Dart\\KDKMenShop\\wwwroot\\css\\StyleForHome.css",
+      "PackagePath": "staticwebassets\\css\\StyleForHome.css"
+    },
+    {
+      "Id": "D:\\Download\\Dart\\KDKMenShop\\wwwroot\\css\\StyleForSearch.css",
+      "PackagePath": "staticwebassets\\css\\StyleForSearch.css"
+    },
+    {
+      "Id": "D:\\Download\\Dart\\KDKMenShop\\wwwroot\\css\\StyleForWishlist.css",
+      "PackagePath": "staticwebassets\\css\\StyleForWishlist.css"
+    },
+    {
+      "Id": "D:\\Download\\Dart\\KDKMenShop\\wwwroot\\css\\button-admin.css",
+      "PackagePath": "staticwebassets\\css\\button-admin.css"
+    },
+    {
+      "Id": "D:\\Download\\Dart\\KDKMenShop\\wwwroot\\css\\buttonMOMO.css",
+      "PackagePath": "staticwebassets\\css\\buttonMOMO.css"
+    },
+    {
+      "Id": "D:\\Download\\Dart\\KDKMenShop\\wwwroot\\css\\buttondelete.css",
+      "PackagePath": "staticwebassets\\css\\buttondelete.css"
+    },
+    {
+      "Id": "D:\\Download\\Dart\\KDKMenShop\\wwwroot\\css\\danhGia.css",
+      "PackagePath": "staticwebassets\\css\\danhGia.css"
+    },
+    {
+      "Id": "D:\\Download\\Dart\\KDKMenShop\\wwwroot\\css\\gia-sale.css",
+      "PackagePath": "staticwebassets\\css\\gia-sale.css"
+    },
+    {
+      "Id": "D:\\Download\\Dart\\KDKMenShop\\wwwroot\\css\\sanphamloai.css",
+      "PackagePath": "staticwebassets\\css\\sanphamloai.css"
+    },
+    {
+      "Id": "D:\\Download\\Dart\\KDKMenShop\\wwwroot\\css\\site.css",
+      "PackagePath": "staticwebassets\\css\\site.css"
+    },
+    {
+      "Id": "D:\\Download\\Dart\\KDKMenShop\\wwwroot\\favicon.ico",
+      "PackagePath": "staticwebassets\\favicon.ico"
+    },
+    {
+      "Id": "D:\\Download\\Dart\\KDKMenShop\\wwwroot\\images\\0450a8ba-5709-4077-b4e4-ba0545c091cb_3.jpg",
+      "PackagePath": "staticwebassets\\images\\0450a8ba-5709-4077-b4e4-ba0545c091cb_3.jpg"
+    },
+    {
+      "Id": "D:\\Download\\Dart\\KDKMenShop\\wwwroot\\images\\0856d5a9-63f8-48f4-ac3f-692a4404acbe_tncd.jpg",
+      "PackagePath": "staticwebassets\\images\\0856d5a9-63f8-48f4-ac3f-692a4404acbe_tncd.jpg"
+    },
+    {
+      "Id": "D:\\Download\\Dart\\KDKMenShop\\wwwroot\\images\\0880e7ad-d293-4fe5-9fc8-366b3d642ced__banner_sea.jpg",
+      "PackagePath": "staticwebassets\\images\\0880e7ad-d293-4fe5-9fc8-366b3d642ced__banner_sea.jpg"
+    },
+    {
+      "Id": "D:\\Download\\Dart\\KDKMenShop\\wwwroot\\images\\0acf3e33-7f93-4c8f-adad-21a253c24538_s1.png.jpg",
+      "PackagePath": "staticwebassets\\images\\0acf3e33-7f93-4c8f-adad-21a253c24538_s1.png.jpg"
+    },
+    {
+      "Id": "D:\\Download\\Dart\\KDKMenShop\\wwwroot\\images\\0cabb159-f9e2-4c12-b814-7b2104a4ef1d_sominau.jpg",
+      "PackagePath": "staticwebassets\\images\\0cabb159-f9e2-4c12-b814-7b2104a4ef1d_sominau.jpg"
+    },
+    {
+      "Id": "D:\\Download\\Dart\\KDKMenShop\\wwwroot\\images\\0f2aace7-b60b-418b-ba1f-ae5731918acf_3.jpg",
+      "PackagePath": "staticwebassets\\images\\0f2aace7-b60b-418b-ba1f-ae5731918acf_3.jpg"
+    },
+    {
+      "Id": "D:\\Download\\Dart\\KDKMenShop\\wwwroot\\images\\0fe21467-7361-480f-85c6-1c689599be5a_miencatgio.jpg",
+      "PackagePath": "staticwebassets\\images\\0fe21467-7361-480f-85c6-1c689599be5a_miencatgio.jpg"
+    },
+    {
+      "Id": "D:\\Download\\Dart\\KDKMenShop\\wwwroot\\images\\14ad2064-0126-44a6-a7e9-529213017788_tncd.jpg",
+      "PackagePath": "staticwebassets\\images\\14ad2064-0126-44a6-a7e9-529213017788_tncd.jpg"
+    },
+    {
+      "Id": "D:\\Download\\Dart\\KDKMenShop\\wwwroot\\images\\1ee94c9d-aea8-4453-9b2e-09a20650d05a_z3993609202075_22b6d8186df056dab94ba10b196fd3bc.jpg",
+      "PackagePath": "staticwebassets\\images\\1ee94c9d-aea8-4453-9b2e-09a20650d05a_z3993609202075_22b6d8186df056dab94ba10b196fd3bc.jpg"
+    },
+    {
+      "Id": "D:\\Download\\Dart\\KDKMenShop\\wwwroot\\images\\216e02c9-86ef-4741-8a44-3c939090eda7_3.jpg",
+      "PackagePath": "staticwebassets\\images\\216e02c9-86ef-4741-8a44-3c939090eda7_3.jpg"
+    },
+    {
+      "Id": "D:\\Download\\Dart\\KDKMenShop\\wwwroot\\images\\2732f0bf-49eb-4770-9bfc-9d6235fa31a1_3.jpg",
+      "PackagePath": "staticwebassets\\images\\2732f0bf-49eb-4770-9bfc-9d6235fa31a1_3.jpg"
+    },
+    {
+      "Id": "D:\\Download\\Dart\\KDKMenShop\\wwwroot\\images\\34a98b47-95df-4cfd-8c45-a427897d9c4e_veuocmo.png",
+      "PackagePath": "staticwebassets\\images\\34a98b47-95df-4cfd-8c45-a427897d9c4e_veuocmo.png"
+    },
+    {
+      "Id": "D:\\Download\\Dart\\KDKMenShop\\wwwroot\\images\\42344623-cdb3-4839-a677-22132d548ecc_tuoitre.jpg",
+      "PackagePath": "staticwebassets\\images\\42344623-cdb3-4839-a677-22132d548ecc_tuoitre.jpg"
+    },
+    {
+      "Id": "D:\\Download\\Dart\\KDKMenShop\\wwwroot\\images\\4f541fba-c494-4bfb-8d8c-dd89f19b4a45_di-san.jpg",
+      "PackagePath": "staticwebassets\\images\\4f541fba-c494-4bfb-8d8c-dd89f19b4a45_di-san.jpg"
+    },
+    {
+      "Id": "D:\\Download\\Dart\\KDKMenShop\\wwwroot\\images\\501fd36c-badd-4912-b179-e5a4a6ab74ca__banner_sea.jpg",
+      "PackagePath": "staticwebassets\\images\\501fd36c-badd-4912-b179-e5a4a6ab74ca__banner_sea.jpg"
+    },
+    {
+      "Id": "D:\\Download\\Dart\\KDKMenShop\\wwwroot\\images\\5101d442-8d15-44ad-bc49-655d04246794_aobalo.jpg",
+      "PackagePath": "staticwebassets\\images\\5101d442-8d15-44ad-bc49-655d04246794_aobalo.jpg"
+    },
+    {
+      "Id": "D:\\Download\\Dart\\KDKMenShop\\wwwroot\\images\\584190be-bb42-401f-9c11-86931d1af418_di-san.jpg",
+      "PackagePath": "staticwebassets\\images\\584190be-bb42-401f-9c11-86931d1af418_di-san.jpg"
+    },
+    {
+      "Id": "D:\\Download\\Dart\\KDKMenShop\\wwwroot\\images\\58fa113d-9855-41bf-ab4e-05f3b3e684f5_miencatgio.jpg",
+      "PackagePath": "staticwebassets\\images\\58fa113d-9855-41bf-ab4e-05f3b3e684f5_miencatgio.jpg"
+    },
+    {
+      "Id": "D:\\Download\\Dart\\KDKMenShop\\wwwroot\\images\\6249c8a4-6cdf-4e22-9e3b-05ed17325686_z3993609202075_22b6d8186df056dab94ba10b196fd3bc.jpg",
+      "PackagePath": "staticwebassets\\images\\6249c8a4-6cdf-4e22-9e3b-05ed17325686_z3993609202075_22b6d8186df056dab94ba10b196fd3bc.jpg"
+    },
+    {
+      "Id": "D:\\Download\\Dart\\KDKMenShop\\wwwroot\\images\\73f8f7c1-c89c-4f7a-8926-82523726a40c_veuocmo.png",
+      "PackagePath": "staticwebassets\\images\\73f8f7c1-c89c-4f7a-8926-82523726a40c_veuocmo.png"
+    },
+    {
+      "Id": "D:\\Download\\Dart\\KDKMenShop\\wwwroot\\images\\7d6b86b1-8d8a-4314-b46f-b76627961bcf_s1.png.jpg",
+      "PackagePath": "staticwebassets\\images\\7d6b86b1-8d8a-4314-b46f-b76627961bcf_s1.png.jpg"
+    },
+    {
+      "Id": "D:\\Download\\Dart\\KDKMenShop\\wwwroot\\images\\8167e247-834b-4aba-8b80-e4f92e09e5bf_veuocmo.png",
+      "PackagePath": "staticwebassets\\images\\8167e247-834b-4aba-8b80-e4f92e09e5bf_veuocmo.png"
+    },
+    {
+      "Id": "D:\\Download\\Dart\\KDKMenShop\\wwwroot\\images\\82c9c6b1-44e5-4776-ba22-0192265ba0bc_tuoitre.jpg",
+      "PackagePath": "staticwebassets\\images\\82c9c6b1-44e5-4776-ba22-0192265ba0bc_tuoitre.jpg"
+    },
+    {
+      "Id": "D:\\Download\\Dart\\KDKMenShop\\wwwroot\\images\\96057af2-230c-4273-90f5-8ff82f73b3a2_s1.png.jpg",
+      "PackagePath": "staticwebassets\\images\\96057af2-230c-4273-90f5-8ff82f73b3a2_s1.png.jpg"
+    },
+    {
+      "Id": "D:\\Download\\Dart\\KDKMenShop\\wwwroot\\images\\9c636df1-0647-4582-ba47-c56c30a99c6c_3.jpg",
+      "PackagePath": "staticwebassets\\images\\9c636df1-0647-4582-ba47-c56c30a99c6c_3.jpg"
+    },
+    {
+      "Id": "D:\\Download\\Dart\\KDKMenShop\\wwwroot\\images\\9e094088-110c-48cd-8409-cd8b93178a74_s1.png.jpg",
+      "PackagePath": "staticwebassets\\images\\9e094088-110c-48cd-8409-cd8b93178a74_s1.png.jpg"
+    },
+    {
+      "Id": "D:\\Download\\Dart\\KDKMenShop\\wwwroot\\images\\Ao3Lo27-1.jpg",
+      "PackagePath": "staticwebassets\\images\\Ao3Lo27-1.jpg"
+    },
+    {
+      "Id": "D:\\Download\\Dart\\KDKMenShop\\wwwroot\\images\\Ao3Lo27.jpg",
+      "PackagePath": "staticwebassets\\images\\Ao3Lo27.jpg"
+    },
+    {
+      "Id": "D:\\Download\\Dart\\KDKMenShop\\wwwroot\\images\\AoSoMi77-22-1.jpg",
+      "PackagePath": "staticwebassets\\images\\AoSoMi77-22-1.jpg"
+    },
+    {
+      "Id": "D:\\Download\\Dart\\KDKMenShop\\wwwroot\\images\\AoSoMi77-22.jpg",
+      "PackagePath": "staticwebassets\\images\\AoSoMi77-22.jpg"
+    },
+    {
+      "Id": "D:\\Download\\Dart\\KDKMenShop\\wwwroot\\images\\AoSoMi77-24.jpg",
+      "PackagePath": "staticwebassets\\images\\AoSoMi77-24.jpg"
+    },
+    {
+      "Id": "D:\\Download\\Dart\\KDKMenShop\\wwwroot\\images\\AoSoMi77Be-24-1.jpg",
+      "PackagePath": "staticwebassets\\images\\AoSoMi77Be-24-1.jpg"
+    },
+    {
+      "Id": "D:\\Download\\Dart\\KDKMenShop\\wwwroot\\images\\AoSoMi77Be-24.jpg",
+      "PackagePath": "staticwebassets\\images\\AoSoMi77Be-24.jpg"
+    },
+    {
+      "Id": "D:\\Download\\Dart\\KDKMenShop\\wwwroot\\images\\AoSoMi77Den-24-1.jpg",
+      "PackagePath": "staticwebassets\\images\\AoSoMi77Den-24-1.jpg"
+    },
+    {
+      "Id": "D:\\Download\\Dart\\KDKMenShop\\wwwroot\\images\\AoSoMi77Den-24.jpg",
+      "PackagePath": "staticwebassets\\images\\AoSoMi77Den-24.jpg"
+    },
+    {
+      "Id": "D:\\Download\\Dart\\KDKMenShop\\wwwroot\\images\\AoSoMi77Nau-22-1.jpg",
+      "PackagePath": "staticwebassets\\images\\AoSoMi77Nau-22-1.jpg"
+    },
+    {
+      "Id": "D:\\Download\\Dart\\KDKMenShop\\wwwroot\\images\\AoSoMi77Nau-22.jpg",
+      "PackagePath": "staticwebassets\\images\\AoSoMi77Nau-22.jpg"
+    },
+    {
+      "Id": "D:\\Download\\Dart\\KDKMenShop\\wwwroot\\images\\AoSoMi77Trang-22-1.jpg",
+      "PackagePath": "staticwebassets\\images\\AoSoMi77Trang-22-1.jpg"
+    },
+    {
+      "Id": "D:\\Download\\Dart\\KDKMenShop\\wwwroot\\images\\AoSoMi77Trang-22.jpg",
+      "PackagePath": "staticwebassets\\images\\AoSoMi77Trang-22.jpg"
+    },
+    {
+      "Id": "D:\\Download\\Dart\\KDKMenShop\\wwwroot\\images\\AoSoMiDiSanDenM4-1.jpg",
+      "PackagePath": "staticwebassets\\images\\AoSoMiDiSanDenM4-1.jpg"
+    },
+    {
+      "Id": "D:\\Download\\Dart\\KDKMenShop\\wwwroot\\images\\AoSoMiDiSanDenM4.jpg",
+      "PackagePath": "staticwebassets\\images\\AoSoMiDiSanDenM4.jpg"
+    },
+    {
+      "Id": "D:\\Download\\Dart\\KDKMenShop\\wwwroot\\images\\AoSoMiDiSanM4-1.jpg",
+      "PackagePath": "staticwebassets\\images\\AoSoMiDiSanM4-1.jpg"
+    },
+    {
+      "Id": "D:\\Download\\Dart\\KDKMenShop\\wwwroot\\images\\AoSoMiDiSanM4.jpg",
+      "PackagePath": "staticwebassets\\images\\AoSoMiDiSanM4.jpg"
+    },
+    {
+      "Id": "D:\\Download\\Dart\\KDKMenShop\\wwwroot\\images\\AoSoMiGioCat01-1.jpg",
+      "PackagePath": "staticwebassets\\images\\AoSoMiGioCat01-1.jpg"
+    },
+    {
+      "Id": "D:\\Download\\Dart\\KDKMenShop\\wwwroot\\images\\AoSoMiGioCat01.jpg",
+      "PackagePath": "staticwebassets\\images\\AoSoMiGioCat01.jpg"
+    },
+    {
+      "Id": "D:\\Download\\Dart\\KDKMenShop\\wwwroot\\images\\AoSoMiGioCat22-1.jpg",
+      "PackagePath": "staticwebassets\\images\\AoSoMiGioCat22-1.jpg"
+    },
+    {
+      "Id": "D:\\Download\\Dart\\KDKMenShop\\wwwroot\\images\\AoSoMiGioCat22.jpg",
+      "PackagePath": "staticwebassets\\images\\AoSoMiGioCat22.jpg"
+    },
+    {
+      "Id": "D:\\Download\\Dart\\KDKMenShop\\wwwroot\\images\\AoSoMiPREMIUM57-1.jpg",
+      "PackagePath": "staticwebassets\\images\\AoSoMiPREMIUM57-1.jpg"
+    },
+    {
+      "Id": "D:\\Download\\Dart\\KDKMenShop\\wwwroot\\images\\AoSoMiPREMIUM57.jpg",
+      "PackagePath": "staticwebassets\\images\\AoSoMiPREMIUM57.jpg"
+    },
+    {
+      "Id": "D:\\Download\\Dart\\KDKMenShop\\wwwroot\\images\\AoSoMiPREMIUM57XanhSoc-1.jpg",
+      "PackagePath": "staticwebassets\\images\\AoSoMiPREMIUM57XanhSoc-1.jpg"
+    },
+    {
+      "Id": "D:\\Download\\Dart\\KDKMenShop\\wwwroot\\images\\AoSoMiPREMIUM57XanhSoc.jpg",
+      "PackagePath": "staticwebassets\\images\\AoSoMiPREMIUM57XanhSoc.jpg"
+    },
+    {
+      "Id": "D:\\Download\\Dart\\KDKMenShop\\wwwroot\\images\\AoSoMiSeafarer18-1.jpg",
+      "PackagePath": "staticwebassets\\images\\AoSoMiSeafarer18-1.jpg"
+    },
+    {
+      "Id": "D:\\Download\\Dart\\KDKMenShop\\wwwroot\\images\\AoSoMiSeafarer18.jpg",
+      "PackagePath": "staticwebassets\\images\\AoSoMiSeafarer18.jpg"
+    },
+    {
+      "Id": "D:\\Download\\Dart\\KDKMenShop\\wwwroot\\images\\AoThunDiSanAnubis-1.jpg",
+      "PackagePath": "staticwebassets\\images\\AoThunDiSanAnubis-1.jpg"
+    },
+    {
+      "Id": "D:\\Download\\Dart\\KDKMenShop\\wwwroot\\images\\AoThunDiSanAnubis.jpg",
+      "PackagePath": "staticwebassets\\images\\AoThunDiSanAnubis.jpg"
+    },
+    {
+      "Id": "D:\\Download\\Dart\\KDKMenShop\\wwwroot\\images\\AoThunDiSanAnubisTrang-1.jpg",
+      "PackagePath": "staticwebassets\\images\\AoThunDiSanAnubisTrang-1.jpg"
+    },
+    {
+      "Id": "D:\\Download\\Dart\\KDKMenShop\\wwwroot\\images\\AoThunDiSanAnubisTrang.jpg",
+      "PackagePath": "staticwebassets\\images\\AoThunDiSanAnubisTrang.jpg"
+    },
+    {
+      "Id": "D:\\Download\\Dart\\KDKMenShop\\wwwroot\\images\\AoThunDiSanVer2-1.jpg",
+      "PackagePath": "staticwebassets\\images\\AoThunDiSanVer2-1.jpg"
+    },
+    {
+      "Id": "D:\\Download\\Dart\\KDKMenShop\\wwwroot\\images\\AoThunDiSanVer2.jpg",
+      "PackagePath": "staticwebassets\\images\\AoThunDiSanVer2.jpg"
+    },
+    {
+      "Id": "D:\\Download\\Dart\\KDKMenShop\\wwwroot\\images\\AoThunDiSanVer4-1.jpg",
+      "PackagePath": "staticwebassets\\images\\AoThunDiSanVer4-1.jpg"
+    },
+    {
+      "Id": "D:\\Download\\Dart\\KDKMenShop\\wwwroot\\images\\AoThunDiSanVer4.jpg",
+      "PackagePath": "staticwebassets\\images\\AoThunDiSanVer4.jpg"
+    },
+    {
+      "Id": "D:\\Download\\Dart\\KDKMenShop\\wwwroot\\images\\AoThunM12-1.jpg",
+      "PackagePath": "staticwebassets\\images\\AoThunM12-1.jpg"
+    },
+    {
+      "Id": "D:\\Download\\Dart\\KDKMenShop\\wwwroot\\images\\AoThunM12.jpg",
+      "PackagePath": "staticwebassets\\images\\AoThunM12.jpg"
+    },
+    {
+      "Id": "D:\\Download\\Dart\\KDKMenShop\\wwwroot\\images\\AoThunM28-1.jpg",
+      "PackagePath": "staticwebassets\\images\\AoThunM28-1.jpg"
+    },
+    {
+      "Id": "D:\\Download\\Dart\\KDKMenShop\\wwwroot\\images\\AoThunM28.jpg",
+      "PackagePath": "staticwebassets\\images\\AoThunM28.jpg"
+    },
+    {
+      "Id": "D:\\Download\\Dart\\KDKMenShop\\wwwroot\\images\\AoThunM30-1.jpg",
+      "PackagePath": "staticwebassets\\images\\AoThunM30-1.jpg"
+    },
+    {
+      "Id": "D:\\Download\\Dart\\KDKMenShop\\wwwroot\\images\\AoThunM30.jpg",
+      "PackagePath": "staticwebassets\\images\\AoThunM30.jpg"
+    },
+    {
+      "Id": "D:\\Download\\Dart\\KDKMenShop\\wwwroot\\images\\AoThunM35-1.jpg",
+      "PackagePath": "staticwebassets\\images\\AoThunM35-1.jpg"
+    },
+    {
+      "Id": "D:\\Download\\Dart\\KDKMenShop\\wwwroot\\images\\AoThunM35.jpg",
+      "PackagePath": "staticwebassets\\images\\AoThunM35.jpg"
+    },
+    {
+      "Id": "D:\\Download\\Dart\\KDKMenShop\\wwwroot\\images\\AoThunM36-1.jpg",
+      "PackagePath": "staticwebassets\\images\\AoThunM36-1.jpg"
+    },
+    {
+      "Id": "D:\\Download\\Dart\\KDKMenShop\\wwwroot\\images\\AoThunM36.jpg",
+      "PackagePath": "staticwebassets\\images\\AoThunM36.jpg"
+    },
+    {
+      "Id": "D:\\Download\\Dart\\KDKMenShop\\wwwroot\\images\\AoThunM9.jpg",
+      "PackagePath": "staticwebassets\\images\\AoThunM9.jpg"
+    },
+    {
+      "Id": "D:\\Download\\Dart\\KDKMenShop\\wwwroot\\images\\AoThunStyle02-1.jpg",
+      "PackagePath": "staticwebassets\\images\\AoThunStyle02-1.jpg"
+    },
+    {
+      "Id": "D:\\Download\\Dart\\KDKMenShop\\wwwroot\\images\\AoThunStyle02.jpg",
+      "PackagePath": "staticwebassets\\images\\AoThunStyle02.jpg"
+    },
+    {
+      "Id": "D:\\Download\\Dart\\KDKMenShop\\wwwroot\\images\\AoThunVer36-1.jpg",
+      "PackagePath": "staticwebassets\\images\\AoThunVer36-1.jpg"
+    },
+    {
+      "Id": "D:\\Download\\Dart\\KDKMenShop\\wwwroot\\images\\AoThunVer36.jpg",
+      "PackagePath": "staticwebassets\\images\\AoThunVer36.jpg"
+    },
+    {
+      "Id": "D:\\Download\\Dart\\KDKMenShop\\wwwroot\\images\\AoThunVer50-1.jpg",
+      "PackagePath": "staticwebassets\\images\\AoThunVer50-1.jpg"
+    },
+    {
+      "Id": "D:\\Download\\Dart\\KDKMenShop\\wwwroot\\images\\AoThunVer50.jpg",
+      "PackagePath": "staticwebassets\\images\\AoThunVer50.jpg"
+    },
+    {
+      "Id": "D:\\Download\\Dart\\KDKMenShop\\wwwroot\\images\\AoThunVer52-1.jpg",
+      "PackagePath": "staticwebassets\\images\\AoThunVer52-1.jpg"
+    },
+    {
+      "Id": "D:\\Download\\Dart\\KDKMenShop\\wwwroot\\images\\AoThunVer52.jpg",
+      "PackagePath": "staticwebassets\\images\\AoThunVer52.jpg"
+    },
+    {
+      "Id": "D:\\Download\\Dart\\KDKMenShop\\wwwroot\\images\\BaloGenToB352.jpg",
+      "PackagePath": "staticwebassets\\images\\BaloGenToB352.jpg"
+    },
+    {
+      "Id": "D:\\Download\\Dart\\KDKMenShop\\wwwroot\\images\\BaloGentoB350-1.jpg",
+      "PackagePath": "staticwebassets\\images\\BaloGentoB350-1.jpg"
+    },
+    {
+      "Id": "D:\\Download\\Dart\\KDKMenShop\\wwwroot\\images\\BaloGentoB350.jpg",
+      "PackagePath": "staticwebassets\\images\\BaloGentoB350.jpg"
+    },
+    {
+      "Id": "D:\\Download\\Dart\\KDKMenShop\\wwwroot\\images\\BaloGioCat02-1.jpg",
+      "PackagePath": "staticwebassets\\images\\BaloGioCat02-1.jpg"
+    },
+    {
+      "Id": "D:\\Download\\Dart\\KDKMenShop\\wwwroot\\images\\BaloGioCat02.jpg",
+      "PackagePath": "staticwebassets\\images\\BaloGioCat02.jpg"
+    },
+    {
+      "Id": "D:\\Download\\Dart\\KDKMenShop\\wwwroot\\images\\BaloGioCat04-1.jpg",
+      "PackagePath": "staticwebassets\\images\\BaloGioCat04-1.jpg"
+    },
+    {
+      "Id": "D:\\Download\\Dart\\KDKMenShop\\wwwroot\\images\\BaloGioCat04.jpg",
+      "PackagePath": "staticwebassets\\images\\BaloGioCat04.jpg"
+    },
+    {
+      "Id": "D:\\Download\\Dart\\KDKMenShop\\wwwroot\\images\\BaloGioCat09-1.jpg",
+      "PackagePath": "staticwebassets\\images\\BaloGioCat09-1.jpg"
+    },
+    {
+      "Id": "D:\\Download\\Dart\\KDKMenShop\\wwwroot\\images\\BaloGioCat09.jpg",
+      "PackagePath": "staticwebassets\\images\\BaloGioCat09.jpg"
+    },
+    {
+      "Id": "D:\\Download\\Dart\\KDKMenShop\\wwwroot\\images\\BaloJHS59-1.jpg",
+      "PackagePath": "staticwebassets\\images\\BaloJHS59-1.jpg"
+    },
+    {
+      "Id": "D:\\Download\\Dart\\KDKMenShop\\wwwroot\\images\\BaloJHS59.jpg",
+      "PackagePath": "staticwebassets\\images\\BaloJHS59.jpg"
+    },
+    {
+      "Id": "D:\\Download\\Dart\\KDKMenShop\\wwwroot\\images\\BaloM7-1.jpg",
+      "PackagePath": "staticwebassets\\images\\BaloM7-1.jpg"
+    },
+    {
+      "Id": "D:\\Download\\Dart\\KDKMenShop\\wwwroot\\images\\BaloM7.jpg",
+      "PackagePath": "staticwebassets\\images\\BaloM7.jpg"
+    },
+    {
+      "Id": "D:\\Download\\Dart\\KDKMenShop\\wwwroot\\images\\BaloSpeed52-1.jpg",
+      "PackagePath": "staticwebassets\\images\\BaloSpeed52-1.jpg"
+    },
+    {
+      "Id": "D:\\Download\\Dart\\KDKMenShop\\wwwroot\\images\\BaloSpeed52.jpg",
+      "PackagePath": "staticwebassets\\images\\BaloSpeed52.jpg"
+    },
+    {
+      "Id": "D:\\Download\\Dart\\KDKMenShop\\wwwroot\\images\\BaloVer6-1.jpg",
+      "PackagePath": "staticwebassets\\images\\BaloVer6-1.jpg"
+    },
+    {
+      "Id": "D:\\Download\\Dart\\KDKMenShop\\wwwroot\\images\\BaloVer6.jpg",
+      "PackagePath": "staticwebassets\\images\\BaloVer6.jpg"
+    },
+    {
+      "Id": "D:\\Download\\Dart\\KDKMenShop\\wwwroot\\images\\Failed.jpg",
+      "PackagePath": "staticwebassets\\images\\Failed.jpg"
+    },
+    {
+      "Id": "D:\\Download\\Dart\\KDKMenShop\\wwwroot\\images\\GiayCasualGioCat15-1.jpg",
+      "PackagePath": "staticwebassets\\images\\GiayCasualGioCat15-1.jpg"
+    },
+    {
+      "Id": "D:\\Download\\Dart\\KDKMenShop\\wwwroot\\images\\GiayCasualGioCat15.jpg",
+      "PackagePath": "staticwebassets\\images\\GiayCasualGioCat15.jpg"
+    },
+    {
+      "Id": "D:\\Download\\Dart\\KDKMenShop\\wwwroot\\images\\GiayCasualGioCat18-1.jpg",
+      "PackagePath": "staticwebassets\\images\\GiayCasualGioCat18-1.jpg"
+    },
+    {
+      "Id": "D:\\Download\\Dart\\KDKMenShop\\wwwroot\\images\\GiayCasualGioCat18.jpg",
+      "PackagePath": "staticwebassets\\images\\GiayCasualGioCat18.jpg"
+    },
+    {
+      "Id": "D:\\Download\\Dart\\KDKMenShop\\wwwroot\\images\\GiayCasualGioCat19-1.jpg",
+      "PackagePath": "staticwebassets\\images\\GiayCasualGioCat19-1.jpg"
+    },
+    {
+      "Id": "D:\\Download\\Dart\\KDKMenShop\\wwwroot\\images\\GiayCasualGioCat19.jpg",
+      "PackagePath": "staticwebassets\\images\\GiayCasualGioCat19.jpg"
+    },
+    {
+      "Id": "D:\\Download\\Dart\\KDKMenShop\\wwwroot\\images\\GiayTayCotDay-1.jpg",
+      "PackagePath": "staticwebassets\\images\\GiayTayCotDay-1.jpg"
+    },
+    {
+      "Id": "D:\\Download\\Dart\\KDKMenShop\\wwwroot\\images\\GiayTayCotDay.jpg",
+      "PackagePath": "staticwebassets\\images\\GiayTayCotDay.jpg"
+    },
+    {
+      "Id": "D:\\Download\\Dart\\KDKMenShop\\wwwroot\\images\\GiayTayCotDay44-1.jpg",
+      "PackagePath": "staticwebassets\\images\\GiayTayCotDay44-1.jpg"
+    },
+    {
+      "Id": "D:\\Download\\Dart\\KDKMenShop\\wwwroot\\images\\GiayTayCotDay44.jpg",
+      "PackagePath": "staticwebassets\\images\\GiayTayCotDay44.jpg"
+    },
+    {
+      "Id": "D:\\Download\\Dart\\KDKMenShop\\wwwroot\\images\\GiayTayCß+ÖtD+óyA5-1.jpg",
+      "PackagePath": "staticwebassets\\images\\GiayTayCß+ÖtD+óyA5-1.jpg"
+    },
+    {
+      "Id": "D:\\Download\\Dart\\KDKMenShop\\wwwroot\\images\\GiayTayCß+ÖtD+óyA5.jpg",
+      "PackagePath": "staticwebassets\\images\\GiayTayCß+ÖtD+óyA5.jpg"
+    },
+    {
+      "Id": "D:\\Download\\Dart\\KDKMenShop\\wwwroot\\images\\GiayTayCộtDâyA5-1.jpg",
+      "PackagePath": "staticwebassets\\images\\GiayTayCộtDâyA5-1.jpg"
+    },
+    {
+      "Id": "D:\\Download\\Dart\\KDKMenShop\\wwwroot\\images\\GiayTayCộtDâyA5.jpg",
+      "PackagePath": "staticwebassets\\images\\GiayTayCộtDâyA5.jpg"
+    },
+    {
+      "Id": "D:\\Download\\Dart\\KDKMenShop\\wwwroot\\images\\GiayTayLuoi-1.jpg",
+      "PackagePath": "staticwebassets\\images\\GiayTayLuoi-1.jpg"
+    },
+    {
+      "Id": "D:\\Download\\Dart\\KDKMenShop\\wwwroot\\images\\GiayTayLuoi.jpg",
+      "PackagePath": "staticwebassets\\images\\GiayTayLuoi.jpg"
+    },
+    {
+      "Id": "D:\\Download\\Dart\\KDKMenShop\\wwwroot\\images\\GiayTayLuoi23-1.jpg",
+      "PackagePath": "staticwebassets\\images\\GiayTayLuoi23-1.jpg"
+    },
+    {
+      "Id": "D:\\Download\\Dart\\KDKMenShop\\wwwroot\\images\\GiayTayLuoi23.jpg",
+      "PackagePath": "staticwebassets\\images\\GiayTayLuoi23.jpg"
+    },
+    {
+      "Id": "D:\\Download\\Dart\\KDKMenShop\\wwwroot\\images\\GiayTayLuoiA4-1.jpg",
+      "PackagePath": "staticwebassets\\images\\GiayTayLuoiA4-1.jpg"
+    },
+    {
+      "Id": "D:\\Download\\Dart\\KDKMenShop\\wwwroot\\images\\GiayTayLuoiA4.jpg",
+      "PackagePath": "staticwebassets\\images\\GiayTayLuoiA4.jpg"
+    },
+    {
+      "Id": "D:\\Download\\Dart\\KDKMenShop\\wwwroot\\images\\Jean01-1.jpg",
+      "PackagePath": "staticwebassets\\images\\Jean01-1.jpg"
+    },
+    {
+      "Id": "D:\\Download\\Dart\\KDKMenShop\\wwwroot\\images\\Jean01.jpg",
+      "PackagePath": "staticwebassets\\images\\Jean01.jpg"
+    },
+    {
+      "Id": "D:\\Download\\Dart\\KDKMenShop\\wwwroot\\images\\Jean02-1.jpg",
+      "PackagePath": "staticwebassets\\images\\Jean02-1.jpg"
+    },
+    {
+      "Id": "D:\\Download\\Dart\\KDKMenShop\\wwwroot\\images\\Jean02.jpg",
+      "PackagePath": "staticwebassets\\images\\Jean02.jpg"
+    },
+    {
+      "Id": "D:\\Download\\Dart\\KDKMenShop\\wwwroot\\images\\Jean04-1.jpg",
+      "PackagePath": "staticwebassets\\images\\Jean04-1.jpg"
+    },
+    {
+      "Id": "D:\\Download\\Dart\\KDKMenShop\\wwwroot\\images\\Jean04.jpg",
+      "PackagePath": "staticwebassets\\images\\Jean04.jpg"
+    },
+    {
+      "Id": "D:\\Download\\Dart\\KDKMenShop\\wwwroot\\images\\Jean27-1.jpg",
+      "PackagePath": "staticwebassets\\images\\Jean27-1.jpg"
+    },
+    {
+      "Id": "D:\\Download\\Dart\\KDKMenShop\\wwwroot\\images\\Jean27.jpg",
+      "PackagePath": "staticwebassets\\images\\Jean27.jpg"
+    },
+    {
+      "Id": "D:\\Download\\Dart\\KDKMenShop\\wwwroot\\images\\Jean28-1.jpg",
+      "PackagePath": "staticwebassets\\images\\Jean28-1.jpg"
+    },
+    {
+      "Id": "D:\\Download\\Dart\\KDKMenShop\\wwwroot\\images\\Jean28.jpg",
+      "PackagePath": "staticwebassets\\images\\Jean28.jpg"
+    },
+    {
+      "Id": "D:\\Download\\Dart\\KDKMenShop\\wwwroot\\images\\Jean30-1.jpg",
+      "PackagePath": "staticwebassets\\images\\Jean30-1.jpg"
+    },
+    {
+      "Id": "D:\\Download\\Dart\\KDKMenShop\\wwwroot\\images\\Jean30.jpg",
+      "PackagePath": "staticwebassets\\images\\Jean30.jpg"
+    },
+    {
+      "Id": "D:\\Download\\Dart\\KDKMenShop\\wwwroot\\images\\Jean33-1.jpg",
+      "PackagePath": "staticwebassets\\images\\Jean33-1.jpg"
+    },
+    {
+      "Id": "D:\\Download\\Dart\\KDKMenShop\\wwwroot\\images\\Jean33.jpg",
+      "PackagePath": "staticwebassets\\images\\Jean33.jpg"
+    },
+    {
+      "Id": "D:\\Download\\Dart\\KDKMenShop\\wwwroot\\images\\Success.jpg",
+      "PackagePath": "staticwebassets\\images\\Success.jpg"
+    },
+    {
+      "Id": "D:\\Download\\Dart\\KDKMenShop\\wwwroot\\images\\aa1b5701-d926-476e-af8f-c678975284f5_z3993609202075_22b6d8186df056dab94ba10b196fd3bc.jpg",
+      "PackagePath": "staticwebassets\\images\\aa1b5701-d926-476e-af8f-c678975284f5_z3993609202075_22b6d8186df056dab94ba10b196fd3bc.jpg"
+    },
+    {
+      "Id": "D:\\Download\\Dart\\KDKMenShop\\wwwroot\\images\\addf1c67-6b78-4ce7-8884-648f2c993481_9.jpg",
+      "PackagePath": "staticwebassets\\images\\addf1c67-6b78-4ce7-8884-648f2c993481_9.jpg"
+    },
+    {
+      "Id": "D:\\Download\\Dart\\KDKMenShop\\wwwroot\\images\\ae750d99-4e89-442a-bbbf-efd64e07868b_3.jpg",
+      "PackagePath": "staticwebassets\\images\\ae750d99-4e89-442a-bbbf-efd64e07868b_3.jpg"
+    },
+    {
+      "Id": "D:\\Download\\Dart\\KDKMenShop\\wwwroot\\images\\aothunBTS.jpg",
+      "PackagePath": "staticwebassets\\images\\aothunBTS.jpg"
+    },
+    {
+      "Id": "D:\\Download\\Dart\\KDKMenShop\\wwwroot\\images\\aothuntrangtron.jpg",
+      "PackagePath": "staticwebassets\\images\\aothuntrangtron.jpg"
+    },
+    {
+      "Id": "D:\\Download\\Dart\\KDKMenShop\\wwwroot\\images\\c30ead43-3e53-47e4-8cbb-6ee768f29d2e__banner_sea.jpg",
+      "PackagePath": "staticwebassets\\images\\c30ead43-3e53-47e4-8cbb-6ee768f29d2e__banner_sea.jpg"
+    },
+    {
+      "Id": "D:\\Download\\Dart\\KDKMenShop\\wwwroot\\images\\di-san.jpg",
+      "PackagePath": "staticwebassets\\images\\di-san.jpg"
+    },
+    {
+      "Id": "D:\\Download\\Dart\\KDKMenShop\\wwwroot\\images\\f5f1b760-46e1-439a-9b02-bc6446b754e9__banner_sea.jpg",
+      "PackagePath": "staticwebassets\\images\\f5f1b760-46e1-439a-9b02-bc6446b754e9__banner_sea.jpg"
+    },
+    {
+      "Id": "D:\\Download\\Dart\\KDKMenShop\\wwwroot\\images\\hide.png",
+      "PackagePath": "staticwebassets\\images\\hide.png"
+    },
+    {
+      "Id": "D:\\Download\\Dart\\KDKMenShop\\wwwroot\\images\\mien-gio-cat.jpg",
+      "PackagePath": "staticwebassets\\images\\mien-gio-cat.jpg"
+    },
+    {
+      "Id": "D:\\Download\\Dart\\KDKMenShop\\wwwroot\\images\\seafarer1-1.jpg",
+      "PackagePath": "staticwebassets\\images\\seafarer1-1.jpg"
+    },
+    {
+      "Id": "D:\\Download\\Dart\\KDKMenShop\\wwwroot\\images\\seafarer1.jpg",
+      "PackagePath": "staticwebassets\\images\\seafarer1.jpg"
+    },
+    {
+      "Id": "D:\\Download\\Dart\\KDKMenShop\\wwwroot\\images\\seafarer15-1.jpg",
+      "PackagePath": "staticwebassets\\images\\seafarer15-1.jpg"
+    },
+    {
+      "Id": "D:\\Download\\Dart\\KDKMenShop\\wwwroot\\images\\seafarer15.jpg",
+      "PackagePath": "staticwebassets\\images\\seafarer15.jpg"
+    },
+    {
+      "Id": "D:\\Download\\Dart\\KDKMenShop\\wwwroot\\images\\seafarer16-1.jpg",
+      "PackagePath": "staticwebassets\\images\\seafarer16-1.jpg"
+    },
+    {
+      "Id": "D:\\Download\\Dart\\KDKMenShop\\wwwroot\\images\\seafarer16.jpg",
+      "PackagePath": "staticwebassets\\images\\seafarer16.jpg"
+    },
+    {
+      "Id": "D:\\Download\\Dart\\KDKMenShop\\wwwroot\\images\\seafarer17-1.jpg",
+      "PackagePath": "staticwebassets\\images\\seafarer17-1.jpg"
+    },
+    {
+      "Id": "D:\\Download\\Dart\\KDKMenShop\\wwwroot\\images\\seafarer17.jpg",
+      "PackagePath": "staticwebassets\\images\\seafarer17.jpg"
+    },
+    {
+      "Id": "D:\\Download\\Dart\\KDKMenShop\\wwwroot\\images\\seafarer18-1.jpg",
+      "PackagePath": "staticwebassets\\images\\seafarer18-1.jpg"
+    },
+    {
+      "Id": "D:\\Download\\Dart\\KDKMenShop\\wwwroot\\images\\seafarer18.jpg",
+      "PackagePath": "staticwebassets\\images\\seafarer18.jpg"
+    },
+    {
+      "Id": "D:\\Download\\Dart\\KDKMenShop\\wwwroot\\images\\seafarer5-1.jpg",
+      "PackagePath": "staticwebassets\\images\\seafarer5-1.jpg"
+    },
+    {
+      "Id": "D:\\Download\\Dart\\KDKMenShop\\wwwroot\\images\\seafarer5.jpg",
+      "PackagePath": "staticwebassets\\images\\seafarer5.jpg"
+    },
+    {
+      "Id": "D:\\Download\\Dart\\KDKMenShop\\wwwroot\\images\\seafarer6-1.jpg",
+      "PackagePath": "staticwebassets\\images\\seafarer6-1.jpg"
+    },
+    {
+      "Id": "D:\\Download\\Dart\\KDKMenShop\\wwwroot\\images\\seafarer6.jpg",
+      "PackagePath": "staticwebassets\\images\\seafarer6.jpg"
+    },
+    {
+      "Id": "D:\\Download\\Dart\\KDKMenShop\\wwwroot\\images\\seafarer8-1.jpg",
+      "PackagePath": "staticwebassets\\images\\seafarer8-1.jpg"
+    },
+    {
+      "Id": "D:\\Download\\Dart\\KDKMenShop\\wwwroot\\images\\seafarer8.jpg",
+      "PackagePath": "staticwebassets\\images\\seafarer8.jpg"
+    },
+    {
+      "Id": "D:\\Download\\Dart\\KDKMenShop\\wwwroot\\images\\show.png",
+      "PackagePath": "staticwebassets\\images\\show.png"
+    },
+    {
+      "Id": "D:\\Download\\Dart\\KDKMenShop\\wwwroot\\images\\size-chart-01.jpg",
+      "PackagePath": "staticwebassets\\images\\size-chart-01.jpg"
+    },
+    {
+      "Id": "D:\\Download\\Dart\\KDKMenShop\\wwwroot\\images\\sominau.jpg",
+      "PackagePath": "staticwebassets\\images\\sominau.jpg"
+    },
+    {
+      "Id": "D:\\Download\\Dart\\KDKMenShop\\wwwroot\\images\\somivaikakinhungmem.jpg",
+      "PackagePath": "staticwebassets\\images\\somivaikakinhungmem.jpg"
+    },
+    {
+      "Id": "D:\\Download\\Dart\\KDKMenShop\\wwwroot\\images_banner_bosuutap\\Seafarer.jpg",
+      "PackagePath": "staticwebassets\\images_banner_bosuutap\\Seafarer.jpg"
+    },
+    {
+      "Id": "D:\\Download\\Dart\\KDKMenShop\\wwwroot\\images_banner_bosuutap\\di-san.jpg",
+      "PackagePath": "staticwebassets\\images_banner_bosuutap\\di-san.jpg"
+    },
+    {
+      "Id": "D:\\Download\\Dart\\KDKMenShop\\wwwroot\\images_banner_bosuutap\\mien-gio-cat.jpg",
+      "PackagePath": "staticwebassets\\images_banner_bosuutap\\mien-gio-cat.jpg"
+    },
+    {
+      "Id": "D:\\Download\\Dart\\KDKMenShop\\wwwroot\\js\\ScriptForBTS.js",
+      "PackagePath": "staticwebassets\\js\\ScriptForBTS.js"
+    },
+    {
+      "Id": "D:\\Download\\Dart\\KDKMenShop\\wwwroot\\js\\ScriptForBanner.js",
+      "PackagePath": "staticwebassets\\js\\ScriptForBanner.js"
+    },
+    {
+      "Id": "D:\\Download\\Dart\\KDKMenShop\\wwwroot\\js\\XuLyGoiSanPham.js",
+      "PackagePath": "staticwebassets\\js\\XuLyGoiSanPham.js"
+    },
+    {
+      "Id": "D:\\Download\\Dart\\KDKMenShop\\wwwroot\\js\\XuLyGoiSanPhamBoSuuTap.js",
+      "PackagePath": "staticwebassets\\js\\XuLyGoiSanPhamBoSuuTap.js"
+    },
+    {
+      "Id": "D:\\Download\\Dart\\KDKMenShop\\wwwroot\\js\\XuLyGoiSanPhamGiamGia.js",
+      "PackagePath": "staticwebassets\\js\\XuLyGoiSanPhamGiamGia.js"
+    },
+    {
+      "Id": "D:\\Download\\Dart\\KDKMenShop\\wwwroot\\js\\chars.js",
+      "PackagePath": "staticwebassets\\js\\chars.js"
+    },
+    {
+      "Id": "D:\\Download\\Dart\\KDKMenShop\\wwwroot\\js\\password_strength.js",
+      "PackagePath": "staticwebassets\\js\\password_strength.js"
+    },
+    {
+      "Id": "D:\\Download\\Dart\\KDKMenShop\\wwwroot\\js\\site.js",
+      "PackagePath": "staticwebassets\\js\\site.js"
+    },
+    {
+      "Id": "D:\\Download\\Dart\\KDKMenShop\\wwwroot\\lib\\bootstrap\\LICENSE",
+      "PackagePath": "staticwebassets\\lib\\bootstrap"
+    },
+    {
+      "Id": "D:\\Download\\Dart\\KDKMenShop\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-grid.css"
+    },
+    {
+      "Id": "D:\\Download\\Dart\\KDKMenShop\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-grid.css.map"
+    },
+    {
+      "Id": "D:\\Download\\Dart\\KDKMenShop\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.min.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-grid.min.css"
+    },
+    {
+      "Id": "D:\\Download\\Dart\\KDKMenShop\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.min.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-grid.min.css.map"
+    },
+    {
+      "Id": "D:\\Download\\Dart\\KDKMenShop\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.css"
+    },
+    {
+      "Id": "D:\\Download\\Dart\\KDKMenShop\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.css.map"
+    },
+    {
+      "Id": "D:\\Download\\Dart\\KDKMenShop\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.min.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.min.css"
+    },
+    {
+      "Id": "D:\\Download\\Dart\\KDKMenShop\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.min.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.min.css.map"
+    },
+    {
+      "Id": "D:\\Download\\Dart\\KDKMenShop\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.css"
+    },
+    {
+      "Id": "D:\\Download\\Dart\\KDKMenShop\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.css.map"
+    },
+    {
+      "Id": "D:\\Download\\Dart\\KDKMenShop\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.min.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.min.css"
+    },
+    {
+      "Id": "D:\\Download\\Dart\\KDKMenShop\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.min.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.min.css.map"
+    },
+    {
+      "Id": "D:\\Download\\Dart\\KDKMenShop\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.css"
+    },
+    {
+      "Id": "D:\\Download\\Dart\\KDKMenShop\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.css.map"
+    },
+    {
+      "Id": "D:\\Download\\Dart\\KDKMenShop\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.min.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.min.css"
+    },
+    {
+      "Id": "D:\\Download\\Dart\\KDKMenShop\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.min.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.min.css.map"
+    },
+    {
+      "Id": "D:\\Download\\Dart\\KDKMenShop\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.css"
+    },
+    {
+      "Id": "D:\\Download\\Dart\\KDKMenShop\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.css.map"
+    },
+    {
+      "Id": "D:\\Download\\Dart\\KDKMenShop\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.min.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.min.css"
+    },
+    {
+      "Id": "D:\\Download\\Dart\\KDKMenShop\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.min.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.min.css.map"
+    },
+    {
+      "Id": "D:\\Download\\Dart\\KDKMenShop\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.css"
+    },
+    {
+      "Id": "D:\\Download\\Dart\\KDKMenShop\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.css.map"
+    },
+    {
+      "Id": "D:\\Download\\Dart\\KDKMenShop\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.min.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.min.css"
+    },
+    {
+      "Id": "D:\\Download\\Dart\\KDKMenShop\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.min.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.min.css.map"
+    },
+    {
+      "Id": "D:\\Download\\Dart\\KDKMenShop\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap.css"
+    },
+    {
+      "Id": "D:\\Download\\Dart\\KDKMenShop\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap.css.map"
+    },
+    {
+      "Id": "D:\\Download\\Dart\\KDKMenShop\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.min.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap.min.css"
+    },
+    {
+      "Id": "D:\\Download\\Dart\\KDKMenShop\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.min.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap.min.css.map"
+    },
+    {
+      "Id": "D:\\Download\\Dart\\KDKMenShop\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.css"
+    },
+    {
+      "Id": "D:\\Download\\Dart\\KDKMenShop\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.css.map"
+    },
+    {
+      "Id": "D:\\Download\\Dart\\KDKMenShop\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.min.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.min.css"
+    },
+    {
+      "Id": "D:\\Download\\Dart\\KDKMenShop\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.min.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.min.css.map"
+    },
+    {
+      "Id": "D:\\Download\\Dart\\KDKMenShop\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.js",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.js"
+    },
+    {
+      "Id": "D:\\Download\\Dart\\KDKMenShop\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.js.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.js.map"
+    },
+    {
+      "Id": "D:\\Download\\Dart\\KDKMenShop\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.min.js",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.min.js"
+    },
+    {
+      "Id": "D:\\Download\\Dart\\KDKMenShop\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.min.js.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.min.js.map"
+    },
+    {
+      "Id": "D:\\Download\\Dart\\KDKMenShop\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.esm.js",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.esm.js"
+    },
+    {
+      "Id": "D:\\Download\\Dart\\KDKMenShop\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.esm.js.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.esm.js.map"
+    },
+    {
+      "Id": "D:\\Download\\Dart\\KDKMenShop\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.esm.min.js",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.esm.min.js"
+    },
+    {
+      "Id": "D:\\Download\\Dart\\KDKMenShop\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.esm.min.js.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.esm.min.js.map"
+    },
+    {
+      "Id": "D:\\Download\\Dart\\KDKMenShop\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.js",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.js"
+    },
+    {
+      "Id": "D:\\Download\\Dart\\KDKMenShop\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.js.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.js.map"
+    },
+    {
+      "Id": "D:\\Download\\Dart\\KDKMenShop\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.min.js",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.min.js"
+    },
+    {
+      "Id": "D:\\Download\\Dart\\KDKMenShop\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.min.js.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.min.js.map"
+    },
+    {
+      "Id": "D:\\Download\\Dart\\KDKMenShop\\wwwroot\\lib\\jquery-validation-unobtrusive\\LICENSE.txt",
+      "PackagePath": "staticwebassets\\lib\\jquery-validation-unobtrusive\\LICENSE.txt"
+    },
+    {
+      "Id": "D:\\Download\\Dart\\KDKMenShop\\wwwroot\\lib\\jquery-validation-unobtrusive\\jquery.validate.unobtrusive.js",
+      "PackagePath": "staticwebassets\\lib\\jquery-validation-unobtrusive\\jquery.validate.unobtrusive.js"
+    },
+    {
+      "Id": "D:\\Download\\Dart\\KDKMenShop\\wwwroot\\lib\\jquery-validation-unobtrusive\\jquery.validate.unobtrusive.min.js",
+      "PackagePath": "staticwebassets\\lib\\jquery-validation-unobtrusive\\jquery.validate.unobtrusive.min.js"
+    },
+    {
+      "Id": "D:\\Download\\Dart\\KDKMenShop\\wwwroot\\lib\\jquery-validation\\LICENSE.md",
+      "PackagePath": "staticwebassets\\lib\\jquery-validation\\LICENSE.md"
+    },
+    {
+      "Id": "D:\\Download\\Dart\\KDKMenShop\\wwwroot\\lib\\jquery-validation\\dist\\additional-methods.js",
+      "PackagePath": "staticwebassets\\lib\\jquery-validation\\dist\\additional-methods.js"
+    },
+    {
+      "Id": "D:\\Download\\Dart\\KDKMenShop\\wwwroot\\lib\\jquery-validation\\dist\\additional-methods.min.js",
+      "PackagePath": "staticwebassets\\lib\\jquery-validation\\dist\\additional-methods.min.js"
+    },
+    {
+      "Id": "D:\\Download\\Dart\\KDKMenShop\\wwwroot\\lib\\jquery-validation\\dist\\jquery.validate.js",
+      "PackagePath": "staticwebassets\\lib\\jquery-validation\\dist\\jquery.validate.js"
+    },
+    {
+      "Id": "D:\\Download\\Dart\\KDKMenShop\\wwwroot\\lib\\jquery-validation\\dist\\jquery.validate.min.js",
+      "PackagePath": "staticwebassets\\lib\\jquery-validation\\dist\\jquery.validate.min.js"
+    },
+    {
+      "Id": "D:\\Download\\Dart\\KDKMenShop\\wwwroot\\lib\\jquery\\LICENSE.txt",
+      "PackagePath": "staticwebassets\\lib\\jquery\\LICENSE.txt"
+    },
+    {
+      "Id": "D:\\Download\\Dart\\KDKMenShop\\wwwroot\\lib\\jquery\\dist\\jquery.js",
+      "PackagePath": "staticwebassets\\lib\\jquery\\dist\\jquery.js"
+    },
+    {
+      "Id": "D:\\Download\\Dart\\KDKMenShop\\wwwroot\\lib\\jquery\\dist\\jquery.min.js",
+      "PackagePath": "staticwebassets\\lib\\jquery\\dist\\jquery.min.js"
+    },
+    {
+      "Id": "D:\\Download\\Dart\\KDKMenShop\\wwwroot\\lib\\jquery\\dist\\jquery.min.map",
+      "PackagePath": "staticwebassets\\lib\\jquery\\dist\\jquery.min.map"
+    },
+    {
+      "Id": "obj\\Debug\\net6.0\\staticwebassets\\msbuild.KDKMenShop.Microsoft.AspNetCore.StaticWebAssets.props",
+      "PackagePath": "build\\Microsoft.AspNetCore.StaticWebAssets.props"
+    },
+    {
+      "Id": "obj\\Debug\\net6.0\\staticwebassets\\msbuild.build.KDKMenShop.props",
+      "PackagePath": "build\\KDKMenShop.props"
+    },
+    {
+      "Id": "obj\\Debug\\net6.0\\staticwebassets\\msbuild.buildMultiTargeting.KDKMenShop.props",
+      "PackagePath": "buildMultiTargeting\\KDKMenShop.props"
+    },
+    {
+      "Id": "obj\\Debug\\net6.0\\staticwebassets\\msbuild.buildTransitive.KDKMenShop.props",
+      "PackagePath": "buildTransitive\\KDKMenShop.props"
+    }
+  ],
+  "ElementsToRemove": []
+}
