@@ -1,0 +1,126 @@
+﻿@using KDKMenShop.Models.ViewModels;
+@model RateOrderViewModel
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+
+<style>
+    .chinh {
+        margin: 0 auto;
+        width: 50%; /* Adjust width as needed */
+    }
+
+    
+
+    .ratings {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin-bottom: 10px;
+        margin-right: 10px;
+    }
+
+    .rating-star {
+        font-size: 4rem; /* Increase font size to make the stars larger */
+        color: #ffcc00; /* Set the color of the stars */
+        cursor: pointer; /* Change cursor to pointer on hover */
+        transition: color 0.2s; /* Add a transition effect on hover */
+    }
+
+       
+        .ratings i {
+            color: #cecece;
+            font-size: 32px;
+        }
+
+    .rating-color {
+        color: #fbc634 !important;
+    }
+
+    #imgpreview {
+        width: 200px; /* Adjust width as desired */
+        height: auto; /* Maintain aspect ratio */
+    }
+   
+</style>
+
+<div class="chinh">
+    <form id="rateOrderForm" method="post" action="/Order/RateOrder" enctype="multipart/form-data">
+        <!-- Include anti-forgery token for security -->
+        @Html.AntiForgeryToken()
+
+        <!-- Hidden field to store the order ID -->
+        <input type="hidden" name="Madh" value="@Model.Madh" />
+        @foreach (var maSP in Model.MaSanPham)
+        {
+            <input type="hidden" name="MaSanPham" value="@maSP" />
+        }
+        <!-- Input field for rating -->
+        <div class="form-group">
+            <label for="danhGia">Số sao:</label>
+            <div class="ratings">
+                <i class="fa fa-star rating-star" data-value="1"></i>
+                <i class="fa fa-star rating-star" data-value="2"></i>
+                <i class="fa fa-star rating-star" data-value="3"></i>
+                <i class="fa fa-star rating-star" data-value="4"></i>
+                <i class="fa fa-star rating-star" data-value="5"></i>
+            </div>
+            <input type="hidden" name="DanhGia" value="" required />
+        </div>
+
+
+        <div class="form-group">
+            <label>Hình Ảnh</label>
+            <input asp-for="ImageUpload" class="form-control" />
+            <span asp-validation-for="ImageUpload" class="text-danger"type="file" accept="image/*,video/*" />
+            <img id="imgpreview" class"pt-2" />
+        </div>
+       
+        <!-- Textarea for comment -->
+        <div class="form-group">
+            <label for="binhLuan">Đánh Giá:</label>
+            <textarea name="BinhLuan" class="form-control" placeholder="Your comment" rows="4"></textarea>
+        </div>
+
+        <!-- Submit button -->
+        <button type="submit" class="btn btn-primary">Gửi Đánh Giá</button>
+    </form>
+</div>
+@section Scripts{
+    @{  
+        Html.RenderPartial("_ValidationScriptsPartial");
+    }
+
+    <script>
+        document.getElementById('ImageUpload').addEventListener('change', function (e) {
+            var file = e.target.files[0];
+            if (file) {
+                var reader = new FileReader();
+                reader.onload = function (e) {
+                    document.getElementById('imgpreview').src = e.target.result;
+                };
+                reader.readAsDataURL(file);
+            }
+        });
+    </script>
+    <script>
+        $("#ImageUpload").change(function () {
+            readURL(this);
+        })
+           
+    </script>
+   <script>
+    $(document).ready(function(){
+        $('.rating-star').click(function(){
+            // Remove active class from all stars
+            $('.rating-star').removeClass('rating-color');
+            
+            // Add active class to clicked star and all preceding stars
+            $(this).prevAll('.rating-star').addBack().addClass('rating-color');
+
+            // Set the value of the hidden input field to the selected rating
+                var ratingValue = $(this).data('value');
+                $('input[name="DanhGia"]').val(ratingValue);
+        });
+    });
+</script>
+}

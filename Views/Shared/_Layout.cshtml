@@ -1,0 +1,399 @@
+﻿@{
+    string formattedValue = ViewBag.CartItemSum != null ? ViewBag.CartItemSum.ToString("N0") + " VNĐ" : "0 VNĐ";
+    var stopwatch = new System.Diagnostics.Stopwatch();
+    stopwatch.Start();
+}
+<!DOCTYPE html>
+<html lang="zxx">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="description" content="Ogani Template">
+    <meta name="keywords" content="Ogani, unica, creative, html">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Shop Thời Trang KDK      </title>
+    <link rel="icon" type="image/x-icon" href="http://localhost:5208/favicon.ico">
+    <!-- Google Font -->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cairo:wght@200;300;400;600;900&display=swap">
+    
+    
+
+    <!-- Css Styles -->
+    
+    <link rel="stylesheet" href="../KDKTrangChu/css/bootstrap.min.css"  type="text/css">
+	
+	<link href="~/kdktrangchu/css/style.css" rel="stylesheet" />
+    <link rel="stylesheet" href="../KDKTrangChu/css/font-awesome.min.css" type="text/css">
+    <link rel="stylesheet" href="../KDKTrangChu/css/elegant-icons.css"  type="text/css">
+    <link rel="stylesheet" href="../KDKTrangChu/css/nice-select.css"  type="text/css">
+    <link rel="stylesheet" href="../KDKTrangChu/css/jquery-ui.min.css" type="text/css">
+    <link rel="stylesheet" href="../KDKTrangChu/css/owl.carousel.min.css" type="text/css">
+    <link rel="stylesheet" href="../KDKTrangChu/css/slicknav.min.css" type="text/css">
+    <link rel="stylesheet" href="../KDKTrangChu/css/login.css" type="text/css">
+    <link rel="stylesheet" href="../KDKTrangChu/css/dropdownlayout.css" type="text/css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-icons/1.7.2/font/bootstrap-icons.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" integrity="sha512-VpBV2k+6RfXzWK+HWLk9+Oe5KCBiGbzWgxVt0eLqjBwGdfY6a79HYyqcaN8ca8Cxq3abHjaX0VnGGzVIaNYBhA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    
+    @* <script>
+        window.onload = function () {
+            // Get all link tags that have rel="stylesheet"
+            let links = document.querySelectorAll('link[rel="stylesheet"]');
+            links.forEach(link => {
+                if (link.href) {
+                    // Append cache-busting parameter
+                    link.href = `${link.href}?v=${new Date().getTime()}`;
+                }
+            });
+            let scripts = document.querySelectorAll('script[src]');
+            scripts.forEach(script => {
+                if (script.src) {
+                    script.src = `${script.src}?v=${new Date().getTime()}`;
+                }
+            });
+        }
+
+    </script> *@
+    <style>
+        
+        #navbar {
+            height: 75px;
+            z-index: 999;
+            background-color: #333;
+        }
+
+            #navbar a {
+                color: #f2f2f2;
+            }
+
+        .sticky {
+            position: fixed;
+            top: 0;
+            width: 100%;
+        }
+
+        .paste-button {
+            position: relative;
+            display: block;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        .button {
+            background-color: #fff;
+            color: #333;
+            padding: 5px 15px;
+            font-size: 13px;
+            font-weight: bold;
+            border: 2px solid transparent;
+            border-radius: 15px;
+            cursor: pointer;
+            height:35px;
+            width:100px;
+        }
+
+        .dropdown-content {
+            display: none;
+            text-align: center;
+            font-size: 13px;
+            position: absolute;
+            z-index: 1;
+            min-width: 130px;
+            background-color: #fff;
+            color: #333;
+            border: 2px solid #fff;
+            border-radius: 0px 15px 15px 15px;
+            box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+        }
+
+            .dropdown-content a {
+                color: #212121;
+                padding: 8px 10px;
+                text-decoration: none;
+                display: block;
+                transition: 0.1s;
+            }
+
+                .dropdown-content a:hover {
+                    background-color: #212121;
+                    color: #ffffff;
+                }
+
+                .dropdown-content a:focus {
+                    background-color: #212121;
+                    color: #ffffff;
+                }
+
+            .dropdown-content #top:hover {
+                border-radius: 0px 13px 0px 0px;
+            }
+
+            .dropdown-content #bottom:hover {
+                border-radius: 0px 0px 13px 13px;
+            }
+
+        .paste-button:hover button {
+            border-radius: 15px 15px 0px 0px;
+        }
+
+        .paste-button:hover .dropdown-content {
+            display: block;
+        }
+
+    </style>
+</head>
+
+<body>
+    <!-- Page Preloder -->
+    <div id="preloder">
+        <div class="loader"></div>
+    </div>
+
+
+    <!-- Humberger End -->
+    <!-- Header Section Begin -->
+
+    <header class="header">
+        <div class="header__top">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-6 col-md-6">
+                        <div class="header__top__left">
+                            <ul>
+                                <li><i class="fa fa-envelope"></i> KDKShop@gmail.com</li>
+
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="col-lg-6 col-md-6">
+                        <div class="header__top__right">
+                            <div class="header__top__right__social">
+                                <a href="#"><i class="fa fa-facebook"></i></a>
+                                <a href="#"><i class="fa fa-twitter"></i></a>
+                                <a href="#"><i class="fa fa-linkedin"></i></a>
+                                <a href="#"><i class="fa fa-pinterest-p"></i></a>
+                            </div>
+                            <div class="header__top__right__language">
+                                <div class="dropdown">
+                                    <button class="btn btn-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                        @if (Thread.CurrentThread.CurrentCulture.ToString() == "vi")
+                                        {
+                                            <span>VI</span>
+                                        }
+                                        else
+                                        {
+                                            <span>EN</span>
+                                        }
+                                        <span class="arrow_carrot-down"></span>
+                                    </button>
+                                    <ul class="dropdown-menu">
+                                        <li><a class="dropdown-item" asp-controller="Home" asp-action="ChangeLanguage" asp-route-lang="vi">Tiếng Việt</a></li>
+                                        <li><a class="dropdown-item" asp-controller="Home" asp-action="ChangeLanguage" asp-route-lang="en">English</a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <div class="header__top__right__auth">
+                                @if (ViewBag.cc == null)
+                                {
+
+                                    <a href="~/dang-nhap"><i class="fa fa-user"></i> Đăng Nhập</a>
+                                }
+                                else
+                                {
+                                   @*  <div class="custom-dropdown">
+                                        <button class="custom-dropbtn">@ViewBag.cc</button>
+                                        <div class="custom-dropdown-content">
+                                            <a asp-action="ThongTinCaNhan" asp-controller="Account">Thông tin tài khoản</a>
+                                            <a asp-action="Index" asp-controller="Order">Đơn mua</a>
+                                            <a href="~/Account/DangXuat">Đăng xuất</a>
+                                        </div>
+                                    </div> *@
+                                    <div class="paste-button">
+                                        <button class="button">@ViewBag.cc &nbsp; ▼</button>
+                                        <div class="dropdown-content">
+                                            <a id="top" asp-action="ThongTinCaNhan" asp-controller="Account">Thông tin tài khoản</a>
+                                            <a id="middle" asp-action="Index" asp-controller="Order">Đơn mua</a>
+                                            <a id="bottom" href="~/Account/DangXuat">Đăng xuất</a>
+                                        </div>
+                                    </div>
+
+                                }
+
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="container1" id="navbar">
+            <div class="row">
+
+                <div class="col-lg-3">
+                    <div class="header__logo">
+                       @*  <a href="./index.html"><img src="../KDKTrangChu/img/LogoK.png" alt=""></a> *@
+                    </div>
+                </div>
+                
+                @Html.Partial("_collectionPartial.cshtml")
+                <div class="col-lg-3">
+                    <div class="header__cart">
+                        <ul>
+                            <li><a asp-controller="Wishlist" asp-action="Index"><i class="fa fa-heart"></i> <span id="wishlist-item-count">@ViewBag.WishlistItemCount</span></a></li>
+                            <li><a asp-controller="Cart" asp-action="Index"><i class="fa fa-shopping-bag"></i> <span id="cart-item-count">@ViewBag.CartItemCount</span></a></li>
+                        </ul>
+                        <div class="header__cart__price">Tổng:<span id="cart-item-sum">@formattedValue</span></div>
+                    </div>
+                </div>
+            </div>
+            <div class="humberger__open">
+                <i class="fa fa-bars"></i>
+            </div>
+
+        </div>
+
+    </header>
+    <!-- Header Section End -->
+   
+    <!-- Featured Section Begin -->
+    <section class="featured spad">
+        <div class="container">
+            @Html.Partial("_NotificationPartial")
+            <div class="row">
+
+                @RenderBody()
+            </div>
+        </div>
+    </section>
+    <!-- Featured Section End -->
+    
+    <!-- Footer Section Begin -->
+    <footer class="footer spad">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-3 col-md-6 col-sm-6">
+                    <div class="footer__about">
+                        <div class="footer__about__logo">
+                           @*  <a href="./index.html"><img src="../KDKTrangChu/img/logo.png" alt=""></a> *@
+                        </div>
+                        <ul>
+                            <li>Địa chỉ: Đ.Hòa Tân 1, Phường Phú Tân, Quận 6, Thành phố Hồ Chí Minh, Vietnam</li>
+                            <li>Phone: +84 999999999</li>
+                            <li>Email: KDKShop@gmail.com</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6 col-sm-6 offset-lg-1">
+                    <div class="footer__widget">
+                        <h6>Thông Tin KDK</h6>
+                        <ul>
+                            <li><a asp-controller="Footer" asp-action="GioiThieu">Giới thiệu về KDK</></a></li>
+                            <li><a asp-controller="Footer" asp-action="ChinhSachBanHang">Chính sách bán hàng</a></li>
+                            <li><a asp-controller="Footer" asp-action="ChinhSachDoiTra">Chính sách đổi trả</a></li>
+                            <li><a asp-controller="Footer" asp-action="ChinhSachKhuyenMai">Chính sách khuyến mãi</a></li>
+                            <li><a asp-controller="Footer" asp-action="DieuKhoanMuaBan">Điều khoản mua bán</a></li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-12">
+                    <div class="footer__widget">
+                        <h6>Tham gia với chúng tôi ngay bây giờ</h6>
+                        <p>Nhận thông tin mới nhất của cửa hàng cập nhật qua Email</p>
+                        <form action="#">
+                            <input type="text" placeholder="Nhập Email tại đây">
+                            <button asp-action="ChucNangNotDone" asp-controller="Error" type="submit" class="site-btn">Đăng ký ngay</button>
+                        </form>
+                        <div class="footer__widget__social">
+                            <a href="https://www.facebook.com/profile.php?id=100019555892897"><i class="fa fa-facebook"></i></a>
+                            <a href="https://www.facebook.com/profile.php?id=100019555892897"><i class="fa fa-instagram"></i></a>
+                            <a href="https://www.facebook.com/profile.php?id=100019555892897"><i class="fa fa-twitter"></i></a>
+                            <a href="https://www.facebook.com/profile.php?id=100019555892897"><i class="fa fa-pinterest"></i></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <!-- Footer Section End -->
+    <!-- Js Plugins -->
+    <script src="../KDKTrangChu/js/jquery-3.3.1.min.js"></script>
+    <script src="../KDKTrangChu/js/bootstrap.min.js"></script>
+    <script src="../KDKTrangChu/js/jquery.nice-select.min.js"></script>
+    <script src="../KDKTrangChu/js/jquery-ui.min.js"></script>
+    <script src="../KDKTrangChu/js/jquery.slicknav.js"></script>
+    <script src="../KDKTrangChu/js/mixitup.min.js"></script>
+    <script src="../KDKTrangChu/js/owl.carousel.min.js"></script>
+    <script src="../KDKTrangChu/js/main.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script>
+        // When the user scrolls the page, execute myFunction
+        window.onscroll = function () { myFunction() };
+
+        // Get the navbar
+        var navbar = document.getElementById("navbar");
+
+        // Get the offset position of the navbar
+        var sticky = navbar.offsetTop;
+
+        // Add the sticky class to the navbar when you reach its scroll position. Remove "sticky" when you leave the scroll position
+        function myFunction() {
+            if (window.pageYOffset >= sticky) {
+                navbar.classList.add("sticky")
+            } else {
+                navbar.classList.remove("sticky");
+            }
+        }
+    </script>
+    @RenderSection("Scripts", required: false)
+    <!--Start of Tawk.to Script-->
+    <script type="text/javascript">
+        var Tawk_API = Tawk_API || {}, Tawk_LoadStart = new Date();
+        (function () {
+            var s1 = document.createElement("script"), s0 = document.getElementsByTagName("script")[0];
+            s1.async = true;
+            s1.src = 'https://embed.tawk.to/663dfb8d07f59932ab3e248f/1hth1t86v';
+            s1.charset = 'UTF-8';
+            s1.setAttribute('crossorigin', '*');
+            s0.parentNode.insertBefore(s1, s0);
+        })();
+    </script>
+
+    <!--End of Tawk.to Script-->
+    @* reload lại trang sau khi nhấn nút quay về *@
+    <script>
+        window.addEventListener('pageshow', function (event) {
+            // Check if the page is being loaded from the bfcache
+            if (event.persisted || (window.performance && window.performance.navigation.type === 2)) {
+                // Reload the page
+                location.reload();
+            }
+        });
+    </script>
+
+    <script>
+        var startTime = Date.now(); // Thời điểm bắt đầu
+
+        window.addEventListener('load', function () {
+            var loadTime = Date.now() - startTime; // Tính thời gian tải
+
+            console.log('Thời gian tải trang: ' + loadTime + ' ms');
+            document.getElementById('loadTimeDisplay').innerText = 'Thời gian tải trang: ' + loadTime + ' ms';
+        });
+    </script>
+
+    <!-- Hiển thị thời gian tải -->
+    <p id="loadTimeDisplay">Thời gian tải trang: đang tính...</p>
+
+    @{
+        // Stop the stopwatch
+        stopwatch.Stop();
+        var duration = stopwatch.ElapsedMilliseconds;
+    }
+
+    <!-- Optional: Hiển thị thời gian xử lý server-side (không chính xác cho tải trang) -->
+    <p>Thời gian xử lý server-side: @duration ms</p>
+
+  
+    
+</body>
+
+</html>

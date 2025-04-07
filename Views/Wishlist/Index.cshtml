@@ -1,0 +1,137 @@
+﻿@using KDKMenShop.Models.ViewModels
+@model WishlistViewModel
+@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+
+}
+<link rel="stylesheet" type="text/css" href="~/css/StyleForWishlist.css" />
+<style>
+    /* CSS in index.cshtml */
+    .wishlist-content .row.row-custom {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: start;
+        margin-right: -15px;
+        margin-left: -15px;
+        min-width: 500px;
+        min-height: 200px;
+    }
+
+    .wishlist-content .col-md-3 {
+        flex: 1 0 auto;
+        width: 25%;
+        min-width: 300px;
+    }
+
+</style>
+<div class="wishlist-content">
+    <h2>Danh sách yêu thích</h2>
+    <div class="row row-custom">
+        @foreach (var item in Model.WishlistItems)
+        {
+            var imagePath = "/images/" + item.image;
+
+            <div class="col-md-3">
+                <div class="card-wrapper">
+                    <div class="card-body">
+                        <button class="btn btn-link deleteFromWishlist" data-ma-san-pham="@item.ProductId">
+                            <span class="bi bi-x-lg"></span>
+                        </button>
+                        <img class="card-img-top" src="@Url.Content(imagePath)" alt="@item.TenSP" />
+                        <div class="card-fixed">
+                            <h5 class="card-title">@Html.DisplayFor(modelItem => item.TenSP)</h5>
+                            @if (item.GiaSale != 0)
+                            {
+                                <p class="card-text" style="color:red">Giá khuyến mãi:<strong> @item.GiaSale.ToString("N0") đ</strong></p>
+                                <p class="card-text">Giá hiện tại: <del>@item.Gia.ToString("N0") đ</del></p>
+                            }
+                            else if(item.GiaSale ==0){
+                                  <p class="card-text">Giá hiện tại: @item.Gia.ToString("N0") đ</p> 
+                            }
+                          
+                           
+                            
+                            <a href="javascript:void(0);" class="btn btn-primary addToCartBtn" data-ma-san-pham="@item.ProductId">Thêm vào giỏ hàng</a>
+                            <a href="@Url.Action("Detail", "Product", new { maSP = item.ProductId })" class="btn btn-secondary">Xem thêm</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        }
+    </div>
+</div>
+
+
+@section Scripts {
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.js"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.css" rel="stylesheet" />
+
+    <script>
+        toastr.options = {
+            "closeButton": true,
+            "positionClass": "toast-bottom-right",
+            "progressBar": true,
+            "timeOut": "3000", // 3s
+        };
+        $(document).ready(function () {
+            $(".addToCartBtn").click(function () {
+                var maSanPham = $(this).data("ma-san-pham");
+
+                $.ajax({
+                    url: "@Url.Action("ThemGio", "Cart")",
+                    type: "POST",
+                    data: { MaSanPham: maSanPham },
+                    success: function (response) {
+                        if (response.success) {
+                            // Update cart item count on success
+                            $("#cart-item-sum").text(response.cartItemSum);
+                            $('#cart-item-count').text(response.cartItemCount);
+
+                            // Hiển thị thông báo thành công
+                            toastr.success(response.message);
+                        } else {
+                            // Hiển thị thông báo lỗi
+                            toastr.error(response.message);
+                        }
+                    },
+                });
+            });
+
+            
+
+            $(".deleteFromWishlist").click(function () {
+                var maSanPham = $(this).data("ma-san-pham");
+                var cardToRemove = $(this).closest(".col-md-3");
+                $.ajax({
+                    url: "/Wishlist/DeleteFromWishlist",
+                    type: "POST",
+                    data: { MaSanPham: maSanPham },
+                    success: function (result) {
+                        if (result.success) {
+                            
+                            // Remove the card from the DOM upon successful deletion
+                            cardToRemove.remove();
+                            $("#wishlist-item-count").text(result.wishlistItemCount);
+                            toastr.success(result.message);
+                        } else {
+                            toastr.error(result.message);
+                        }
+                    },
+                });
+            });
+        });
+    </script>
+
+    <style>
+        .toast-success {
+            background-color: #28a745 !important; /*Nền màu xanh*/
+            color: #fff !important; /*Font màu trắng*/
+        }
+
+        .toast-error {
+            background-color: #dc3545 !important; /*Nền màu đỏ*/
+            color: #fff !important;
+        }
+    </style>
+}

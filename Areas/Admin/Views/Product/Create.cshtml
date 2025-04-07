@@ -1,0 +1,275 @@
+﻿@model SanPham
+@{
+	ViewData["title"] = "Thêm Mới Sản Phẩm";
+
+}
+<!-- Latest compiled and minified CSS của Bootstrap -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+
+<div class="col-md-12 ">
+	<h3>Thêm Sản Phẩm</h3>
+	<style>
+		.custom-select {
+			width: 100%;
+		}
+
+		.btn {
+			margin-top: 20px;
+		}
+
+		.error-popover {
+			color: #dc3545;
+		}
+	</style>
+
+	<div class="col-md-9" style="margin-left:150px;">
+
+		<form asp-action="Create" enctype="multipart/form-data" id="productForm">
+			<div asp-validation-summary="ModelOnly" class="text-danger"></div>
+
+			@*< div class="form-group">
+			<label>Mã Sản Phẩm</label>
+			<input asp-for="MaSanPham" class="form-control" />
+			<span asp-validation-for="MaSanPham" class="text-danger" />
+			</div> *@
+			<div class="form-group">
+				<label>Tên Sản Phẩm</label>
+				<input asp-for="TenSanPham" class="form-control" required/>
+				<span id="tenSanPhamError" class="text-danger"></span>
+			</div>
+			
+			<script>
+				// Lấy thẻ input và span hiển thị lỗi
+				var tenSanPhamInput = document.querySelector('input[name="TenSanPham"]');
+				var tenSanPhamError = document.getElementById('tenSanPhamError');
+
+				// Lắng nghe sự kiện khi mất focus khỏi input
+				tenSanPhamInput.addEventListener('blur', function () {
+					// Kiểm tra nếu giá trị của input không hợp lệ
+					if (tenSanPhamInput.validity.valueMissing) {
+						// Hiển thị thông báo lỗi tùy chỉnh
+						tenSanPhamError.textContent = 'Vui lòng nhập tên sản phẩm.';
+					} else {
+						// Nếu hợp lệ, xóa thông báo lỗi
+						tenSanPhamError.textContent = '';
+					}
+				});
+			</script>
+			<div class="form-group">
+				<label>Vật Liệu</label>
+				<input asp-for="MaVatLieu" class="form-control" required />
+				<span id="vatLieuError" class="text-danger"></span>
+			</div>
+			
+			<script>
+				var vatLieuInput = document.querySelector('input[name="VatLieu"]');
+				var vatLieuError = document.getElementById('vatLieuError');
+
+				vatLieuInput.addEventListener('blur', function () {
+					if (vatLieuInput.value.trim() === '') {
+						vatLieuError.textContent = 'Vui lòng nhập vật liệu.';
+					} else {
+						vatLieuError.textContent = '';
+					}
+				});
+			</script>
+			<div class="form-group">
+				<label>Giá</label>
+				<input asp-for="Gia" class="form-control" required />
+				<span id="giaError" class="text-danger"></span>
+			</div>
+			<script>
+				var giaInput = document.querySelector('input[name="Gia"]');
+				var giaError = document.getElementById('giaError');
+
+				giaInput.addEventListener('blur', function () {
+					if (giaInput.value.trim() === '') {
+						giaError.textContent = 'Vui lòng nhập giá.';
+					} else {
+						giaError.textContent = '';
+					}
+				});
+
+			</script>
+
+			
+			<div class="form-group">
+				<label>Mô Tả</label>
+				<textarea asp-for="MoTa" class="form-control" [Required(ErrorMessage="Vui lòng nhập mô tả." )]></textarea>
+				<span id="moTaError" class="text-danger"></span>
+			</div>
+			
+
+
+			<div class="form-group">
+				<label>Hình Ảnh</label>
+				<input asp-for="ImageUpload" class="form-control" required />
+				<span id="imageUploadError" class="text-danger"></span>
+				<img id="imgpreview" class"pt-2" />
+			</div>
+			<script>
+				// Lấy thẻ input và span hiển thị lỗi
+				var imageUploadInput = document.querySelector('input[name="ImageUpload"]');
+				var imageUploadError = document.getElementById('imageUploadError');
+
+				// Lắng nghe sự kiện khi mất focus khỏi input
+				imageUploadInput.addEventListener('blur', function () {
+					// Kiểm tra nếu giá trị của input không hợp lệ
+					if (imageUploadInput.validity.valueMissing) {
+						// Hiển thị thông báo lỗi tùy chỉnh
+						imageUploadError.textContent = 'Vui lòng chọn hình ảnh.';
+					} else {
+						// Nếu hợp lệ, xóa thông báo lỗi
+						imageUploadError.textContent = '';
+					}
+				});
+			</script>
+			<div class="form-group">
+				<label>Loại Sản Phẩm</label>
+				<select asp-for="MaLoaiSp" class="form-control custom-select" asp-items="ViewBag.LoaiSps" required>
+					<option value="">Chọn</option>
+				</select>
+				<span id="maLoaiSpError" class="text-danger"></span>
+			</div>
+			<script>
+				// Lấy thẻ select và span hiển thị lỗi
+				var maLoaiSpInput = document.querySelector('select[name="MaLoaiSp"]');
+				var maLoaiSpError = document.getElementById('maLoaiSpError');
+
+				// Lắng nghe sự kiện khi giá trị của select thay đổi
+				maLoaiSpInput.addEventListener('change', function () {
+					// Kiểm tra nếu giá trị của select không hợp lệ
+					if (maLoaiSpInput.value === '') {
+						// Hiển thị thông báo lỗi tùy chỉnh
+						maLoaiSpError.textContent = 'Vui lòng chọn loại sản phẩm.';
+					} else {
+						// Nếu hợp lệ, xóa thông báo lỗi
+						maLoaiSpError.textContent = '';
+					}
+				});
+			</script>
+
+			<div class="form-group">
+				<label>Mã Bộ Sưu Tập</label>
+				<select asp-for="MaBoSuuTap" class="form-control custom-select" asp-items="ViewBag.BoSuuTaps" required>
+					<option value="">Chọn</option>
+				</select>
+				<span id="maBoSuuTapError" class="text-danger"></span>
+			</div>
+			<script>
+				// Lấy thẻ select và span hiển thị lỗi
+				var mabosuutapInput = document.querySelector('select[name="MaBoSuuTap"]');
+				var maBoSuuTapError = document.getElementById('maBoSuuTapError');
+
+				// Lắng nghe sự kiện khi giá trị của select thay đổi
+				mabosuutapInput.addEventListener('change', function () {
+					// Kiểm tra nếu giá trị của select không hợp lệ
+					if (mabosuutapInput.value === '') {
+						// Hiển thị thông báo lỗi tùy chỉnh
+						maBoSuuTapError.textContent = 'Vui lòng chọn mã bộ sưu tập.';
+					} else {
+						// Nếu hợp lệ, xóa thông báo lỗi
+						maBoSuuTapError.textContent = '';
+					}
+				});
+			</script>
+			<div class="form-group">
+				<label>Mã Chi Tiết Giảm</label>
+				<select asp-for="MaChiTietGiam" class="form-control custom-select" asp-items="ViewBag.MaChiTietGiams">
+					<option value="">Chọn</option>
+
+				</select>
+				<span asp-validation-for="MaChiTietGiam" class="text-danger"></span>
+			</div>
+
+
+
+			<div class="form-group btn" style="margin-top:20px">
+				<button class="btn btn-primary">Thêm mới</button>
+			</div>
+		</form>
+		<a asp-action="Index">Trở về</a>
+	</div>
+</div>
+</div>
+@section Scripts{
+	@{
+		await Html.RenderPartialAsync("_ValidationScriptsPartial");
+	}
+	<!-- jQuery library -->
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+
+	<script src="https://cdn.ckeditor.com/4.22.1/standard/ckeditor.js"></script>
+	<script>
+		$("#ImageUpload").change(function () {
+			readURL(this);
+		})
+	</script>
+	<script>
+		CKEDITOR.replace('MoTa');
+	</script>
+	<script>
+		document.querySelector('.btn.btn-primary').addEventListener('click', function (event) {
+			event.preventDefault();
+
+			var tenSanPhamInput = document.querySelector('input[name="TenSanPham"]');
+			var tenSanPhamError = document.getElementById('tenSanPhamError');
+			if (tenSanPhamInput.value.trim() === '') {
+				tenSanPhamError.textContent = 'Vui lòng nhập tên sản phẩm.';
+			} else {
+				tenSanPhamError.textContent = '';
+			}
+
+			var vatLieuInput = document.querySelector('input[name="VatLieu"]');
+			var vatLieuError = document.getElementById('vatLieuError');
+			if (vatLieuInput.value.trim() === '') {
+				vatLieuError.textContent = 'Vui lòng nhập vật liệu.';
+			} else {
+				vatLieuError.textContent = '';
+			}
+
+			var giaInput = document.querySelector('input[name="Gia"]');
+			var giaError = document.getElementById('giaError');
+			if (giaInput.value.trim() === '') {
+				giaError.textContent = 'Vui lòng nhập giá.';
+			} else {
+				giaError.textContent = '';
+			}
+
+			
+
+			var imageInput = document.querySelector('input[name="ImageUpload"]');
+			var imageError = document.getElementById('imageUploadError');
+			if (imageInput.value.trim() === '') {
+				imageError.textContent = 'Vui lòng chọn hình ảnh.';
+			} else {
+				imageError.textContent = '';
+			}
+
+
+			var maLoaiSpInput = document.querySelector('select[name="MaLoaiSp"]');
+			var maLoaiSpError = document.getElementById('maLoaiSpError');
+			if (maLoaiSpInput.value === '') {
+				maLoaiSpError.textContent = 'Vui lòng chọn loại sản phẩm.';
+			} else {
+				maLoaiSpError.textContent = '';
+			}
+
+			var maBoSuuTapInput = document.querySelector('select[name="MaBoSuuTap"]');
+			var maBoSuuTapError = document.getElementById('maBoSuuTapError');
+			if (maBoSuuTapInput.value === '') {
+				maBoSuuTapError.textContent = 'Vui lòng chọn mã bộ sưu tập.';
+			} else {
+				maBoSuuTapError.textContent = '';
+			}
+
+			// Chỉ submit form nếu tất cả các trường đều hợp lệ
+			if (tenSanPhamInput.value.trim() !== '' && vatLieuInput.value.trim() !== '' && giaInput.value.trim() !== '' && imageInput.value.trim() !== '' && maLoaiSpInput.value !== '' && maBoSuuTapInput.value !== '') {
+				document.getElementById('productForm').submit();
+			}
+		});
+	</script>
+
+
+}

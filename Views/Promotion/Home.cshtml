@@ -1,0 +1,272 @@
+﻿@using Microsoft.EntityFrameworkCore;
+@{
+	Layout = "~/Views/Shared/_Layout.cshtml";
+	var groupedProducts = Model.Where(p => p.MaChiTietGiam != null && p.Ma.MaVoucherNavigation.ThoiGianBatDau <= DateTime.Now
+		&& p.Ma.MaVoucherNavigation.ThoiGianKetThuc >= DateTime.Now).GroupBy(p => p.MaChiTietGiam); // Nhóm sản phẩm theo mã bộ sưu tập
+
+}
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.theme.default.min.css">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"></script>
+<link rel="stylesheet" type="text/css" href="~/css/StyleForHome.css" />
+@*Hiển thị sản phẩm giảm giá*@
+<script src="~/js/xulygoisanphamgiamgia.js"></script>
+<link href="~/css/gia-sale.css" rel="stylesheet" />
+<style>
+
+	.original-price {
+		text-decoration: line-through;
+		margin-right: 10px;
+	}
+
+	.original-price,
+	h5 span {
+		display: inline-block;
+	}
+
+	.price-container {
+		display: flex;
+	}
+</style>
+@model IEnumerable<SanPham> // Sửa kiểu dữ liệu tùy theo model của bạn
+<section class="hero hero-normal">
+	<div class="container">
+		<div class="row">
+			
+			@*Menu các sản phẩm giảm giá*@
+			@Html.Partial("_MenuPromotionPartial")
+
+			<div class="col-lg-9">
+				<div class="hero__search">
+					<div class="hero__search__form">
+
+						@* <form action="/Promotion/SearchPromotion" method="get">
+						<input class="search-input"
+						type="text"
+						name="searchString"
+						placeholder="@KDKMenShop.Resrources.lang.Bạn_cần_tìm_">
+						<button type="submit" class="site-btn">@KDKMenShop.Resrources.lang.Tìm_kiếm</button>
+						<div class="search-suggestions"></div>
+						</form> *@
+						@*Tìm kiếm sản phẩm giảm giá*@
+						@Html.Partial("_SearchPromotionPartial")
+					</div>
+					<div class="hero__search__phone">
+						<div class="hero__search__phone__icon">
+							<i class="fa fa-phone"></i>
+						</div>
+
+						<div class="hero__search__phone__text">
+							<h5>+84 999999999</h5>
+							<span>Hỗ trợ 24/7</span>
+						</div>
+
+					</div>
+				</div>
+			</div>
+
+		</div>
+	</div>
+	</div>
+</section>
+@foreach (var group in groupedProducts)
+{
+	var promotionId = group.Key; // Mã bộ sưu tập
+	var products = group.ToList(); // Danh sách sản phẩm trong bộ sưu tập này
+	@*  var collectionImage = ""; // Ảnh đại diện cho bộ sưu tập, bạn có thể lấy từ cơ sở dữ liệu hoặc sử dụng ảnh mặc định *@
+	var promotionName = ""; // Tên chương trình từ Khuyến mãi
+	var promotionSlug = ""; // Tên slug
+	
+	var SpName = ""; // tên loại sản phẩm
+	using (var db = new ThoiTrangNamKDKContext()) // Thay "YourDbContext" bằng tên của DbContext của bạn
+	{
+		var promotion = db.ChiTietKhuyenMais.FirstOrDefault(b => b.MaChiTietGiam == promotionId);
+		if (promotion != null)
+		{
+			db.Entry(promotion).Reference(p => p.MaVoucherNavigation).Load();
+			promotionName = promotion.MaVoucherNavigation.TenChuongTrinh;
+			promotionSlug = promotion.Slug;
+			
+		}
+
+		var Sp = db.SanPhams.Include(s => s.MaLoaiSpNavigation).FirstOrDefault(b => b.MaChiTietGiam == promotionId);
+		if (Sp != null)
+		{
+
+			SpName = Sp.MaLoaiSpNavigation.TenLoaiSp;
+
+		}
+	}
+	if (promotionId != 0)
+	{
+		<div class="col-lg-12">
+			@* <div class="hero__item set-bg" data-setbg="@collectionImage"></div> *@
+			<div class="section-title">
+				@* <h2>@collectionName</h2> *@
+				<h2><a href="@Url.Action("Index", "Promotion", new { Slug = promotionSlug })">@promotionId.@SpName</a></h2>
+			</div>
+
+			<div class="row featured__filter">
+				<div class="owl-carousel owl-theme">
+					@foreach (var product in products)
+					{
+						<div class="col-lg-3 col-md-4 col-sm-6 mix oranges fresh-meat">
+							<div class="featured__item">
+								<div class="featured__item__pic set-bg product-image" style="width:225px;" data-setbg="@Url.Content("~/Images/" + product.HinhAnh)">
+									<ul class="featured__item__pic__hover">
+										<li>
+											<a href="javascript:void(0);" class="add-to-wishlist" data-ma-san-pham="@product.MaSanPham" title="Thêm vào WishList">
+												<i class="fa fa-heart"></i>
+											</a>
+										</li>
+										<li>
+											<a asp-action="Detail" asp-controller="Product" asp-route-maSP="@product.MaSanPham"><i class="fa fa-retweet"></i></a>
+										</li>
+										<li>
+											<a href="javascript:void(0);" class="add-to-cart" data-ma-san-pham="@product.MaSanPham">
+												<i class="fa fa-shopping-cart"></i>
+											</a>
+										</li>
+									</ul>
+									<!-- hiển thị giảm giá ra màn hình sản phảm -->
+									@if (product.Ma != null && product.Ma.MaVoucherNavigation != null && product.Ma.MaVoucherNavigation.ThoiGianBatDau <= DateTime.Now && product.Ma.MaVoucherNavigation.ThoiGianKetThuc >= DateTime.Now)
+									{
+										<div class="discount-percentage">
+											-@product.Ma.MaVoucherNavigation.PhanTramGiam%
+										</div>
+									}
+								</div>
+								<a asp-action="Detail" asp-controller="Product" asp-route-maSP="@product.MaSanPham">
+									<div class="featured__item__text">
+										@if (product.Ma != null && product.Ma.MaVoucherNavigation != null &&
+												product.Ma.MaVoucherNavigation.ThoiGianBatDau <= DateTime.Now && product.Ma.MaVoucherNavigation.ThoiGianKetThuc >= DateTime.Now)
+										{
+											<h5 class="price-container">
+												<span class="original-price">@String.Format("{0:N0}", product.Gia)₫   </span>
+												<span>@(String.Format("{0:N0}", product.Gia * (100 - product.Ma.MaVoucherNavigation.PhanTramGiam) / 100))₫</span>
+											</h5>
+										}
+										else
+										{
+											// Xử lý khi một hoặc nhiều đối tượng không được khởi tạo
+											<h5>@(String.Format("{0:N0}₫", product.Gia))</h5>
+										}
+									</div>
+								</a>
+							</div>
+						</div>
+					}
+				</div>
+			</div>
+		</div>
+	}
+}
+
+@*Hiện thông báo*@
+<div id="cart-notification" class="cart-notification" style="display: none;">
+	<span id="cart-message" class="cart-message">Sản phẩm đã được thêm vào giỏ hàng </span>
+</div>
+@* Hiển thị thông báo lỗi *@
+<div id="error-notification" class="error-notification" style="display: none;">
+	<span id="error-message" class="error-message"></span>
+</div>
+
+@* Hiển thị thông báo lỗi *@
+<div id="wishlist-notification" class="wishlist-notification" style="display: none;">
+	<span id="wishlist-message" class="wishlist-message">Sản phẩm đã được thêm vào danh sách yêu thích</span>
+</div>
+
+@section Scripts {
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.js"></script>
+	<link href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.css" rel="stylesheet" />
+	<script>
+		$(document).ready(function () {
+			$(".owl-carousel").owlCarousel({
+				loop: false,
+				margin: 0,
+				nav: true,
+				responsive: {
+					0: {
+						items: 1
+					},
+					600: {
+						items: 3
+					},
+					1000: {
+						items: 5
+					}
+				}
+			});
+		});
+
+
+	
+		$(document).ready(function () {
+			$('#filter-toggle').click(function () {
+				$('#filter-form-container').toggle();
+			});
+		});
+		$(document).ready(function () {
+			toastr.options = {
+				"closeButton": true,
+				"positionClass": "toast-bottom-right",
+				"progressBar": true,
+				"timeOut": "3000", // 3s
+			};
+			$(".add-to-cart").click(function () {
+				var maSanPham = $(this).data("ma-san-pham");
+
+				$.ajax({
+					url: "@Url.Action("ThemGio", "Cart")",
+					type: "POST",
+					data: { MaSanPham: maSanPham },
+					success: function (response) {
+						if (response.success) {
+							toastr.success("Đã thêm sản phẩm vào giỏ hàng!");
+							// Update cart item count on success
+							$("#cart-item-count").text(response.cartItemCount);
+							$("#cart-item-sum").text(response.cartItemSum);
+
+							// Hiển thị thông báo thành công
+
+						} else {
+							// Hiển thị thông báo lỗi
+							toastr.error(response.error);
+						}
+					},
+					error: function () {
+						// Hiển thị thông báo lỗi khi có lỗi xảy ra trong AJAX request
+						toastr.error("Đã xảy ra lỗi, vui lòng thử lại sau");
+
+					}
+				});
+			});
+			$(".add-to-wishlist").click(function () {
+				var maSanPham = $(this).data('ma-san-pham');
+				$.ajax({
+					url: '@Url.Action("AddToWishlist", "Wishlist")',
+					type: "POST",
+					data: { MaSanPham: maSanPham },
+					success: function (result) {
+						if (result.success) {
+							toastr.success("Thêm sản phẩm vào Wishlist thành công!");
+							$('#wishlist-item-count').text(result.wishlistItemCount);
+						} else {
+							// Thêm sản phẩm thất bại, hiển thị thông báo lỗi
+							toastr.error(result.error);
+							
+							
+						}
+					},
+					error: function () {
+						// Hiển thị thông báo lỗi khi có lỗi xảy ra trong AJAX request
+						toastr.error("Đã xảy ra lỗi, vui lòng thử lại sau");
+					}
+				});
+			});
+		});
+	</script>
+    }

@@ -1,0 +1,187 @@
+﻿@model ChiTietKichThuoc
+@{
+	ViewData["title"] = "Thêm Mới Kích Thước";
+
+}
+<!-- Latest compiled and minified CSS của Bootstrap -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+
+<div class="col-md-12 ">
+	<h3>Thêm Kích Thước</h3>
+	<style>
+		.custom-select {
+			width: 100%;
+		}
+
+		.btn {
+			margin-top: 20px;
+		}
+
+		.error-popover {
+			color: #dc3545;
+		}
+	</style>
+
+	<div class="col-md-9" style="margin-left:150px;">
+
+		<form asp-action="ThemMoiKichThuoc" enctype="multipart/form-data" id="SizeForm">
+			<div asp-validation-summary="ModelOnly" class="text-danger"></div>
+
+			@*< div class="form-group">
+			<label>Mã Sản Phẩm</label>
+			<input asp-for="MaSanPham" class="form-control" />
+			<span asp-validation-for="MaSanPham" class="text-danger" />
+			</div> *@
+			@* <div class="form-group">
+				<label>Mã Chi Tiết</label>
+				<input asp-for="MaChiTiet" class="form-control" required />
+				<span id="MaChiTietError" class="text-danger"></span>
+			</div> *@
+
+			@* <script>
+				// Lấy thẻ input và span hiển thị lỗi
+				var MaChiTietInput = document.querySelector('input[name="MaChiTiet"]');
+				var MaChiTietError = document.getElementById('MaChiTietError');
+
+				// Lắng nghe sự kiện khi mất focus khỏi input
+				MaChiTietInput.addEventListener('blur', function () {
+					// Kiểm tra nếu giá trị của input không hợp lệ
+					if (MaChiTietInput.validity.valueMissing) {
+						// Hiển thị thông báo lỗi tùy chỉnh
+						MaChiTietError.textContent = 'Vui lòng nhập mã chi tiết.';
+					} else {
+						// Nếu hợp lệ, xóa thông báo lỗi
+						MaChiTietError.textContent = '';
+					}
+				});
+			</script> *@
+			
+			<div class="form-group">
+				<label>Kích Thước</label>
+				<input asp-for="KichThuoc" class="form-control" required />
+				<span id="KichThuocError" class="text-danger"></span>
+			</div>
+			<script>
+				var KichThuocInput = document.querySelector('input[name="KichThuoc"]');
+				var KichThuocError = document.getElementById('KichThuocError');
+
+				KichThuocInput.addEventListener('blur', function () {
+					if (KichThuocInput.value.trim() === '') {
+						KichThuocError.textContent = 'Vui lòng nhập kích thước.';
+					} else {
+						KichThuocError.textContent = '';
+					}
+				});
+
+			</script>
+			<div class="form-group">
+				<label>Số Lượng</label>
+				<input asp-for="SoLuong" class="form-control" required />
+				<span id="SoLuongError" class="text-danger"></span>
+			</div>
+			<script>
+				var SoLuongInput = document.querySelector('input[name="SoLuong"]');
+				var SoLuongError = document.getElementById('SoLuongError');
+
+				SoLuongInput.addEventListener('blur', function () {
+					if (SoLuongInput.value.trim() === '') {
+						SoLuongError.textContent = 'Vui lòng nhập số lượng!';
+					} else {
+						SoLuongError.textContent = '';
+					}
+				});
+
+			</script>
+			<div class="form-group">
+			<select asp-for="MaSanPham" class="form-control" asp-items="@(new SelectList(ViewBag.MaSanPhamList))">
+				<option value="">Chọn mã sản phẩm</option>
+				
+			</select>
+			<span id="MaSanPhamError" class="text-danger"></span>
+			</div>
+			<script>
+				// Lấy thẻ select và span hiển thị lỗi
+				var MaSanPhamInput = document.querySelector('select[name="MaSanPham"]');
+				var MaSanPhamError = document.getElementById('MaSanPhamError');
+
+				// Lắng nghe sự kiện khi giá trị của select thay đổi
+				MaSanPhamInput.addEventListener('change', function () {
+					// Kiểm tra nếu giá trị của select không hợp lệ
+					if (MaSanPhamInput.value === '') {
+						// Hiển thị thông báo lỗi tùy chỉnh
+						MaSanPhamError.textContent = 'Vui lòng chọn mã sản phẩm.';
+					} else {
+						// Nếu hợp lệ, xóa thông báo lỗi
+						MaSanPhamError.textContent = '';
+					}
+				});
+			</script>
+
+			<div class="form-group btn" style="margin-top:20px">
+				<button class="btn btn-primary">Thêm mới</button>
+			</div>
+		</form>
+		<a asp-action="DanhSachKichThuoc">Trở về</a>
+	</div>
+</div>
+</div>
+@section Scripts{
+	@{
+		await Html.RenderPartialAsync("_ValidationScriptsPartial");
+	}
+	<!-- jQuery library -->
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+
+	
+	<script>
+		document.querySelector('.btn.btn-primary').addEventListener('click', function (event) {
+			event.preventDefault();
+			// var MaChiTietInput = document.querySelector('input[name="MaChiTiet"]');
+			// var MaChiTietError = document.getElementById('MaChiTietError');
+			// if (MaChiTietInput.value.trim() === '') {
+			// 	MaChiTietError.textContent = 'Vui lòng nhập mã chi tiết.';
+			// } else {
+			// 	MaChiTietError.textContent = '';
+			// }
+
+			var SoLuongInput = document.querySelector('input[name="SoLuong"]');
+			var SoLuongError = document.getElementById('SoLuongError');
+			if (SoLuongInput.value.trim() === '') {
+				SoLuongError.textContent = 'Vui lòng nhập số lượng.';
+			} else {
+				SoLuongError.textContent = '';
+			}
+
+			var KichThuocInput = document.querySelector('input[name="KichThuoc"]');
+			var KichThuocError = document.getElementById('KichThuocError');
+			if (KichThuocInput.value.trim() === '') {
+				KichThuocError.textContent = 'Vui lòng nhập kích thước.';
+			} else {
+				KichThuocError.textContent = '';
+			}
+			var MaSanPhamInput = document.querySelector('select[name="MaSanPham"]');
+			var MaSanPhamError = document.getElementById('MaSanPhamError');
+			if (MaSanPhamInput.value.trim() === '') {
+				MaSanPhamError.textContent = 'Vui lòng nhập mã sản phẩm.';
+			} else {
+				MaSanPhamError.textContent = '';
+			}
+			
+
+
+
+			
+
+
+			
+
+			// Chỉ submit form nếu tất cả các trường đều hợp lệ
+			if ( && MaSanPhamInput.value.trim() !== '' && KichThuocInput.value.trim() !== '' && SoLuongInput.value.trim() !== '') {
+				document.getElementById('SizeForm').submit();
+			}
+		});
+	</script>
+
+
+}

@@ -1,0 +1,83 @@
+﻿@model IEnumerable<BoSuuTap>
+
+
+
+<div class="col-lg-6">
+    <nav class="header__menu">
+        <ul>
+            <li class="active"><a asp-controller="Home" asp-action="Index">@KDKMenShop.Resrources.lang.Trang_Chủ</a></li>
+            @Html.Partial("_promotionPartial")
+            @* <li><a asp-controller="Product" asp-action="Index">@KDKMenShop.Resrources.lang.Sản_Phẩm</a></li> *@
+            <li>
+                <a asp-controller="Collection" asp-action="Home">@KDKMenShop.Resrources.lang.Bộ_Sưu_Tập
+                    <span class="arrow">&#9662;</span> <!-- Arrow added here -->
+                </a>
+                
+                <ul class="header__menu__dropdown">
+                    @foreach (var item in Model)
+                    {
+                        if(item.MaBoSuuTap != 0)
+                        {
+
+
+                            <li><a asp-action="Index" asp-controller="Collection" asp-route-Slug="@item.Slug">@item.TenBoSuuTap</a></li>
+                        }
+
+                    }
+                </ul>
+            </li>
+            <li><a asp-action="Index" asp-controller="Contact">@KDKMenShop.Resrources.lang.Liên_Hệ</a></li>
+        </ul>
+    </nav>
+</div>
+
+@*Hiện thông báo*@
+<div id="cart-notification" class="cart-notification"  style="display: none;">
+    <span id="cart-message" class="cart-message">Sản phẩm đã được thêm vào giỏ hàng </span>
+</div>
+@* Hiển thị thông báo lỗi *@
+<div id="error-notification" class="error-notification" style="display: none;">
+    <span id="error-message" class="error-message"></span>
+</div>
+
+
+
+
+<script>
+    function addToCart(productId) {
+        var url = '/Cart/ThemGio?MaSanPham=' + productId;
+
+        $.ajax({
+            type: 'GET',
+            url: url,
+            dataType: 'json',
+            success: function (result) {
+                                    if (result.success) {
+                                        // Thêm sản phẩm thành công, hiển thị thông báo thành công
+                                        $("#cart-notification").fadeIn();
+                                            // Cập nhật số lượng sản phẩm trong giỏ hàng
+                                        $("#cart-item-count").text(result.cartItemCount);
+                                        $("#cart-item-sum").text(result.cartItemSum);
+                                        setTimeout(function () {
+                                            $("#cart-notification").fadeOut();
+                                        }, 2500);
+                                    } else {
+                                        // Thêm sản phẩm thất bại, hiển thị thông báo lỗi
+                                        $("#error-message").text(result.error);
+                                        $("#error-notification").fadeIn();
+                                        setTimeout(function () {
+                                            $("#error-notification").fadeOut();
+                                        }, 2500);
+                                    }
+                                },
+                                error: function () {
+                                    // Hiển thị thông báo lỗi khi có lỗi xảy ra trong AJAX request
+                                    $("#error-message").text("Đã xảy ra lỗi, vui lòng thử lại sau");
+                                    $("#error-notification").fadeIn();
+                                    setTimeout(function () {
+                                        $("#error-notification").fadeOut();
+                                    }, 2500);
+                                }
+        });
+    }
+</script>

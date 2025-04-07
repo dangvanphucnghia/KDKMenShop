@@ -1,0 +1,54 @@
+﻿@model IEnumerable<ChiTietKhuyenMai>
+@{
+	var activeItems = Model.Where(s => s.MaVoucherNavigation.ThoiGianBatDau <= DateTime.Now && DateTime.Now 
+		<= s.MaVoucherNavigation.ThoiGianKetThuc).DistinctBy(s => s.Slug).DistinctBy(s => s.MaChiTietGiam);
+}
+
+<style>
+
+	/* .hero__categories ul {
+		display: none;
+	} */
+
+
+</style>
+<li><a asp-controller="Promotion" asp-action="Home">@KDKMenShop.Resrources.lang.Sale_Giá_Hời
+		<span class="arrow">&#9662;</span> <!-- Arrow added here -->
+	</a>
+	
+    <ul class="header__menu__dropdown_promotion">
+
+		@if (activeItems.Any())
+		{
+			@foreach (var item in Model.DistinctBy(s=>s.MaChiTietGiam))
+			{
+				@* foreach (var product in item.SanPhams)
+				{ *@
+				<li><a asp-action="Index" asp-controller="Promotion" asp-route-Slug="@item.Slug">@item.TenGiamGia @* @item.MaVoucherNavigation.PhanTramGiam% *@</a></li>
+				@* } *@
+			}
+		}
+		else
+		{
+			<li style="color:#eeeeee"><span>Hiện tại không có khuyến mãi!</span></li>
+		}
+    </ul>
+		
+	
+</li>
+
+
+@*Hiện thông báo*@
+<div id="cart-notification" class="cart-notification" style="display: none;">
+	<span id="cart-message" class="cart-message">Sản phẩm đã được thêm vào giỏ hàng </span>
+</div>
+@* Hiển thị thông báo lỗi *@
+<div id="error-notification" class="error-notification" style="display: none;">
+	<span id="error-message" class="error-message"></span>
+</div>
+@* <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js?v=@Guid.NewGuid()"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.js?v=@Guid.NewGuid()"></script>
+<link href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.css?v=@Guid.NewGuid()" rel="stylesheet" />
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js?v=@Guid.NewGuid()"></script> *@
+
+

@@ -1,0 +1,45 @@
+﻿@model IEnumerable<ChiTietKhuyenMai>
+@{
+    var activeItems = Model.Where(s => s.MaVoucherNavigation.ThoiGianBatDau <= DateTime.Now && DateTime.Now <=
+                s.MaVoucherNavigation.ThoiGianKetThuc).DistinctBy(s => s.Slug).DistinctBy(s => s.MaChiTietGiam);
+}
+
+
+<div class="col-lg-3">
+    <div class="hero__categories">
+        <div class="hero__categories__all">
+            <i class="fa fa-bars"></i>
+
+            <span>Danh Sách Sản Phẩm Sale</span>
+        </div>
+        <ul>
+            @if (activeItems.Any())
+            {
+                foreach (var item in activeItems.DistinctBy(s => s.MaChiTietGiam))
+                {
+                    <li><a asp-action="Index" asp-controller="Promotion" asp-route-Slug="@item.Slug">@item.TenGiamGia @* @item.MaVoucherNavigation.PhanTramGiam% *@</a></li>
+                }
+            }
+            else
+            {
+                <li style="color:#1c1c1c"><span>Hiện tại không có khuyến mãi!</span></li>
+            }
+        </ul>
+    </div>
+
+</div>
+
+
+
+@*Hiện thông báo*@
+<div id="cart-notification" class="cart-notification" style="display: none;">
+    <span id="cart-message" class="cart-message">Sản phẩm đã được thêm vào giỏ hàng </span>
+</div>
+@* Hiển thị thông báo lỗi *@
+<div id="error-notification" class="error-notification" style="display: none;">
+    <span id="error-message" class="error-message"></span>
+</div>
+
+
+
+

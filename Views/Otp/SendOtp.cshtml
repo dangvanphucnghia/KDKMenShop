@@ -1,0 +1,13 @@
+﻿@{
+    ViewData["Title"] = "Send OTP";
+}
+
+<h2>Send OTP</h2>
+
+<form method="post" action="@Url.Action("SendOtp", "Otp")">
+    <div class="form-group">
+        <label for="phoneNumber">Phone Number:</label>
+        <input type="text" class="form-control" id="phoneNumber" name="phoneNumber" required>
+    </div>
+    <button type="submit" class="btn btn-primary">Send OTP</button>
+</form>

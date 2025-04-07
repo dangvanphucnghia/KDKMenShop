@@ -1,0 +1,133 @@
+﻿@model KDKMenShop.Models.TaiKhoan
+
+@{
+    ViewBag.Title = "Lấy Lại Mật Khẩu";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://unpkg.com/bootstrap@5.3.2/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+
+    <link rel="stylesheet" href="https://unpkg.com/bs-brain@2.0.3/components/logins/login-12/assets/css/login-12.css">
+    <link rel="stylesheet" href="../KDKTrangChu/css/bootstrap.min.css" type="text/css">
+    <link rel="stylesheet" href="../KDKTrangChu/css/font-awesome.min.css" type="text/css">
+    <link rel="stylesheet" href="../KDKTrangChu/css/elegant-icons.css" type="text/css">
+    <link rel="stylesheet" href="../KDKTrangChu/css/nice-select.css" type="text/css">
+    <link rel="stylesheet" href="../KDKTrangChu/css/jquery-ui.min.css" type="text/css">
+    <link rel="stylesheet" href="../KDKTrangChu/css/owl.carousel.min.css" type="text/css">
+    <link rel="stylesheet" href="../KDKTrangChu/css/slicknav.min.css" type="text/css">
+    <link rel="stylesheet" href="../KDKTrangChu/css/style.css" type="text/css">
+    <link rel="stylesheet" href="../KDKTrangChu/css/dropdownlayout.css" type="text/css">
+    <link href="~/Content/Site.css" rel="stylesheet" />
+    <style>
+        .form--control {
+            /* Thêm các thuộc tính CSS tại đây */
+            /* Ví dụ: */
+
+
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 20px;
+        }
+
+        /* Hoặc thêm một lớp mới và áp dụng nó */
+        .custom-email {
+            /* Thêm các thuộc tính CSS tại đây */
+            /* Ví dụ: */
+            background-color: #f7f7f7;
+            border-radius: 10px;
+            height: 40px;
+            width: 250px;
+        }
+    </style>
+</head>
+<body>
+    <section class="" style="margin-bottom:100px;">
+        <div class="container py-4">
+            <div class="row d-flex justify-content-center align-items-center h-100">
+                <div class="col-12 col-md-8 col-lg-6 col-xl-5" style="margin-right:380px;">
+                    <div class="card " style="border-radius: 1rem; width: 800px;">
+                        <div class="card-body p-4 text-center">
+
+                            <div class="mb-md-4 mt-md-3 pb-5 ">
+
+                                <h2 style="color: #343A40;" class="fw-bold mb-2 text-uppercase">Nhập Email lấy lại mật khẩu</h2>
+
+
+                                @*kiểm tra lỗi*@
+
+                                @if (ViewBag.ResetPasswordSuccess != null)
+                                {
+                                    if ((bool)ViewBag.ResetPasswordSuccess)
+                                    {
+                                        <div class="alert alert-success" role="alert">
+                                            Mật khẩu mới đã được gửi lại qua email.
+                                        </div>
+                                    }
+                                    else
+                                    {
+                                        <div class="alert alert-danger" role="alert">
+                                            Địa chỉ email không tồn tại trong hệ thống.
+                                        </div>
+                                    }
+                                }
+                                @using (Html.BeginForm("LayLaiMatKhau", "Account", FormMethod.Post))
+
+                                {
+
+                                    @Html.AntiForgeryToken()
+
+                                    <div class="form-horizontal">
+
+
+                                        @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+                                        @* nhập email để lấy lại mật khẩu *@
+                                        <div class="col-12 m-5 text-center" style="width:300px;">
+                                            @Html.TextBox("email", "", new { @class = "custom-email ", @required = "required" , placeholder = "Nhập email" ,style = "background-color: #f7f7f7;border-radius:10px;height:50px;margin-left:180px;"})
+                                        </div>
+                                        <button id="submitButton" style="background-color: #343A40;border-radius:40px;width:100px;" class="btn-outline-light btn-lg px-3" type="submit"> Gửi</button>
+                                    </div>
+                                }
+
+
+                            </div>
+                            @* chưa có tài khoản đăng ký *@
+                            <div>
+                                <p class="mb-0">
+                                    Chưa nhận được mật khẩu mới? <a href="javascript:void(0)" id="resendLink" style="color:#343A40" class="text-fw-bold">Nhận Lại</a>
+                                </p>
+                            </div>
+                            <div>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    @*Click vào Nhận Lại thì tiếp dẫn button Gửi*@
+    <script>
+        // JavaScript code
+        $(document).ready(function () {
+            $('#resendLink').click(function () {
+                $('#submitButton').click(); // Triggers the click event of submit button
+            });
+        });
+    </script>
+
+
+    <script src="https://cdn.jsdelivr.net/npm/jquery@3.7.1/dist/jquery.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.bundle.min.js"></script>
+
+</body>
+</html>

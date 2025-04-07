@@ -1,0 +1,347 @@
+﻿@model KDKMenShop.Models.ViewModels.OrdersViewModel
+@{
+    ViewBag.Title = "Thêm Mới Đơn Hàng";
+    Layout = "~/Areas/Admin/Views/Shared/_Layout-admin.cshtml";
+}
+
+<style>
+    #chonSanPham label {
+        display: block;
+        margin-bottom: 5px; /* Khoảng cách giữa các ô */
+    }
+
+    .text-center {
+        text-align: center;
+        margin-top: 5px; /* Khoảng cách giữa các ô */
+    }
+
+    .centered-button {
+        display: block;
+        margin: 0 auto; /* căn giữa theo chiều ngang */
+        text-align: center; /* căn giữa nội dung button */
+    }
+</style>
+@section Scripts {
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.9.0/js/bootstrap-datepicker.min.js"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.9.0/css/bootstrap-datepicker.min.css" rel="stylesheet" />
+    <script>
+        $(document).ready(function () {
+            $('#NgayLap').datepicker({
+                format: 'dd/mm/yyyy',
+                autoclose: true
+            });
+        });
+    </script>
+}
+<h2 style="text-align:center">Thêm mới đơn hàng</h2>
+
+@using (Html.BeginForm("ThemMoiDonHang", "Product", FormMethod.Post, new { onsubmit = "return validateForm();" }))
+{
+    @Html.AntiForgeryToken()
+
+    <div class="form-horizontal">
+        <hr />
+        @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+        
+        
+        <div class="form-group">
+            @Html.LabelFor(model => model.MaDH, "Mã đơn hàng", htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.MaDH, new { htmlAttributes = new { @class = "form-control", id = "MaDh" } })
+                <div id="MaDhError" class="text-danger"></div>
+            </div>
+        </div>
+        @*  //bắt sự kiện cho mã đơn *@
+        <script>
+            // Lấy thẻ input và span hiển thị lỗi
+            var MaDhInput = document.getElementById('MaDh');
+            var MaDhError = document.getElementById('MaDhError');
+
+            // Lắng nghe sự kiện khi mất focus khỏi input
+            MaDhInput.addEventListener('blur', function () {
+                // Kiểm tra nếu giá trị của input không hợp lệ
+                if (MaDhInput.validity.valueMissing) {
+                    // Hiển thị thông báo lỗi tùy chỉnh
+                    MaDhError.textContent = 'Vui lòng nhập mã đơn hàng.';
+                } else {
+                    // Nếu hợp lệ, xóa thông báo lỗi
+                    MaDhError.textContent = '';
+                }
+            });
+        </script>
+        <div class="form-group">
+            @Html.LabelFor(model => model.TongTien, "Tổng Tiền", htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.TongTien, new { htmlAttributes = new { @class = "form-control", id = "TongTien", required = "required" } })
+                <div id="TongTienError" class="text-danger"></div>
+            </div>
+        </div>
+        @*  //bắt sự kiện cho tổng tiền *@
+        <script>
+            // Lấy thẻ input và span hiển thị lỗi
+            var TongTien = document.getElementById('TongTien');
+            var TongTienError = document.getElementById('TongTienError');
+
+            // Lắng nghe sự kiện khi mất focus khỏi input
+            TongTien.addEventListener('blur', function () {
+                // Kiểm tra nếu giá trị của input không hợp lệ
+                if (TongTien.validity.valueMissing) {
+                    // Hiển thị thông báo lỗi tùy chỉnh
+                    TongTienError.textContent = 'Vui lòng nhập tổng tiền';
+                } else {
+                    // Nếu hợp lệ, xóa thông báo lỗi
+                    TongTienError.textContent = '';
+                }
+            });
+        </script>
+        <div class="form-group">
+            @Html.LabelFor(model => model.NgayLap, "Ngày lập hóa đơn", htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                <input type="text" class="form-control" id="NgayLap" name="NgayLap" />
+                <div id="NgayLapError" class="text-danger"></div>
+            </div>
+        </div>
+        @*  //bắt sự kiện ngày lâpj *@
+        <script>
+            // Lấy thẻ input và span hiển thị lỗi
+            var NgayLap = document.getElementById('NgayLap');
+            var NgayLapError = document.getElementById('NgayLapError');
+
+            // Lắng nghe sự kiện khi mất focus khỏi input
+            NgayLap.addEventListener('blur', function () {
+                // Kiểm tra nếu giá trị của input không hợp lệ
+                if (NgayLap.validity.valueMissing) {
+                    // Hiển thị thông báo lỗi tùy chỉnh
+                    NgayLapError.textContent = 'Vui lòng nhập ngày lập.';
+                } else {
+                    // Nếu hợp lệ, xóa thông báo lỗi
+                    NgayLapError.textContent = '';
+                }
+            });
+        </script>
+        <div class="form-group">
+            @Html.LabelFor(model => model.DiaChiGiaoHang, "Địa chỉ giao hàng", htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.DiaChiGiaoHang, new { htmlAttributes = new { @class = "form-control", id = "DiaChiGiaoHang" } })
+                <div id="DiaChiGiaoHangError" class="text-danger"></div>
+            </div>
+        </div>
+       @*  //bắt sự kiện cho địa chỉ *@
+        <script>
+            // Lấy thẻ input và span hiển thị lỗi
+            var DiaChiGiaoHang = document.getElementById('DiaChiGiaoHang');
+            var DiaChiGiaoHangError = document.getElementById('DiaChiGiaoHangError');
+
+            // Lắng nghe sự kiện khi mất focus khỏi input
+            DiaChiGiaoHang.addEventListener('blur', function () {
+                // Kiểm tra nếu giá trị của input không hợp lệ
+                if (DiaChiGiaoHang.validity.valueMissing) {
+                    // Hiển thị thông báo lỗi tùy chỉnh
+                    DiaChiGiaoHangError.textContent = 'Vui lòng nhập địa chỉ giao hàng.';
+                } else {
+                    // Nếu hợp lệ, xóa thông báo lỗi
+                    DiaChiGiaoHangError.textContent = '';
+                }
+            });
+        </script>
+
+
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.TrangThaiDH, "Trạng Thái Đơn Hàng", htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.DropDownListFor(model => model.TrangThaiDH, new SelectList(new List<string> { "Đã Đánh Giá", "Đã Thanh Toán", "Chưa Thanh Toán" }), "---Chọn Trạng Thái---", htmlAttributes: new { @class = "form-control", id = "TrangThaiDh" })
+                <div id="TrangThaiDhError" class="text-danger"></div>
+            </div>
+        </div>
+        @* bắt sự kiện cho trạng thái đơn hàng *@
+        <script>
+            // Lấy thẻ input và span hiển thị lỗi
+            var TrangThaiDh = document.getElementById('TrangThaiDh');
+            var TrangThaiDhError = document.getElementById('TrangThaiDhError');
+
+            // Lắng nghe sự kiện khi mất focus khỏi input
+            TrangThaiDh.addEventListener('blur', function () {
+                // Kiểm tra nếu giá trị của input không hợp lệ
+                if (TrangThaiDh.validity.valueMissing) {
+                    // Hiển thị thông báo lỗi tùy chỉnh
+                    TrangThaiDhError.textContent = 'Vui lòng chọn trạng thái đơn hàng.';
+                } else {
+                    // Nếu hợp lệ, xóa thông báo lỗi
+                    TrangThaiDhError.textContent = '';
+                }
+            });
+        </script>
+
+
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.ThongTinDH, "Thông Tin Đơn Hàng", htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.DropDownListFor(model => model.ThongTinDH, new SelectList(new List<string> { "Đang Giao", "Đã Giao", "Hủy", "Đang Chuẩn Bị" }), "---Chọn Thông tin---", htmlAttributes: new { @class = "form-control", id = "ThongTinDh" })
+                <div id="ThongTinDhError" class="text-danger"></div>
+            </div>
+        </div>
+       @*  //bắt sự kiện cho thông tin đơn hàng *@
+        <script>
+            // Lấy thẻ input và span hiển thị lỗi
+            var ThongTinDh = document.getElementById('ThongTinDh');
+            var ThongTinDhError = document.getElementById('TrangThaiDhError');
+
+            // Lắng nghe sự kiện khi mất focus khỏi input
+            ThongTinDh.addEventListener('blur', function () {
+                // Kiểm tra nếu giá trị của input không hợp lệ
+                if (ThongTinDh.value.valueMissing) {
+                    // Hiển thị thông báo lỗi tùy chỉnh
+                    ThongTinDhError.textContent = 'Vui lòng chọn trạng thái đơn hàng.';
+                } else {
+                    // Nếu hợp lệ, xóa thông báo lỗi
+                    ThongTinDhError.textContent = '';
+                }
+            });
+
+
+
+        //MaSAnPham , MaCHiTiet . KichThuoc ,Size , ....
+        </script>
+        <label>sản phẩm:</label>
+        <label for="searchProduct">Tìm kiếm sản phẩm:</label>
+        <input type="text" id="searchProduct" placeholder="Nhập tên sản phẩm...">
+        <div class="form-group" id="chonSanPham">
+
+
+            <br />
+            @for (var i = 0; i < Model.DanhSachSanPham.Count; i++)
+            {
+                <label>
+                    @Html.CheckBoxFor(m => m.DanhSachSanPham[i].Selected, new { @class = "checkbox" } )
+                    <img src="~/images/@Model.DanhSachSanPham[i].HinhAnh" alt="@Model.DanhSachSanPham[i].TenSanPham" style="max-width: 50px; max-height: 50px;" />
+                    @Model.DanhSachSanPham[i].TenSanPham
+                    @Html.HiddenFor(m => m.DanhSachSanPham[i].MaChiTiet)
+                    - Size - @Model.DanhSachSanPham[i].KichThuoc - Số lượng còn lại - <span class="quantity-available">@Model.DanhSachSanPham[i].SoLuong</span>
+                    <input type="number" asp-for="@Model.SoLuong" id="@Model.SoLuong" min="0" value="" class="quantity" />
+                    @Html.HiddenFor(m => m.DanhSachSanPham[i].MaSanPham)
+
+
+
+
+                    
+                </label>
+
+            }
+
+        </div>
+       
+        @*Tìm kiếm không dấu*@
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/unorm/1.4.1/unorm.min.js"></script> <!-- Thêm thư viện unorm.js để xử lý Unicode -->
+        <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+        <script>
+            // Hàm loại bỏ dấu từ chuỗi Unicode
+            function removeDiacritics(str) {
+                return str.normalize("NFD").replace(/[\u0300-\u036f]/g, "");
+            }
+            $(document).ready(function () {
+                // Bắt sự kiện khi người dùng nhập vào ô tìm kiếm
+                $('#searchProduct').on('input', function () {
+                    var value = removeDiacritics($(this).val().toLowerCase()); // Loại bỏ dấu và chuyển sang chữ thường
+                    $('#chonSanPham label').each(function () {
+                        var text = removeDiacritics($(this).text().toLowerCase()); // Loại bỏ dấu và chuyển sang chữ thường
+                        // Hiển thị hoặc ẩn sản phẩm dựa trên từ khóa tìm kiếm
+                        if (text.includes(value)) {
+                            $(this).show();
+                        } else {
+                            $(this).hide();
+                        }
+                    });
+                });
+
+                // Đặt giá trị tối đa cho các ô nhập số lượng
+                $('.quantity').each(function () {
+                    var maxQuantity = parseInt($(this).closest('label').find('.quantity-available').text());
+                    $(this).attr('max', maxQuantity);
+                });
+
+                // Hạn chế việc nhập dữ liệu cho trường số lượng
+                $('.quantity').on('input', function () {
+                    var maxQuantity = parseInt($(this).attr('max'));
+                    var currentValue = parseInt($(this).val());
+                    if (currentValue > maxQuantity) {
+                        $(this).val(maxQuantity);
+                        alert('Số lượng không được lớn hơn số lượng còn lại.');
+                    }
+                });
+
+                // Hạn chế việc nhập dữ liệu cho trường số lượng (sự kiện keypress)
+                $('.quantity').on('keypress', function (e) {
+                    var maxQuantity = parseInt($(this).attr('max'));
+                    var currentValue = parseInt($(this).val() + e.key);
+                    if (currentValue > maxQuantity) {
+                        e.preventDefault();
+                        alert('Số lượng không được lớn hơn số lượng còn lại.');
+                    }
+                });
+            });
+        </script>
+
+
+
+
+        <div class="form-group" style="text-align:center">
+            <div class="form-group btn" style="margin-top:20px">
+                <button type="submit" class="btn btn-primary">Thêm mới đơn hàng</button>
+            </div>
+        </div>
+    </div>
+    //bắt sự kiện để null
+    <script>
+        function validateForm() {
+
+            var maDh = document.getElementById("MaDh").value;
+            var tongTien = document.getElementById("TongTien").value;
+            var ngayLap = document.getElementById("NgayLap").value;
+            var diaChiGiaoHang = document.getElementById("DiaChiGiaoHang").value;
+            var trangThaiDh = document.getElementById("TrangThaiDh").value;
+            var thongTinDh = document.getElementById("ThongTinDh").value;
+
+            var errors = [];
+
+            if (maDh.trim() === "") {
+                errors.push({ field: "MaDhError", message: "Vui lòng nhập mã đơn hàng." });
+            }
+
+            if (tongTien.trim() === "") {
+                errors.push({ field: "TongTienError", message: "Vui lòng nhập tổng tiền." });
+            }
+
+            if (ngayLap.trim() === "") {
+                errors.push({ field: "NgayLapError", message: "Vui lòng nhập ngày lập hóa đơn." });
+            }
+
+            if (diaChiGiaoHang.trim() === "") {
+                errors.push({ field: "DiaChiGiaoHangError", message: "Vui lòng nhập địa chỉ giao hàng." });
+            }
+
+            if (trangThaiDh === "") {
+                errors.push({ field: "TrangThaiDhError", message: "Vui lòng chọn trạng thái đơn hàng." });
+            }
+
+            if (thongTinDh === "") {
+                errors.push({ field: "ThongTinDhError", message: "Vui lòng chọn thông tin đơn hàng." });
+            }
+
+            if (errors.length > 0) {
+                errors.forEach(function (error, index) {
+                    document.getElementById(error.field).innerHTML = error.message;
+                });
+                return false;
+            } else {
+                return true;
+            }
+        }
+    </script>
+
+
+} </div>
+
+

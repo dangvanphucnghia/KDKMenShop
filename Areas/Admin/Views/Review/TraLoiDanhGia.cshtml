@@ -1,0 +1,19 @@
+﻿@model PhanHoiDanhGia
+
+@{
+    ViewData["Title"] = "Reply to Review";
+    Layout = "~/Areas/Admin/Views/Shared/_Layout-admin.cshtml";
+}
+
+<h2>Trả lời đánh giá</h2>
+
+<form asp-action="TraLoiDanhGia" enctype="multipart/form-data" >
+    <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+    <input  asp-for="MaDanhGia" />
+    <div class="form-group">
+        <label for="PhanHoi">Phản Hồi:</label>
+        <textarea class="form-control" id="PhanHoi" name="PhanHoi" rows="3"></textarea>
+    </div>
+    <button type="submit" class="btn btn-primary">Gửi</button>
+</form>
+</div>
