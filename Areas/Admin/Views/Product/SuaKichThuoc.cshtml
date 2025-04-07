@@ -1,0 +1,87 @@
+﻿@model ChiTietKichThuoc
+@{
+	ViewData["title"] = "Thêm Số Lượng Sản Phẩm";
+
+}
+
+<div class="col-md-12 ">
+	<h3>Thêm Số Lượng Sản Phẩm</h3>
+	<style>
+		.custom-select {
+			width: 100%;
+		}
+
+		.btn {
+			margin-top: 20px;
+		}
+	</style>
+
+	<div class="col-md-9" style="margin-left:150px;">
+
+		<form asp-action="SuaKichThuoc" enctype="multipart/form-data">
+			<div asp-validation-summary="ModelOnly" class="text-danger"></div>
+
+			@*< div class="form-group">
+			<label>Mã Sản Phẩm</label>
+			<input asp-for="MaSanPham" class="form-control" />
+			<span asp-validation-for="MaSanPham" class="text-danger" />
+			</div> *@
+			<div class="form-group">
+				<label>Mã Chi Tiết </label>
+				<input asp-for="MaChiTiet" class="form-control" readonly />
+				<span asp-validation-for="MaChiTiet" class="text-danger" />
+
+			</div>
+			<div class="form-group">
+				<label>Tên Sản Phẩm</label>
+				<input asp-for="MaSanPhamNavigation.TenSanPham" class="form-control" readonly />
+				<span asp-validation-for="MaSanPhamNavigation.TenSanPham" class="text-danger" />
+			</div>
+			<div class="form-group">
+				<label>Mã Sản Phẩm</label>
+				<input asp-for="MaSanPham" class="form-control" readonly />
+				<span asp-validation-for="MaSanPham" class="text-danger" />
+			</div>
+
+
+			<div class="form-group">
+				<label>Kích Thước</label>
+				<input asp-for="KichThuoc" class="form-control" readonly />
+				<span asp-validation-for="KichThuoc" class="text-danger" />
+			</div>
+			<div class="form-group">
+				<label>Hình Ảnh</label>
+				<br>
+				@* <input asp-for="MaSanPhamNavigation.HinhAnh" class="form-control" /> *@
+				<span asp-validation-for="MaSanPhamNavigation.HinhAnh" class="text-danger" />
+				<img style="height:300px;width:300px;" src="~/images/@Model.MaSanPhamNavigation.HinhAnh">
+			</div>
+			<div class="form-group">
+				<label>Số Lượng</label>
+				<input asp-for="SoLuong" class="form-control" />
+				<span asp-validation-for="SoLuong" class="text-danger" />
+			</div>
+
+
+
+
+
+
+			<div class="form-group btn" style="margin-top:20px">
+				<button class="btn btn-primary">Cập Nhật</button>
+			</div>
+
+
+		</form>
+		<a asp-action="DanhSachKichThuoc">Trở về</a>
+	</div>
+</div>
+
+@section Scripts{
+	@{
+		await Html.RenderPartialAsync("_ValidationScriptsPartial");
+	}
+
+
+}
+</div>

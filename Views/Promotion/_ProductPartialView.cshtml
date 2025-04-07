@@ -1,0 +1,53 @@
+﻿@using X.PagedList.Mvc.Core;
+@model X.PagedList.IPagedList<SanPham>
+
+<link href="~/css/gia-sale.css" rel="stylesheet" />
+
+<div class="row featured__filter">
+</div>
+	@foreach (var item in Model)
+	{
+		<div class="col-lg-3 col-md-4 col-sm-6 mix oranges fresh-meat">
+			<div class="featured__item">
+				<div class="featured__item__pic set-bg" data-setbg="@Url.Content("~/Images/" + item.HinhAnh)">
+					<ul class="featured__item__pic__hover">
+						<li>
+							<a href="javascript:void(0);" class="add-to-wishlist" data-ma-san-pham="@item.MaSanPham" title="Thêm vào WishList">
+								<i class="fa fa-heart"></i>
+							</a>
+						</li>
+						<li><a asp-action="Detail" asp-controller="Product" asp-route-maSP="@item.MaSanPham"><i class="fa fa-retweet"></i></a></li>
+						@*Them gio hang ajax*@
+						<li>
+							<a href="javascript:void(0);" class="add-to-cart" data-ma-san-pham="@item.MaSanPham">
+								<i class="fa fa-shopping-cart"></i>
+							</a>
+						</li>
+					</ul>
+					<!-- hiển thị giảm giá ra màn hình sản phảm -->
+					@if (item.Ma != null && item.Ma.MaVoucherNavigation != null && item.Ma.MaVoucherNavigation.ThoiGianBatDau <= DateTime.Now && item.Ma.MaVoucherNavigation.ThoiGianKetThuc >= DateTime.Now)
+					{
+						<div class="discount-percentage">
+							-@item.Ma.MaVoucherNavigation.PhanTramGiam%
+						</div>
+					}
+				</div>
+				<a asp-action="Detail" asp-controller="Product" asp-route-maSP="@item.MaSanPham">
+					<div class="featured__item__text">
+						<h6>@item.TenSanPham</h6>
+						<h5>@(String.Format("{0:N0}", item.Gia))₫</h5>
+					</div>
+				</a>
+			</div>
+		</div>
+		
+	}
+</div>
+</div>
+
+	</div>
+		</div>
+
+<div class="product__pagination">
+	@Html.PagedListPager(Model, page => Url.Action("Index", new { Slug = ViewBag.Slug, page }), new PagedListRenderOptions { Display = PagedListDisplayMode.IfNeeded })
+</div>

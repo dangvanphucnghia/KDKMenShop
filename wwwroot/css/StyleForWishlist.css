@@ -1,0 +1,146 @@
+﻿* {
+    box-sizing: border-box;
+}
+.col-md-3 {
+    width: 100%;
+    position: relative;
+    min-height: 1px;
+    padding-right: 15px;
+    padding-left: 15px
+}
+
+/*sản phẩm */
+.col-md-3 {
+    width: 25%;
+    padding-right: 0px;
+    padding-left: 0px;
+}
+
+.card-wrapper {
+    height: 100%; /* Chiều cao sẽ đựng toàn bộ chiều cao của cột */
+    display: flex; /* Sử dụng flexbox để canh chỉnh nội dung bên trong */
+    flex-direction: column; /* Canh chỉnh các phần tử con theo chiều dọc */
+    justify-content: space-between; /* Canh giữa nội dung theo chiều dọc */
+}
+
+.card-body {
+    height: 100%; /* Chiều cao sẽ đựng toàn bộ chiều cao của khung thông tin */
+    display: flex; /* Sử dụng flexbox để canh chỉnh nội dung bên trong */
+    flex-direction: column; /* Canh chỉnh các phần tử con theo chiều dọc */
+    justify-content: space-between; /* Canh giữa nội dung theo chiều dọc */
+    border: 1px solid #83888d; /* Đường viền cho khung thông tin */
+    border-radius: 5px; /* Bo tròn các góc của khung thông tin */
+    padding: 15px; /* Khoảng cách padding bên trong khung thông tin */
+    box-sizing: border-box; /* Đảm bảo kích thước của khung tính cả border và padding */
+}
+
+.card-title {
+    font-size: 18px; /* Kích thước chữ cho tiêu đề sản phẩm */
+    margin-bottom: 10px; /* Khoảng cách dưới của tiêu đề */
+}
+
+.card-text {
+    font-size: 16px; /* Kích thước chữ cho nội dung sản phẩm */
+    margin-bottom: 10px; /* Khoảng cách dưới của nội dung */
+}
+
+.card-buttons {
+    margin-top: auto; /* Kéo các nút lên phía dưới của khung thông tin */
+}
+
+.card-img-top {
+    height: 200px; /* Đặt chiều cao của ảnh là 200px */
+    object-fit: cover; /* Hiển thị ảnh bằng cách đè lên và căn giữa */
+}
+
+.container.mt-4 {
+    margin-bottom: 10px;
+}
+
+.card-wrapper {
+    position: relative;
+}
+
+    .card-wrapper .bi-heart {
+        position: relative;
+        top: 0;
+        right: 0;
+        font-size: 24px;
+        color: black;
+        background-color: white;
+        padding: 5px;
+    }
+
+.deleteFromWishlist {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    z-index: 1;
+    color: black;
+    background-color: white;
+    padding: 5px;
+}
+
+.card-body {
+    position: relative;
+    border-radius: 0px;
+}
+
+.card-wrapper:hover .card {
+    border-color: #007bff;
+    box-shadow: 0 0 10px rgba(0, 123, 255, 0.5);
+}
+
+.btn-link {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    z-index: 1;
+    color: black;
+    background-color: white;
+    padding: 5px;
+}
+
+.card-fixed {
+    height: 200px !important;
+}
+
+    .card-fixed .btn-primary {
+        position: absolute;
+        bottom: 30px;
+        left: 10px;
+        background-color: white;
+        color: black;
+        border-radius: 0;
+        border-color: black;
+    }
+
+    .card-fixed .btn-secondary {
+        position: absolute;
+        bottom: 30px;
+        right: 10px;
+        border-radius: 0;
+    }
+
+.btn-secondary {
+    --bs-btn-bg: #000;
+}
+
+.featured {
+    padding-top: 40px;
+    padding-bottom: 40px;
+}
+
+.card-body {
+    position: relative;
+    border-radius: 0px;
+}
+
+.card-wrapper:hover .card-body {
+    border-color: #007bff; /* Màu viền khi hover */
+    box-shadow: 0 0 10px rgba(0, 123, 255, 0.5); /* Hiệu ứng bóng đổ khi hover */
+}
+
+.wishlist-container .row {
+    justify-content: center;
+}

@@ -1,0 +1,15 @@
+﻿/* CSS cho dropdown menu */
+.collapse {
+    display: none;
+}
+
+    .collapse.in {
+        display: block;
+    }
+
+.fa.arrow:before {
+    content: "\f078"; /* Mặc định là mũi tên hướng xuống */
+    float: right;
+    margin-right: -10px;
+}
+

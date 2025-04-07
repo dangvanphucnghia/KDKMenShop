@@ -1,0 +1,105 @@
+﻿@model IEnumerable<ChiTietKichThuoc>
+@{
+    ViewData["title"] = "Danh Sách Kích Thước";
+    Layout = "~/Areas/Admin/Views/Shared/_Layout-admin.cshtml";
+}
+<style>
+    th, td {
+        text-align: left;
+        padding: 8px;
+    }
+
+        /* Đặt width cho từng cột */
+        th:nth-child(1),
+        td:nth-child(1) {
+            width: 5%; /* width cho cột số thứ tự */
+        }
+
+        th:nth-child(2),
+        td:nth-child(2) {
+            width: 5%; /* width cho cột tên sản phẩm */
+            white-space: normal; /* Cho phép xuống dòng nếu nội dung quá dài */
+        }
+
+        th:nth-child(3),
+        td:nth-child(3) {
+            width: 20%; /* width cho cột tên sản phẩm */
+            white-space: normal; /* Cho phép xuống dòng nếu nội dung quá dài */
+        }
+
+        th:nth-child(4),
+        td:nth-child(4) {
+            width: 5%;
+            white-space: normal; /* Cho phép xuống dòng nếu nội dung quá dài */
+        }
+        th:nth-child(5),
+        td:nth-child(5) {
+            width:5%;
+            white-space: normal; /* Cho phép xuống dòng nếu nội dung quá dài */
+        }
+        th:nth-child(6),
+        td:nth-child(6) {
+            width: 5%;
+            white-space: normal; /* Cho phép xuống dòng nếu nội dung quá dài */
+        }
+
+        th:nth-child(7),
+        td:nth-child(7) {
+            width: 5%; /* width cho cột số thứ tự */
+        }
+
+        
+    /* Thêm scrollbar ngang */
+    .table-container {
+        overflow-x: auto;
+    }
+</style>
+
+<div>
+    <div>
+        <h2>Danh Sách Kích Thước</h2>
+    </div>
+    <div style="margin-top: 10px; margin-bottom: 10px;">
+        <!-- Thêm phần tử div và margin-top -->
+        <a asp-action="ThemMoiKichThuoc" class="btn btn-success btn-sm" asp-controller="Product">Thêm kích thước</a>
+    </div>
+</div>
+
+<!-- Đặt bảng trong container để thêm thanh lướt ngang -->
+<div class="table-container">
+    <table class="table">
+        <thead>
+            <tr>
+                <th scope="col">#</th>
+                <th scope="col">Mã Sản Phẩm</th>
+                <th scope="col">Tên Sản Phẩm</th>
+                <th scope="col">Hình Ảnh</th>
+                <th scope="col">Kích Thước</th>
+                <th scope="col">Số Lượng</th>
+               
+                <th scope="col">Quản lý</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var item in Model)
+            {
+                <tr>
+                    <td>@item.MaChiTiet</td>
+                    <td>@item.MaSanPham</td>
+                    <td>@item.MaSanPhamNavigation.TenSanPham</td>
+                    <td>
+                        <img style="height:50px;width:50px;" src="~/images/@item.MaSanPhamNavigation.HinhAnh">
+                    </td>
+                    <td>@item.KichThuoc</td>
+                    <td>@item.SoLuong</td>
+                   
+                    <td>
+                        <a asp-controller="Product" class="btn btn-warning btn-sm" asp-action="SuaKichThuoc" asp-route-id="@item.MaChiTiet">Sửa</a>
+                        <a asp-controller="Product" class="btn btn-danger btn-sm confirmDeletion" asp-action="XoaKichThuoc" asp-route-id="@item.MaChiTiet">Xóa</a>
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+</div>
+</div>

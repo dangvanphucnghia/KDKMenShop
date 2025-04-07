@@ -1,0 +1,40 @@
+﻿@{
+   
+    var groupedProducts = Model.Where(p => p.MaBoSuuTap != 0).GroupBy(p => p.MaBoSuuTap); // Nhóm sản phẩm theo mã bộ sưu tập
+ }
+@model List<SanPham>
+
+<script src="../js/ScriptForBanner.js"></script>
+    @foreach (var group in groupedProducts)
+    {
+        
+        var collectionId = group.Key; // Mã bộ sưu tập
+        
+         var collectionImage = ""; // Ảnh đại diện cho bộ sưu tập, bạn có thể lấy từ cơ sở dữ liệu hoặc sử dụng ảnh mặc định
+       
+        using (var db = new ThoiTrangNamKDKContext()) 
+        {
+            var collection = db.BoSuuTaps.FirstOrDefault(b => b.MaBoSuuTap == collectionId);
+            if (collection != null)
+            {
+            collectionImage = collection.HinhBoSuuTap.Trim();
+              
+            }
+        }
+   
+    <div class="slideshow-container">
+
+
+
+        <div class="mySlides">
+            <img src="@Url.Content($"../images_banner_bosuutap/{collectionImage}")" style="width:100%" class="ads">
+        </div>
+
+        
+  
+    <a id="prevRegular" class="prev prev-regular" onclick="plusSlides(-1)">&#10094;</a>
+    <a id="nextRegular" class="next next-regular" onclick="plusSlides(1)">&#10095;</a>
+</div>
+}
+
+ 

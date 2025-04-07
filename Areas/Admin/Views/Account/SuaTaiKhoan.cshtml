@@ -1,0 +1,114 @@
+﻿@model KDKMenShop.Models.TaiKhoan
+
+@{
+    ViewBag.Title = "SuaTaiKhoan";
+    Layout = "~/Areas/Admin/Views/Shared/_Layout-admin.cshtml";
+}
+@section Scripts {
+    @*Đồng hồ*@
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.9.0/js/bootstrap-datepicker.min.js"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.9.0/css/bootstrap-datepicker.min.css" rel="stylesheet" />
+    <script>$(document).ready(function () {
+            $('#NgayLap').datepicker({
+                format: 'dd/mm/yyyy',
+                autoclose: true
+            });
+        });</script>
+}
+@using (Html.BeginForm())
+{
+    @Html.AntiForgeryToken()
+
+    <div class="form-horizontal">
+        <h1>Đổi thông tin cá nhân </h1>
+        <hr />
+        @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+
+
+        @*<div class="form-group">
+                @Html.LabelFor(model => model.idTK, "Id", htmlAttributes: new { @class = "control-label col-md-2" })
+                <div class="col-md-10">
+                    @Html.EditorFor(model => model.idTK, new { htmlAttributes = new { @class = "form-control" } })
+                    @Html.ValidationMessageFor(model => model.idTK, "", new { @class = "text-danger" })
+                </div>
+            </div>*@
+        <!-- Các trường nhập liệu -->
+        <div class="form-group">
+            @Html.LabelFor(model => model.TenDangNhap, "Tài Khoản", htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.TenDangNhap, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.TenDangNhap, "", new { @class = "text-danger" })
+            </div>
+        </div>
+        <div class="form-group">
+            @Html.LabelFor(model => model.IdTkNavigation.HoTen, "Họ Tên", htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.IdTkNavigation.HoTen, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.IdTkNavigation.HoTen, "", new { @class = "text-danger" })
+            </div>
+        </div>
+        <div class="form-group">
+            @Html.LabelFor(model => model.MatKhau, "Mật Khẩu", htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.MatKhau, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.MatKhau, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.IdTkNavigation.Email, "Email", htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.IdTkNavigation.Email, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.IdTkNavigation.Email, "", new { @class = "text-danger" })
+            </div>
+        </div>
+        <div class="form-group">
+            @Html.LabelFor(model => model.IdTkNavigation.DiaChi, "Địa Chỉ", htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.IdTkNavigation.DiaChi, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.IdTkNavigation.DiaChi, "", new { @class = "text-danger" })
+            </div>
+        </div>
+        <div class="form-group">
+            @Html.LabelFor(model => model.IdTkNavigation.Sdt, "Số Điện Thoại", htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.IdTkNavigation.Sdt, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.IdTkNavigation.Sdt, "", new { @class = "text-danger" })
+            </div>
+        </div>
+        <div class="form-group">
+            @Html.LabelFor(model => model.IdTkNavigation.TrangThai, "Trạng thái", htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.DropDownListFor(model => model.IdTkNavigation.TrangThai, new SelectList(new List<string> { "Mở", "Khóa" }), "---Chọn Thông tin---", htmlAttributes: new { @class = "form-control" })
+                <span class="text-danger">@Html.ValidationMessageFor(model => model.IdTkNavigation.TrangThai)</span>
+            </div>
+        </div>
+        <div class="form-group">
+
+            @Html.LabelFor(model => model.IdTkNavigation.NgayBatDau, "Ngày Kết Thúc", htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+
+                @Html.TextBoxFor(m => m.IdTkNavigation.NgayBatDau, new { @class = "form-control", type = "date" })
+            </div>
+        </div>
+
+        <div class="form-group">
+
+            @Html.LabelFor(model => model.IdTkNavigation.NgayKetThuc, "Ngày Kết Thúc", htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+
+                @Html.TextBoxFor(m => m.IdTkNavigation.NgayKetThuc, new { @class = "form-control", type = "date" })
+            </div>
+        </div>
+        <!-- Các trường nhập liệu khác -->
+
+        <div class="form-group">
+            <div class="col-md-offset-2 col-md-10">
+                <input type="submit" value="Sửa" class="btn btn-primary" />
+            </div>
+        </div>
+    </div>
+}
+</div>

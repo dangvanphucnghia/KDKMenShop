@@ -1,0 +1,122 @@
+﻿@using KDKMenShop.Models.Model;
+@model AccountModel
+@{
+    ViewBag.Title = "Thông Tin Cá Nhân";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<link rel="stylesheet" href="~/KDKTrangChu/css/profile.css" type="text/css">
+</div>
+<section class="bg-light">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-12 mb-4 mb-sm-5">
+                <div class="card card-style1 border-0">
+                    <div class="card-body p-1-9 p-sm-2-3 p-md-6 p-lg-7">
+                        <div class="row align-items-center">
+                            <div class="col-lg-6 mb-4 mb-lg-0">
+                                <img src="https://bootdey.com/img/Content/avatar/avatar7.png" alt="...">
+                            </div>
+                            <div class="col-lg-6 px-xl-10" id="ssss">
+                                <div class="bg-secondary d-lg-inline-block py-1-9 px-1-9 px-sm-6 mb-1-9 rounded">
+                                    <h3 class="h2 text-white mb-0" id="name">@Model.Name</h3>
+                                   
+                                </div>
+                                <ul class="list-unstyled mb-1-9" id="userInfo">
+                                    <li class="mb-2 mb-xl-3 display-28"><span class="display-26 text-secondary me-2 font-weight-600">Email:</span id="email"> @Model.Email</li>
+                                    <li class="mb-2 mb-xl-3 display-28"><span class="display-26 text-secondary me-2 font-weight-600">Địa Chỉ:</span id="diachi"> @Model.Diachi</li>
+                                    <li class="mb-2 mb-xl-3 display-28"><span class="display-26 text-secondary me-2 font-weight-600">Số Điện Thoại:</span id="sdt"> @Model.SDT</li>
+                                    <li class="mb-2 mb-xl-3 display-28"><span class="display-26 text-secondary me-2 font-weight-600">Thành Viên:</span> Chưa Có</li>
+                                </ul>
+                                <ul class="social-icon-style1 list-unstyled mb-0 ps-0">
+                                    <li><a href="#!"><i class="ti-twitter-alt"></i></a></li>
+                                    <li><a href="#!"><i class="ti-facebook"></i></a></li>
+                                    <li><a href="#!"><i class="ti-pinterest"></i></a></li>
+                                    <li><a href="#!"><i class="ti-instagram"></i></a></li>
+                                </ul>
+                               
+                                <div>
+                                    <button type="button" class="btn btn-sm btn-primary" data-toggle="modal" data-target="#editModal">
+                                        Sửa
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-12 mb-4 mb-sm-5">
+                <div>
+                    <span class="section-title text-primary mb-3 mb-sm-4">Giới Thiệu Thông Tin</span>
+                  
+                    <p class="mb-0">Chưa cập nhật thông tin giới thiệu.</p>
+                </div>
+            </div>
+            
+           <!-- Form chỉnh sửa thông tin -->
+            <div class="modal fade" id="editModal" tabindex="-1" role="dialog" aria-labelledby="editModalLabel" aria-hidden="true">
+                <div class="modal-dialog" role="document">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h5 class="modal-title" id="editModalLabel">Chỉnh Sửa Thông Tin</h5>
+                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                <span aria-hidden="true">&times;</span>
+                            </button>
+                        </div>
+                        <div class="modal-body">
+                            <form id="editForm" method="post">
+                                <div class="form-group">
+                                    <label for="EditName">Họ và Tên:</label>
+                                    <input type="text" class="form-control" id="EditName" name="Name" value="@Model.Name">
+                                </div>
+                                <div class="form-group">
+                                    <label for="EditEmail">Email:</label>
+                                    <input type="email" class="form-control" id="EditEmail" name="Email" value="@Model.Email">
+                                </div>
+                                <div class="form-group">
+                                    <label for="EditDiachi">Địa Chỉ:</label>
+                                    <input type="text" class="form-control" id="EditDiachi" name="Diachi" value="@Model.Diachi">
+                                </div>
+                                <div class="form-group">
+                                    <label for="EditSDT">Số Điện Thoại:</label>
+                                    <input type="tel" class="form-control" id="EditSDT" name="SDT" value="@Model.SDT">
+                                </div>
+                                
+                                <button type="submit" class="btn btn-primary">Cập Nhật</button>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<script>
+   document.getElementById('editForm').addEventListener('submit', function (event) {
+    // Prevent the default form submission
+    event.preventDefault();
+
+    // Get form data
+    var formData = new FormData(this);
+
+    // Send AJAX request
+    fetch('/Account/CapNhatThongTin', {
+        method: 'POST',
+        body: formData
+    })
+        .then(response => response.text())
+            .then(html => {
+                document.getElementById('ssss').innerHTML = html;
+               
+                // If the response is OK, handle the success case
+                // For example, you can close the modal or show a success message
+                $('#editModal').modal('hide'); // Close the modal
+                alert('Thông tin đã được cập nhật thành công.');
+               
+            
+        })
+        .catch(error => {
+            console.error('Error:', error);
+        });
+});
+
+</script>

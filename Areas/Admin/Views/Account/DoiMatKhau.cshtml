@@ -1,0 +1,55 @@
+﻿@{
+    ViewBag.Title = "DoiMatKhau";
+    Layout = "~/Areas/Admin/Views/Shared/_Layout-admin.cshtml";
+}
+
+
+<h2 style="color: #ffccd3;" class="fw-bold mb-2 text-uppercase">Đổi mật khẩu</h2>
+
+
+@*kiểm tra lỗi*@
+
+@if (ViewBag.ChangePasswordSuccess != null)
+{
+    if ((bool)ViewBag.ChangePasswordSuccess)
+    {
+        <p style="color:green">Mật khẩu đã được đổi thành công!</p>
+    }
+    else
+    {
+        <p style="color:red">Đã có lỗi xảy ra. Không thể đổi mật khẩu!</p>
+    }
+}
+<div>
+
+
+    <form method="post" action="@Url.Action("DoiMatKhau", "Account")">
+        <input type="hidden" name="email" value="@ViewBag.Email" />
+        <div>
+            <div class="col-12">
+
+
+                <input type="password" id="newPassword" name="newPassword" required placeholder="Mật Khẩu Mới" style="padding: 10px; margin-left: 50px; margin-bottom: 20px; border: 1px solid #ccc; border-radius: 20px; width: 100%; box-sizing: border-box;" />
+
+            </div>
+            <div class="col-12">
+
+
+                <input type="password" id="confirmNewPassword" name="confirmNewPassword" required placeholder="Xác Nhận Mật Khẩu Mới" style="padding: 10px;margin-left:50px; margin-bottom: 20px; border: 1px solid #ccc; border-radius: 20px; width: 100%; box-sizing: border-box;" />
+
+            </div>
+            <button id="submitButton" style="background-color: #ff9a9c; margin-left:80px;border-radius: 40px; width: 100px; padding: 10px; margin-top: 20px; color: white; border: none; cursor: pointer;" class="btn-outline-light btn-lg px-2" type="submit"> Gửi</button>
+        </div>
+    </form>
+</div>
+</div>
+
+
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
+
+
+<script src="https://cdn.jsdelivr.net/npm/jquery@3.7.1/dist/jquery.slim.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.bundle.min.js"></script>
+

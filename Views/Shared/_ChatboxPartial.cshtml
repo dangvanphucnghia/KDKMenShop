@@ -1,0 +1,15 @@
+﻿
+
+<div id="chatbox">
+    <div id="chatlogs">
+        @foreach (var message in Model)
+        {
+            <div>@message.SenderId: @message.Text</div>
+        }
+    </div>
+    <form id="chatForm" method="post" action="@Url.Action("SendMessage", "Chat")">
+        <input type="text" name="Text" id="chatinput" placeholder="Nhập tin nhắn của bạn...">
+        <input type="hidden" name="SenderId" value="Guest">
+        <button type="submit" id="send">Gửi</button>
+    </form>
+</div>

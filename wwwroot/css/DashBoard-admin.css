@@ -1,0 +1,69 @@
+﻿.custom-table {
+    max-height: 500px; /* Điều chỉnh kích thước cố định cho bảng */
+    overflow-y: auto; /* Tạo thanh cuộn dọc khi cần thiết */
+}
+
+.custom-table-don {
+    max-height: 600px; /* Điều chỉnh kích thước cố định cho bảng */
+    overflow-y: auto; /* Tạo thanh cuộn dọc khi cần thiết */
+}
+
+.custom-table-doanhThu {
+    max-height: 600px; /* Điều chỉnh kích thước cố định cho bảng */
+    overflow-y: auto; /* Tạo thanh cuộn dọc khi cần thiết */
+}
+
+th, td {
+    text-align: left;
+    padding: 8px;
+}
+
+    /* Đặt width cho từng cột */
+    th:nth-child(1),
+    td:nth-child(1) {
+        width: 5%; /* width cho cột số thứ tự */
+    }
+
+    th:nth-child(2),
+    td:nth-child(2) {
+        width: 20%; /* width cho cột tên sản phẩm */
+        white-space: normal; /* Cho phép xuống dòng nếu nội dung quá dài */
+    }
+
+    th:nth-child(3),
+    td:nth-child(3) {
+        width: 5%; /* width cho cột số thứ tự */
+        white-space: normal; /* Cho phép xuống dòng nếu nội dung quá dài */
+    }
+
+    th:nth-child(4),
+    td:nth-child(4) {
+        width: 5%; /* width cho cột số thứ tự */
+        white-space: normal; /* Cho phép xuống dòng nếu nội dung quá dài */
+    }
+
+    th:nth-child(7),
+    td:nth-child(7) {
+        width: 5%; /* width cho cột số thứ tự */
+    }
+
+    th:nth-child(8),
+    td:nth-child(8) {
+        width: 5%; /* width cho cột số thứ tự */
+    }
+
+    th:nth-child(9),
+    td:nth-child(9) {
+        width: 5%; /* width cho cột số thứ tự */
+    }
+
+
+    th:nth-child(6),
+    td:nth-child(6) {
+        white-space: normal; /* Cho phép xuống dòng nếu nội dung quá dài */
+    }
+
+/* Thêm scrollbar ngang */
+.table-container {
+    overflow-x: auto;
+}

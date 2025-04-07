@@ -1,0 +1,231 @@
+﻿@using X.PagedList.Mvc.Core;
+@model X.PagedList.IPagedList<SanPham>
+<link rel="stylesheet" href="../KDKTrangChu/css/PageList.css?v=@DateTime.Now.Ticks" type="text/css">
+<link rel="stylesheet" type="text/css" href="../css/StyleForHome.css?v=@DateTime.Now.Ticks">
+<script src="../js/XuLyGoiSanPham.js?v=@DateTime.Now.Ticks"></script>
+<link rel="stylesheet" href="../css/gia-sale.css?v=@DateTime.Now.Ticks">
+
+<style>
+	.cart-notification {
+		display: none;
+		position: fixed;
+		bottom: 20px;
+		right: 20px;
+		background-color: #4CAF50;
+		color: white;
+		padding: 15px;
+		border-radius: 5px;
+		z-index: 9999;
+		animation: slideIn 0.5s, slideOut 0.5s 2.5s forwards;
+	}
+
+	.error-notification {
+		display: none;
+		position: fixed;
+		bottom: 20px;
+		right: 20px;
+		background-color: red;
+		color: white;
+		padding: 15px;
+		border-radius: 5px;
+		z-index: 9999;
+		animation: slideIn 0.5s, slideOut 0.5s 2.5s forwards;
+	}
+
+	.original-price {
+		text-decoration: line-through;
+		margin-right: 10px;
+	}
+</style>
+<section class="hero hero-normal">
+	<div class="container">
+		<div class="row">
+			@* <div class="col-lg-3">
+			<div class="hero__categories">
+			<div class="hero__categories__all">
+			<i class="fa fa-bars"></i>
+			<span>Danh Sách Sản Phẩm</span>
+			</div> *@
+			@Html.Partial("_menuPartial")
+			@* </div>
+			</div> *@
+			<div class="col-lg-9">
+				<div class="hero__search">
+					<div class="hero__search__form">
+						@Html.Partial("_SearchPartial")
+					</div>
+					<div class="hero__search__phone">
+						<div class="hero__search__phone__icon">
+							<i class="fa fa-phone"></i>
+						</div>
+						<div class="hero__search__phone__text">
+							<h5>+84 999999999</h5>
+							<span>Hỗ trợ 24/7</span>
+						</div>
+					</div>
+
+				</div>
+			</div>
+		</div>
+</section>
+
+<div class="col-lg-12">
+</div>
+			</div>
+<div class="row featured__filter">
+	@foreach (var item in Model)
+	{
+
+		<div class="col-lg-3 col-md-4 col-sm-6 mix oranges fresh-meat">
+			<div class="featured__item">
+				@* Việc thêm tham số này vào URL thường nhằm mục đích chống lại caching (lưu trữ) của trình duyệt hoặc máy chủ,
+				đảm bảo rằng yêu cầu luôn được xử lý như một yêu cầu mới, không sử dụng dữ liệu đã lưu. *@
+				<div class="featured__item__pic set-bg" data-setbg="@($"{Url.Content("~/Images/" + item.HinhAnh)}?v={DateTime.Now.Ticks}")" loading="lazy">
+					
+
+					<ul class="featured__item__pic__hover">
+						<li><a href="#"><i class="fa fa-heart"></i></a></li>
+						<li><a asp-action="Detail" asp-controller="Product" asp-route-maSP="@item.MaSanPham"><i class="fa fa-retweet"></i></a></li>
+						@*Them gio hang ajax*@
+						<li>
+							<a href="javascript:void(0);" class="add-to-cart" data-ma-san-pham="@item.MaSanPham">
+								<i class="fa fa-shopping-cart"></i>
+							</a>
+						</li>
+					</ul>
+					<!-- hiển thị giảm giá ra màn hình sản phảm -->
+					@if (item.Ma != null && item.Ma.MaVoucherNavigation != null && item.Ma.MaVoucherNavigation.ThoiGianBatDau <= DateTime.Now && item.Ma.MaVoucherNavigation.ThoiGianKetThuc >= DateTime.Now)
+					{
+						<div class="discount-percentage">
+							-@item.Ma.MaVoucherNavigation.PhanTramGiam%
+						</div>
+					}
+				</div>
+				<a asp-action="Detail" asp-controller="Product" asp-route-maSP="@item.MaSanPham">
+					<div class="featured__item__text">
+						<h6>@item.TenSanPham</h6>
+						@if (item.Ma != null && item.Ma.MaVoucherNavigation != null && item.Ma.MaVoucherNavigation.ThoiGianBatDau <= DateTime.Now && item.Ma.MaVoucherNavigation.ThoiGianKetThuc >= DateTime.Now)
+						{
+							<h5 class="price-container">
+								<span class="original-price">@String.Format("{0:N0}", item.Gia)₫   </span>
+								<span>@(String.Format("{0:N0}", item.Gia * (100 - item.Ma.MaVoucherNavigation.PhanTramGiam) / 100))₫</span>
+							</h5>
+						}
+						else
+						{
+							// Xử lý khi một hoặc nhiều đối tượng không được khởi tạo
+							<h5>@(String.Format("{0:N0}₫", item.Gia))</h5>
+						}
+					</div>
+				</a>
+			</div>
+		</div>
+		
+	}
+
+</div>
+</div>
+
+<div class="product__pagination">
+	@Html.PagedListPager(Model, page => Url.Action("Index", new { Slug = ViewBag.Slug, page }), new PagedListRenderOptions { Display = PagedListDisplayMode.IfNeeded })
+</div>
+
+
+
+@*Hiện thông báo*@
+<div id="cart-notification" class="cart-notification">
+	<span id="cart-message" class="cart-message" style="display: none;">Sản phẩm đã được thêm vào giỏ hàng</span>
+</div>
+<div id="error-notification" class="error-notification" style="display: none;">
+	<span id="error-message" class="error-message"></span>
+</div>
+@section Scripts {
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js?v=@Guid.NewGuid()"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.js?v=@Guid.NewGuid()"></script>
+	<link href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.css.?v=@Guid.NewGuid()" rel="stylesheet" />
+	<script>
+		$(document).ready(function () {
+			$('#filter-toggle').click(function () {
+				$('#filter-form-container').toggle();
+			});
+		});
+		$(document).ready(function () {
+			toastr.options = {
+				"closeButton": true,
+				"positionClass": "toast-bottom-right",
+				"progressBar": true,
+				"timeOut": "3000", // 3s
+			};
+			$(".add-to-cart").click(function () {
+				var maSanPham = $(this).data("ma-san-pham");
+
+				$.ajax({
+					url: "@Url.Action("ThemGio", "Cart")",
+					type: "POST",
+					data: { MaSanPham: maSanPham },
+					success: function (response) {
+						if (response.success) {
+							toastr.success("Đã thêm sản phẩm vào giỏ hàng!");
+							// Update cart item count on success
+							$("#cart-item-count").text(response.cartItemCount);
+							$("#cart-item-sum").text(response.cartItemSum);
+
+							// Hiển thị thông báo thành công
+							
+						} else {
+							// Hiển thị thông báo lỗi
+							toastr.error(response.error);
+						}
+					},
+					error: function () {
+						// Hiển thị thông báo lỗi khi có lỗi xảy ra trong AJAX request
+						toastr.error("Đã xảy ra lỗi, vui lòng thử lại sau");
+						
+					}
+				});
+			});
+			$(".add-to-wishlist").click(function () {
+				var maSanPham = $(this).data('ma-san-pham');
+				$.ajax({
+					url: '@Url.Action("AddToWishlist", "Wishlist")',
+					type: "POST",
+					data: { MaSanPham: maSanPham },
+					success: function (result) {
+						if (result.success) {
+							toastr.success("Thêm sản phẩm vào Wishlist thành công!");
+							$('#wishlist-item-count').text(result.wishlistItemCount);
+						} else {
+							// Thêm sản phẩm thất bại, hiển thị thông báo lỗi
+							toastr.error(result.error);
+
+
+						}
+					},
+					error: function () {
+						// Hiển thị thông báo lỗi khi có lỗi xảy ra trong AJAX request
+						toastr.error("Đã xảy ra lỗi, vui lòng thử lại sau");
+					}
+				});
+			});
+		});
+	</script>
+	@* <script>
+		window.onload = function () {
+			// Get all link tags that have rel="stylesheet"
+			let links = document.querySelectorAll('link[rel="stylesheet"]');
+			links.forEach(link => {
+				if (link.href) {
+					// Append cache-busting parameter
+					link.href = `${link.href}?v=${new Date().getTime()}`;
+				}
+			});
+			let scripts = document.querySelectorAll('script[src]');
+			scripts.forEach(script => {
+				if (script.src) {
+					script.src = `${script.src}?v=${new Date().getTime()}`;
+				}
+			});
+		}
+
+	</script> *@
+}

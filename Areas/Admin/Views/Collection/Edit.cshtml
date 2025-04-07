@@ -1,0 +1,46 @@
+﻿
+@model BoSuuTap
+@{
+	ViewData["title"] = "Sửa Bộ Sưu Tập";
+
+}
+
+<div class ="col-md-12 " >
+	<h3>Sửa Bộ Sưu Tập</h3>
+<style>
+	.custom-select {
+	width: 100%;
+
+}
+.btn{
+	margin-top:20px;
+}
+</style>
+
+<div class="col-md-9" style="margin-left:150px;">
+
+<form asp-action="Edit" enctype="multipart/form-data">
+	<div asp-validation-summary="ModelOnly" class="text-danger"></div>
+
+	<div class="form-group">
+	<label>Mã Bộ Sưu Tập</label>
+	<input asp-for="MaBoSuuTap" class="form-control" />
+	<span asp-validation-for="MaBoSuuTap" class="text-danger" />
+	</div>
+	<div class="form-group">
+	<label>Tên Loại Sản Phẩm</label>
+	<input asp-for="TenBoSuuTap" class="form-control" />
+	<span asp-validation-for="TenBoSuuTap" class="text-danger" />
+	</div>
+
+
+	<div class="form-group btn" style="margin-top:20px">
+	<button class="btn btn-primary">Cập Nhật</button>
+	</div>
+	
+</form>
+</div>	
+<a asp-action="Index">Trở về</a>
+</div>
+
+

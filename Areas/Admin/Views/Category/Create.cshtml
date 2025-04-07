@@ -1,0 +1,62 @@
+﻿@model LoaiSp
+@{
+	ViewData["title"] = "Thêm Mới Loại Sản Phẩm";
+
+}
+
+<div class="col-md-12 ">
+	<h3>Thêm Loại Sản Phẩm</h3>
+	<style>
+		.custom-select {
+			width: 100%;
+		}
+
+		.btn {
+			margin-top: 20px;
+		}
+	</style>
+
+	<div class="col-md-12" style="margin-left:150px;">
+
+		<form asp-action="Create" enctype="multipart/form-data">
+			<div asp-validation-summary="ModelOnly" class="text-danger"></div>
+
+			@*< div class="form-group">
+			<label>Mã Sản Phẩm</label>
+			<input asp-for="MaSanPham" class="form-control" />
+			<span asp-validation-for="MaSanPham" class="text-danger" />
+			</div> *@
+
+			<div class="form-group ">
+				<label>Tên Loại Sản Phẩm</label>
+				<input asp-for="TenLoaiSp" class="form-control" style="width:500px;" />
+				<span asp-validation-for="TenLoaiSp" class="text-danger"></span>
+			</div>
+
+			<div class="form-group ">
+				<label>Slug</label>
+				<input asp-for="Slug" class="form-control" style="width:500px;" />
+				<span asp-validation-for="Slug" class="text-danger"></span>
+			</div>
+
+
+
+
+
+
+			<div class="form-group btn" style="margin-top:20px">
+				<button class="btn btn-primary">Thêm mới</button>
+			</div>
+		</form>
+	</div>
+	<a asp-action="Index">Trở về</a>
+</div>
+</div>
+
+@section Scripts{
+	@{
+		await Html.RenderPartialAsync("_ValidationScriptsPartial");
+	}
+	
+
+}
