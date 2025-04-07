@@ -1,0 +1,67 @@
+﻿/* Phân trang */
+.product__pagination {
+    margin-top: 20px;
+    text-align: center;
+}
+
+    .product__pagination .pagination {
+        display: inline-block;
+        padding-left: 0;
+        margin: 0;
+        border-radius: 4px;
+    }
+
+        .product__pagination .pagination > li {
+            display: inline;
+            margin-right: 10px; /* Khoảng cách giữa các số trang */
+        }
+
+            .product__pagination .pagination > li > a,
+            .product__pagination .pagination > li > span {
+                position: relative;
+                float: left;
+                padding: 4px 12px;
+                line-height: 1.42857143;
+                text-decoration: none;
+                color: #111111;
+                background-color: #fff;
+                border: 1px solid #ddd;
+            }
+
+        .product__pagination .pagination > .active > a,
+        .product__pagination .pagination > .active > span,
+        .product__pagination .pagination > .active > a:hover,
+        .product__pagination .pagination > .active > span:hover,
+        .product__pagination .pagination > .active > a:focus,
+        .product__pagination .pagination > .active > span:focus {
+            z-index: 2;
+            color: #fff;
+            cursor: default;
+            background-color: #111111;
+            border-color: #337ab7;
+        }
+
+        .product__pagination .pagination > li > a:hover,
+        .product__pagination .pagination > li > span:hover,
+        .product__pagination .pagination > li > a:focus,
+        .product__pagination .pagination > li > span:focus {
+            z-index: 2;
+            color: #23527c;
+            background-color: #eee;
+            border-color: #ddd;
+        }
+.hero__search__form-toggle {
+    cursor: pointer;
+    width: 610px;
+    border: 1px solid #e6e6e6;
+    border-radius: 5px;
+    padding: 10px;
+    height: 50px;
+    position: relative;
+    float: left;
+}
+@media only screen and (max-width: 767px) {
+    .hero__search__form form input.price-filter {
+        width: 100px;
+    }
+}

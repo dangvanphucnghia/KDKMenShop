@@ -1,0 +1,53 @@
+﻿
+
+.cart-notification {
+    display: none;
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background-color: #4CAF50;
+    color: white;
+    padding: 15px;
+    border-radius: 5px;
+    z-index: 9999;
+    animation: slideIn 0.5s, slideOut 0.5s 2.5s forwards;
+}
+
+.error-notification {
+    display: none;
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background-color: red;
+    color: white;
+    padding: 15px;
+    border-radius: 5px;
+    z-index: 9999;
+    animation: slideIn 0.5s, slideOut 0.5s 2.5s forwards;
+}
+.wishlist-notification {
+    display: none;
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background-color: #4CAF50;
+    color: white;
+    padding: 15px;
+    border-radius: 5px;
+    z-index: 9999;
+    animation: slideIn 0.5s, slideOut 0.5s 2.5s forwards;
+}
+
+.featured__controls ul li a {
+    color: #1c1c1c; /* Change the color as per your preference */
+    text-decoration: none; /* Remove underline from links */
+}
+
+.featured__controls ul li a.active,
+.featured__controls ul li a:hover {
+    color: #000; /* Change the color on hover as per your preference */
+}
+
+.product-image {
+    width: 225px; /* Thiết lập chiều rộng tối đa cho ảnh là 100% của phần tử cha */
+}
