@@ -1,0 +1,170 @@
+﻿@model List<KDKMenShop.Models.TaiKhoan>
+
+@{
+    ViewBag.Title = "DanhSachTaiKhoan";
+    Layout = "~/Areas/Admin/Views/Shared/_Layout-admin.cshtml";
+    // Số lượng admin
+    var AdminCount = Model.Count(item =>
+        item.LoaiTk.IndexOf("admin", StringComparison.OrdinalIgnoreCase) >= 0
+    );
+
+    // Số lượng User
+    var UserCount = Model.Count(item =>
+        item.LoaiTk.IndexOf("User", StringComparison.OrdinalIgnoreCase) >= 0
+    );
+    // Số lượng NV
+    var NVCount = Model.Count(item =>
+        item.LoaiTk.IndexOf("nhân viên", StringComparison.OrdinalIgnoreCase) >= 0
+    );
+}
+<style>
+    th, td {
+        text-align: left;
+        padding: 8px;
+    }
+
+        /* Đặt width cho từng cột */
+        th:nth-child(1),
+        td:nth-child(1) {
+            width: 5%; /* width cho cột số thứ tự */
+        }
+
+        th:nth-child(6),
+        td:nth-child(6) {
+            width: 5%; /* width cho cột số thứ tự */
+            white-space: normal; /* Cho phép xuống dòng nếu nội dung quá dài */
+        }
+        th:nth-child(7),
+        td:nth-child(7) {
+            width: 5%; /* width cho cột số thứ tự */
+            white-space: normal; /* Cho phép xuống dòng nếu nội dung quá dài */
+        }
+
+        th:nth-child(8),
+        td:nth-child(8) {
+            width: 5%; /* width cho cột số thứ tự */
+            white-space: normal; /* Cho phép xuống dòng nếu nội dung quá dài */
+        }
+        th:nth-child(2),
+        td:nth-child(2) {
+            width: 20%; /* width cho cột tên sản phẩm */
+            white-space: normal; /* Cho phép xuống dòng nếu nội dung quá dài */
+        }
+
+        th:nth-child(6),
+        td:nth-child(6) {
+            white-space: normal; /* Cho phép xuống dòng nếu nội dung quá dài */
+        }
+
+    /* Thêm scrollbar ngang */
+    .table-container {
+        overflow-x: auto;
+    }
+</style>
+<h2>Danh sách tài khoản và thông tin người dùng</h2>
+<div style="margin-top: 10px; margin-bottom: 10px;">
+    <!-- Thêm phần tử div và margin-top -->
+    <a asp-action="ThemMoiUser" class="btn btn-success btn-sm" asp-controller="Account">Thêm Mới Tài Khoản</a>
+</div>
+
+
+<div class="" style="text-align:center">
+    Tổng Số: <strong>@Model.Count</strong>
+    - Admin: <strong>@AdminCount</strong><br />
+
+</div>
+<div class="" style="text-align:center">
+    Khách: <strong>@UserCount</strong>
+    - Nhân Viên: <strong>@NVCount</strong>
+</div>
+<div class="table-responsive">
+    <table class="table table-striped">
+        <thead class="thead-dark">
+            <tr>
+                <th scope="col">Tài khoản</th>
+                <th scope="col">Họ tên</th>
+                <th scope="col">Mật khẩu</th>
+                <th scope="col">Loại tài khoản</th>
+                <th scope="col">Địa chỉ</th>
+                <th scope="col">Email</th>
+                <th scope="col">Số điện thoại</th>
+                <th scope="col">Hoạt Động</th>
+                <th scope="col">Chức Năng</th>
+                <th scope="col">Tùy Chọn</th>
+
+            </tr>
+        </thead>
+        <tbody>
+
+            @foreach (var taiKhoan in Model)
+            {
+                <tr>
+                    
+                    <td>@taiKhoan.TenDangNhap</td>
+                    <td>@taiKhoan.IdTkNavigation.HoTen</td>
+                    <td>@taiKhoan.MatKhau</td>
+                    <td>@taiKhoan.LoaiTk</td>
+                    <td>@taiKhoan.IdTkNavigation.DiaChi</td>
+                    <td>@taiKhoan.IdTkNavigation.Email</td>
+                    <td>@taiKhoan.IdTkNavigation.Sdt</td>
+                    <td>@taiKhoan.IdTkNavigation.TrangThai</td>
+
+                    <td>
+                        @if (@ViewBag.idtk != null && @ViewBag.idtk.Trim().ToLower() == "nhân viên")
+                        {
+                            if (taiKhoan.LoaiTk.Trim().ToLower() == "admin")
+                            {
+                                <text>
+                                    Không Sửa đc / Không Xóa Được
+                                </text>
+                            }
+                            else
+                            {
+                                @* @Html.ActionLink("Sửa / ", "SuaTaiKhoan", new { id = taiKhoan.Id })
+                                @Html.ActionLink("Xóa", "XoaTaiKhoan", new { id = taiKhoan.Id }) *@
+                                <a asp-controller="Account" class="btn btn-warning btn-sm" asp-action="SuaTaiKhoan" asp-route-id="@taiKhoan.Id">Sửa</a>
+                                <a asp-controller="Account" class="btn btn-danger btn-sm confirmDeletion" asp-action="XoaTaiKhoan" asp-route-id="@taiKhoan.Id"> Xóa</a>
+                            }
+
+                        }
+                        else
+                        {
+                            <a asp-controller="Account" class="btn btn-warning btn-sm" asp-action="SuaTaiKhoan" asp-route-id="@taiKhoan.Id">Sửa</a>
+                            <a asp-controller="Account" class="btn btn-danger btn-sm confirmDeletion" asp-action="XoaTaiKhoan" asp-route-id="@taiKhoan.Id"> Xóa</a>
+                        }
+
+                    </td>
+                    <td>
+                        @if (@ViewBag.idtk != null && @ViewBag.idtk.Trim().ToLower() == "nhân viên")
+                        {
+                            if (taiKhoan.LoaiTk.Trim().ToLower() == "admin")
+                            {
+                                <text>
+                                    Trạng Thái / Reset Password
+                                </text>
+
+                            }
+                            else
+                            {
+                                <a asp-controller="Account" class="btn btn-warning btn-sm" asp-action="TuyChonTaiKhoan" asp-route-id="@taiKhoan.Id">Trạng Thái</a>
+                                <a asp-controller="Account" class="btn btn-danger btn-sm confirmDeletion" asp-action="ResetPassword" asp-route-id="@taiKhoan.Id"> Reset Password</a>
+                            }
+
+                        }
+                        else
+                        {
+                            <a asp-controller="Account" class="btn btn-warning btn-sm" asp-action="TuyChonTaiKhoan" asp-route-id="@taiKhoan.Id">Trạng Thái</a>
+                            <a asp-controller="Account" class="btn btn-danger btn-sm" asp-action="ResetPassword" asp-route-id="@taiKhoan.Id"> Reset Password</a>
+                        }
+
+
+
+
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+
+</div>
+</div>

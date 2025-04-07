@@ -1,0 +1,306 @@
+﻿@model KDKMenShop.Models.Model.AccountModel
+
+@{
+    ViewBag.Title = "Thêm mới tài khoản";
+    Layout = "~/Areas/Admin/Views/Shared/_Layout-admin.cshtml";
+}
+@using System.ComponentModel.DataAnnotations;
+<h2>Thêm mới tài khoản</h2>
+<style>
+    button {
+        position: relative;
+        border: none;
+        background: transparent;
+        padding: 0;
+        cursor: pointer;
+        outline-offset: 4px;
+        transition: filter 250ms;
+        user-select: none;
+        touch-action: manipulation;
+    }
+
+    .shadow {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        border-radius: 12px;
+        background: hsl(0deg 0% 0% / 0.25);
+        will-change: transform;
+        transform: translateY(2px);
+        transition: transform 600ms cubic-bezier(.3, .7, .4, 1);
+    }
+
+    .edge {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        border-radius: 12px;
+        background: linear-gradient( to left, hsl(340deg 100% 16%) 0%, hsl(340deg 100% 32%) 8%, hsl(340deg 100% 32%) 92%, hsl(340deg 100% 16%) 100% );
+    }
+
+    .front {
+        display: block;
+        position: relative;
+        padding: 12px 27px;
+        border-radius: 12px;
+        font-size: 1.1rem;
+        color: white;
+        background: hsl(345deg 100% 47%);
+        will-change: transform;
+        transform: translateY(-4px);
+        transition: transform 600ms cubic-bezier(.3, .7, .4, 1);
+    }
+
+    button:hover {
+        filter: brightness(110%);
+    }
+
+        button:hover .front {
+            transform: translateY(-6px);
+            transition: transform 250ms cubic-bezier(.3, .7, .4, 1.5);
+        }
+
+    button:active .front {
+        transform: translateY(-2px);
+        transition: transform 34ms;
+    }
+
+    button:hover .shadow {
+        transform: translateY(4px);
+        transition: transform 250ms cubic-bezier(.3, .7, .4, 1.5);
+    }
+
+    button:active .shadow {
+        transform: translateY(1px);
+        transition: transform 34ms;
+    }
+
+    button:focus:not(:focus-visible) {
+        outline: none;
+    }
+
+</style>
+@using (Html.BeginForm())
+{
+    @Html.AntiForgeryToken()
+
+    <div class="form-horizontal" style="margin-left:110px;">
+        <h4>User</h4>
+        <hr />
+        @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.loaiTK,"Loại Tài Khoản", htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.DropDownListFor(model => model.loaiTK, new SelectList(new List<string> { "User", "Nhân Viên" }), "Chọn loại", htmlAttributes: new { @class = "form-control" ,required = "required"})
+                <span class="text-danger" id="loaiTKError">@Html.ValidationMessageFor(model => model.TaiKhoan)</span>
+            </div>
+        </div>
+        <script>
+            // Lấy thẻ input và span hiển thị lỗi
+            var loaiTKInput = document.getElementById('loaiTK');
+            var loaiTKError = document.getElementById('loaiTKError');
+
+            // Lắng nghe sự kiện khi mất focus khỏi input
+            loaiTKInput.addEventListener('blur', function () {
+                // Kiểm tra nếu giá trị của input không hợp lệ
+                if (loaiTKInput.validity.valueMissing) {
+                    // Hiển thị thông báo lỗi tùy chỉnh
+                    loaiTKError.textContent = 'Vui lòng chọn loại tài khoản.';
+                } else {
+                    // Nếu hợp lệ, xóa thông báo lỗi
+                    loaiTKError.textContent = '';
+                }
+            });
+        </script>
+        <div class="form-group">
+            @Html.LabelFor(model => model.TaiKhoan, "Tài Khoản", htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.TaiKhoan, new { htmlAttributes = new { @class = "form-control", required = "required" } })
+                @Html.ValidationMessageFor(model => model.TaiKhoan, "", new { @class = "text-danger" ,@id="TaiKhoanError"})
+            </div>
+        </div>
+        <script>
+            // Lấy thẻ input và span hiển thị lỗi
+            var taiKhoanInput = document.getElementById('TaiKhoan');
+            var taiKhoanError = document.getElementById('TaiKhoanError');
+
+            // Lắng nghe sự kiện khi mất focus khỏi input
+            taiKhoanInput.addEventListener('blur', function () {
+                // Kiểm tra nếu giá trị của input không hợp lệ
+                if (taiKhoanInput.validity.valueMissing) {
+                    // Hiển thị thông báo lỗi tùy chỉnh
+                    taiKhoanError.textContent = 'Vui lòng nhập tài khoản.';
+                } else {
+                    // Nếu hợp lệ, xóa thông báo lỗi
+                    taiKhoanError.textContent = '';
+                }
+            });
+        </script>
+        <div class="form-group">
+            @Html.LabelFor(model => model.Password, "Mật Khẩu", htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.Password, new { htmlAttributes = new { @class = "form-control", required = "required" } })
+                @Html.ValidationMessageFor(model => model.Password, "", new { @class = "text-danger",@id="PasswordError" })
+            </div>
+        </div>
+        <script>
+            // Lấy thẻ input và span hiển thị lỗi
+            var PasswordInput = document.getElementById('Password');
+            var PasswordError = document.getElementById('PasswordError');
+
+            // Lắng nghe sự kiện khi mất focus khỏi input
+            PasswordInput.addEventListener('blur', function () {
+                // Kiểm tra nếu giá trị của input không hợp lệ
+                if (PasswordInput.validity.valueMissing) {
+                    // Hiển thị thông báo lỗi tùy chỉnh
+                    PasswordError.textContent = 'Vui lòng nhập mật khẩu.';
+                } else {
+                    // Nếu hợp lệ, xóa thông báo lỗi
+                    PasswordError.textContent = '';
+                }
+            });
+        </script>
+        <div class="form-group">
+            @Html.LabelFor(model => model.Name, "Họ Tên", htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.Name, new { htmlAttributes = new { @class = "form-control", required = "required" } })
+                @Html.ValidationMessageFor(model => model.Name, "", new { @class = "text-danger",@id="NameError" })
+            </div>
+        </div>
+        <script>
+            // Lấy thẻ input và span hiển thị lỗi
+            var NameInput = document.getElementById('Name');
+            var NameError = document.getElementById('NameError');
+
+            // Lắng nghe sự kiện khi mất focus khỏi input
+            NameInput.addEventListener('blur', function () {
+                // Kiểm tra nếu giá trị của input không hợp lệ
+                if (NameInput.validity.valueMissing) {
+                    // Hiển thị thông báo lỗi tùy chỉnh
+                    NameError.textContent = 'Vui lòng nhập họ tên.';
+                } else {
+                    // Nếu hợp lệ, xóa thông báo lỗi
+                    NameError.textContent = '';
+                }
+            });
+        </script>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.Email, "Email", htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.Email, new { htmlAttributes = new { @class = "form-control" ,@required = "required" } })
+                @Html.ValidationMessageFor(model => model.Email, "", new { @class = "text-danger" ,@id="EmailError"})
+            </div>
+        </div>
+        <script>
+            // Lấy thẻ input và span hiển thị lỗi
+            var EmailInput = document.getElementById('Name');
+            var EmailError = document.getElementById('NameError');
+
+            // Lắng nghe sự kiện khi mất focus khỏi input
+            EmailInput.addEventListener('blur', function () {
+                // Kiểm tra nếu giá trị của input không hợp lệ
+                if (EmailInput.validity.valueMissing) {
+                    // Hiển thị thông báo lỗi tùy chỉnh
+                    EmailError.textContent = 'Vui lòng nhập email.';
+                } else {
+                    // Nếu hợp lệ, xóa thông báo lỗi
+                    EmailError.textContent = '';
+                }
+            });
+        </script>
+        <div class="form-group">
+            @Html.LabelFor(model => model.SDT, "Số Điện Thoại", htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.SDT, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.SDT, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.Diachi, "Địa Chỉ", htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.Diachi, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.Diachi, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="text-center" >
+            <div class="col-md-offset-2 col-md-10">
+                <button type="submit" onclick="validateForm()">
+                    <span class="shadow"></span>
+                    <span class="edge"></span>
+                    <span class="front text">
+                        Tạo mới
+                    </span>
+                </button>
+                
+
+            </div>
+        </div>
+    </div>
+}
+
+<div>
+    @Html.ActionLink("Quay Về", "DanhSachTaiKhoan")
+</div>
+</div>
+<script>
+
+
+    function validateForm() {
+        var loaiTK = document.getElementById("loaiTK").value;
+        var TaiKhoan = document.getElementById("TaiKhoan").value;
+        var Password = document.getElementById("Password").value;
+        var Name = document.getElementById("Name").value;
+        var Email = document.getElementById("Email").value;
+        
+        var errors = [];
+
+        if (loaiTK.trim() === "") {
+            errors.push({ field: "loaiTKError", message: "Vui lòng chọn loại tài khoản." });
+        }
+
+        if (TaiKhoan.trim() === "") {
+            errors.push({ field: "TaiKhoanError", message: "Vui lòng nhập tài khoản." });
+        }
+
+        if (Password.trim() === "") {
+            errors.push({ field: "PasswordError", message: "Vui lòng nhập mật khẩu." });
+        }
+
+        if (Name.trim() === "") {
+            errors.push({ field: "NameError", message: "Vui lòng nhập tên." });
+        }
+
+        if (Email === "") {
+            errors.push({ field: "EmailError", message: "Vui lòng nhập email." });
+        }
+
+        
+
+        if (errors.length > 0) {
+            errors.forEach(function (error, index) {
+                document.getElementById(error.field).innerHTML = error.message;
+            });
+            return false;
+        } else {
+            document.getElementById("loaiTKError").style.display = "none";
+            document.getElementById("TaiKhoanError").style.display = "none";
+            document.getElementById("PasswordError").style.display = "none";
+            document.getElementById("NameError").style.display = "none";
+            document.getElementById("loaiTKError").style.display = "none";
+          
+            return true;
+        }
+    }
+  
+       
+       
+</script>

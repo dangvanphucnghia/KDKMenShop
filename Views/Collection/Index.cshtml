@@ -1,0 +1,173 @@
+﻿@using X.PagedList.Mvc.Core;
+@model X.PagedList.IPagedList<SanPham>
+
+<link rel="stylesheet" type="text/css" href="~/css/StyleForHome.css?v=1.0" />
+<link rel="stylesheet" type="text/css" href="~/KDKTrangChu/css/PageList.css?v=1.0" />
+<script src="~/js/xulygoisanphambosuutap.js?v=1.0"></script>
+<style>
+	
+	
+	.original-price {
+		text-decoration: line-through;
+		margin-right: 10px;
+	}
+	/* CSS in index.cshtml */
+	.nice-select {
+		width: 300px;
+	}
+
+	input[type="number"]::-webkit-inner-spin-button,
+	input[type="number"]::-webkit-outer-spin-button {
+		-webkit-appearance: none;
+		margin: 0;
+	}
+
+	input[type="number"] {
+		-moz-appearance: textfield;
+	}
+</style>
+<section class="hero hero-normal">
+	<div class="container">
+		<div class="row">
+			@* <div class="col-lg-3">
+			<div class="hero__categories">
+			<div class="hero__categories__all">
+			<i class="fa fa-bars"></i>
+			<span>Danh Sách Sản Phẩm</span>
+			</div> *@
+			@Html.Partial("_heroPartial")
+			@* </div>
+			</div> *@
+			<div class="col-lg-9">
+				<div class="hero__search">
+					<div class="hero__search__form">
+						@*Tìm kiếm sản phẩm giảm giá*@
+						@Html.Partial("_SearchCollectionPartial")
+					</div>
+					<div class="hero__search__form-toggle" id="filter-toggle">
+						<i class="fa fa-filter"></i>
+						<span>Lọc sản phẩm phù hợp</span>
+					</div>
+					<div class="hero__search__phone">
+						<div class="hero__search__phone__icon">
+							<i class="fa fa-phone"></i>
+						</div>
+						<div class="hero__search__phone__text">
+							<h5>+84 999999999</h5>
+							<span>Hỗ trợ 24/7</span>
+						</div>
+					</div>
+					<div class="hero__search__form_look" id="filter-form-container" style="display: none;">
+						<form id="product-filter-form">
+							<select id="category-filter" name="category">
+								<option value="" selected>-- Toàn bộ sản phẩm --</option>
+								@foreach (var category in ViewBag.Categories)
+								{
+									<option value="@category">@category</option>
+								}
+							</select>
+							<input type="number" id="min-price-filter" name="minPrice" placeholder="₫ Từ" style="width: 100px">
+							<input type="number" id="max-price-filter" name="maxPrice" placeholder="₫ Đến" style="width: 100px">
+							<button type="button" class="site-btn" onclick="applyFilter()">Lọc</button>
+						</form>
+					</div>
+				</div>
+				
+			</div>
+		</div>
+	</div>
+</section>
+@Html.Partial("_ProductPartialView")
+
+
+
+
+@section Scripts {
+@* 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js?v=1.0"></script>
+ *@	<script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.js?v=1.0"></script>
+	<link href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.css?v=1.0" rel="stylesheet" />
+
+	<script>
+		$(document).ready(function () {
+			$('#filter-toggle').click(function () {
+				$('#filter-form-container').toggle();
+			});
+		});
+		$(document).ready(function () {
+			toastr.options = {
+				"closeButton": true,
+				"positionClass": "toast-bottom-right",
+				"progressBar": true,
+				"timeOut": "3000", // 3s
+			};
+			$(".add-to-cart").click(function () {
+				var maSanPham = $(this).data("ma-san-pham");
+
+				$.ajax({
+					url: "@Url.Action("ThemGio", "Cart")",
+					type: "POST",
+					data: { MaSanPham: maSanPham },
+					success: function (response) {
+						if (response.success) {
+							toastr.success("Đã thêm sản phẩm vào giỏ hàng!");
+							// Update cart item count on success
+							$("#cart-item-count").text(response.cartItemCount);
+							$("#cart-item-sum").text(response.cartItemSum);
+
+							// Hiển thị thông báo thành công
+
+						} else {
+							// Hiển thị thông báo lỗi
+							toastr.error(response.error);
+						}
+					},
+					error: function () {
+						// Hiển thị thông báo lỗi khi có lỗi xảy ra trong AJAX request
+						toastr.error("Đã xảy ra lỗi, vui lòng thử lại sau");
+
+					}
+				});
+			});
+			$(".add-to-wishlist").click(function () {
+				var maSanPham = $(this).data('ma-san-pham');
+				$.ajax({
+					url: '@Url.Action("AddToWishlist", "Wishlist")',
+					type: "POST",
+					data: { MaSanPham: maSanPham },
+					success: function (result) {
+						if (result.success) {
+							toastr.success("Thêm sản phẩm vào Wishlist thành công!");
+							$("#wishlist-item-count").text(result.wishlistItemCount);
+						} else {
+							// Thêm sản phẩm thất bại, hiển thị thông báo lỗi
+							toastr.error(result.error);
+
+
+						}
+					},
+					error: function () {
+						// Hiển thị thông báo lỗi khi có lỗi xảy ra trong AJAX request
+						toastr.error("Đã xảy ra lỗi, vui lòng thử lại sau");
+					}
+				});
+			});
+		});
+		function applyFilter() {
+			var category = $('#category-filter').val();
+			var minPrice = $('#min-price-filter').val();
+			var maxPrice = $('#max-price-filter').val();
+			var slug = '@ViewBag.Slug';
+
+			// Construct the URL with filter parameters
+			var url = '@Url.Action("Index", "Collection")'
+				+ '?category=' + encodeURIComponent(category)
+				+ '&minPrice=' + encodeURIComponent(minPrice)
+				+ '&maxPrice=' + encodeURIComponent(maxPrice)
+				+ '&slug=' + encodeURIComponent(slug);
+
+			// Redirect to the filtered page
+			window.location.href = url;
+		}
+
+	</script>
+}

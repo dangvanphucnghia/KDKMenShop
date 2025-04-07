@@ -1,0 +1,106 @@
+﻿
+@model SanPham
+@{
+	ViewData["title"] = "Sửa Sản Phẩm";
+
+}
+
+<div class ="col-md-12 " >
+		<h3>Sửa Sản Phẩm</h3>
+<style>
+	.custom-select {
+	width: 100%;
+
+}
+.btn{
+	margin-top:20px;
+}
+</style>
+
+<div class="col-md-9" style="margin-left:150px;">
+
+<form asp-action="Edit" enctype="multipart/form-data">
+	<div asp-validation-summary="ModelOnly" class="text-danger"></div>
+
+			@*< div class="form-group">
+	<label>Mã Sản Phẩm</label>
+	<input asp-for="MaSanPham" class="form-control" />
+	<span asp-validation-for="MaSanPham" class="text-danger" />
+	</div> *@
+	<div class="form-group">
+	<label>Tên Sản Phẩm</label>
+	<input asp-for="TenSanPham" class="form-control" />
+	<span asp-validation-for="TenSanPham" class="text-danger" />
+	</div>
+	<div class="form-group">
+	<label>Vật Liệu</label>
+	<input asp-for="MaVatLieu" class="form-control" />
+	<span asp-validation-for="MaVatLieu" class="text-danger" />
+	</div>
+
+	<div class="form-group">
+	<label>Giá</label>
+	<input asp-for="Gia" class="form-control" />
+	<span asp-validation-for="Gia" class="text-danger" />
+	</div>
+
+
+
+	<div class="form-group">
+	<label>Mô Tả</label>
+	<textarea asp-for="MoTa" class="form-control" ></textarea>
+	<span asp-validation-for="MoTa" class="text-danger" />
+	</div>
+
+
+
+	<div class="form-group">
+	<label>Hình Ảnh</label>
+	<input asp-for="ImageUpload" class="form-control" />
+	<span asp-validation-for="ImageUpload" class="text-danger" />
+	<img style="height:300px;width:300px;" src="~/images/@Model.HinhAnh">
+	</div>
+
+	<div class="form-group">
+	<label>Loại Sản Phẩm</label>
+	<select asp-for="MaLoaiSp" class="form-control custom-select" asp-items="ViewBag.LoaiSps">
+		<option>Chọn</option>
+	</select>
+		<span asp-validation-for="MaLoaiSp" class="text-danger"></span>
+	</div
+	<div class="form-group">
+	<label>Mã Bộ Sưu Tập</label>
+	<select asp-for="MaBoSuuTap" class="form-control custom-select" asp-items="ViewBag.BoSuuTaps">
+		<option value="NULL">Chọn</option>
+			
+	</select>
+		<span asp-validation-for="MaBoSuuTap" class="text-danger"></span>
+	</
+	<div class="form-group">
+	<label>Mã Chi Tiết Giảm</label>
+	<select asp-for="MaChiTietGiam" class="form-control custom-select" asp-items="ViewBag.MaChiTietGiams">
+		<option value="">Chọn</option>
+			
+	</select>
+		<span asp-validation-for="MaChiTietGiam" class="text-danger"></span>
+	</div
+	<div class="form-group btn" style="margin-top:20px">
+	<button class="btn btn-primary">Cập Nhật</button>
+	</div>
+
+
+</form>
+<a asp-action="Index">Trở về</a>
+</div>
+</div>	
+
+@section Scripts{
+	@{
+		await Html.RenderPartialAsync("_ValidationScriptsPartial");
+	}
+
+			<script src="https://cdn.ckeditor.com/4.22.1/standard/ckeditor.js"></script>		
+		<script>
+			CKEDITOR.replace( 'MoTa' );
+		</script>
+}

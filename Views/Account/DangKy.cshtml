@@ -1,0 +1,492 @@
+﻿@using KDKMenShop.Models.Model;
+@model AccountModel
+
+@{
+	ViewData["Title"] = "Đăng Ký";
+
+}
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css">
+	<link rel="stylesheet" href="../KDKTrangChu/css/dropdownlayout.css" type="text/css">
+	<link rel="stylesheet" href="https://unpkg.com/bootstrap@5.3.2/dist/css/bootstrap.min.css">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+
+	<link rel="stylesheet" href="https://unpkg.com/bs-brain@2.0.3/components/logins/login-12/assets/css/login-12.css">
+	<link rel="stylesheet" href="../KDKTrangChu/css/bootstrap.min.css" type="text/css">
+	<link rel="stylesheet" href="../KDKTrangChu/css/font-awesome.min.css" type="text/css">
+	<link rel="stylesheet" href="../KDKTrangChu/css/elegant-icons.css" type="text/css">
+	<link rel="stylesheet" href="../KDKTrangChu/css/nice-select.css" type="text/css">
+	<link rel="stylesheet" href="../KDKTrangChu/css/jquery-ui.min.css" type="text/css">
+	<link rel="stylesheet" href="../KDKTrangChu/css/owl.carousel.min.css" type="text/css">
+	<link rel="stylesheet" href="../KDKTrangChu/css/slicknav.min.css" type="text/css">
+	<link rel="stylesheet" href="../KDKTrangChu/css/style.css" type="text/css">
+	<link rel="stylesheet" href="../KDKTrangChu/css/dropdownlayout.css" type="text/css">
+	@* CSS*@
+
+	<style>
+		.password-toggle {
+			cursor: pointer;
+			position: absolute;
+			top: 50%;
+			right: 10px; /* Điều chỉnh khoảng cách với cạnh phải của ô nhập mật khẩu */
+			transform: translateY(-50%);
+		}
+
+		.form-outline {
+			position: relative;
+		}
+
+		.error-message {
+			position: absolute;
+			bottom: -20px; /* Điều chỉnh khoảng cách giữa trường nhập liệu và thông báo lỗi */
+			left: 0;
+			color: red;
+			display: none;
+		}
+
+		/* CSS cho button class Btn */
+		.Btn {
+			display: flex;
+			align-items: center;
+			justify-content: flex-start;
+			width: 45px;
+			height: 45px;
+			border: none;
+			border-radius: 50%;
+			cursor: pointer;
+			position: relative;
+			overflow: hidden;
+			transition-duration: .3s;
+			box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.199);
+			background-color: rgb(163, 142, 255);
+		}
+
+			.Btn .sign {
+				width: 100%;
+				transition-duration: .3s;
+				display: flex;
+				align-items: center;
+				justify-content: center;
+			}
+
+				.Btn .sign svg {
+					width: 17px;
+				}
+
+					.Btn .sign svg path {
+						fill: white;
+					}
+
+			.Btn .text {
+				position: absolute;
+				right: 0%;
+				width: 0%;
+				opacity: 0;
+				color: white;
+				font-size: 1.2em;
+				font-weight: 500;
+				transition-duration: .3s;
+			}
+
+			.Btn:hover {
+				width: 125px;
+				border-radius: 40px;
+				transition-duration: .3s;
+			}
+
+				.Btn:hover .sign {
+					width: 30%;
+					transition-duration: .3s;
+					padding-left: 20px;
+				}
+
+				.Btn:hover .text {
+					opacity: 1;
+					width: 70%;
+					transition-duration: .3s;
+					padding-right: 10px;
+				}
+
+			.Btn:active {
+				transform: translate(2px, 2px);
+			}
+
+		/* CSS cho button class btndangky */
+		.btndangky {
+			border: none;
+			width: 7em;
+			height: 3em;
+			border-radius: 3em;
+			display: flex;
+			justify-content: center;
+			align-items: center;
+			gap: 12px;
+			background: #1C1A1C;
+			cursor: pointer;
+			transition: all 450ms ease-in-out;
+		}
+
+			.btndangky .sparkle {
+				fill: #AAAAAA;
+				transition: all 800ms ease;
+			}
+
+			.btndangky .text {
+				font-weight: 600;
+				color: #AAAAAA;
+				font-size: medium;
+			}
+
+			.btndangky:hover {
+				background: linear-gradient(0deg, #A47CF3, #683FEA);
+				box-shadow: inset 0px 1px 0px 0px rgba(255, 255, 255, 0.4), inset 0px -4px 0px 0px rgba(0, 0, 0, 0.2), 0px 0px 0px 4px rgba(255, 255, 255, 0.2), 0px 0px 180px 0px #9917FF;
+				transform: translateY(-2px);
+			}
+
+				.btndangky:hover .text {
+					color: white;
+				}
+
+				.btndangky:hover .sparkle {
+					fill: white;
+					transform: scale(1.2);
+				}
+	</style>
+
+</head>
+<body>
+	<section class="bg-gradient" style="margin-bottom:100px;" >
+		<div class="container-fluid">
+			<!-- Sử dụng container-fluid để giãn ra cả hai bên -->
+			<div class="row justify-content-center align-items-center">
+
+				<div class="col-12 col-md-8 col-lg-6 col-xl-5" style="margin-right:360px;">
+					<div class="card " style="border-radius: 1rem; width: 800px;">
+						<div class="card-body p-5 text-center ">
+
+							<div class="mb-md-4 mt-md-3 pb-4">
+
+								@* Kiểm tra lỗi *@
+                                <h2 style="color: #000 " class="fw-bold mb-2 text-uppercase">Đăng Ký</h2>
+                                @if (ViewBag.EmailExists == true)
+                                {
+                                    <div class="alert alert-danger" role="alert">
+                                        Địa chỉ email đã được đăng ký. Vui lòng sử dụng địa chỉ email khác.
+                                    </div>
+                                }
+                                @if (ViewBag.UserNameExists == true)
+                                {
+                                    <div class="alert alert-danger" role="alert">
+                                        Tên tài khoản đã được đăng ký. Vui lòng sử dụng tên tài khoản khác.
+                                    </div>
+                                }
+                                @if (ViewBag.PhoneExists == true)
+                                {
+                                    <div class="alert alert-danger" role="alert">
+                                        Số điện thoại đã được đăng ký. Vui lòng sử dụng số điện thoại khác.
+                                    </div>
+                                }
+								@* Kiểm tra lỗi nhập *@
+								@* <div class="col-12">
+									@if (ViewBag.ErrorMessages != null)
+									{
+										<div class="alert alert-danger" role="alert">
+											@foreach (var errorMessage in ViewBag.ErrorMessages)
+											{
+												<p>@errorMessage</p>
+											}
+										</div>
+									}
+								<p class="text-white-50 mb-5"></p> *@
+								@using (Html.BeginForm())
+								{
+									@Html.AntiForgeryToken()
+
+									@Html.ValidationSummary(true, "", new { @class = "text-danger" })
+											<div class="row">
+												<div class="col-6" style="">
+													<!-- Bên trái -->
+
+													<div class="col-12 mb-3">
+														<label style="margin-right: 260px; white-space: nowrap;" class="form-label" for="typeUsernameX">Tên Đăng Nhập</label>
+												@Html.EditorFor(model => model.TaiKhoan, new { htmlAttributes = new { @class = "form-control", id = "username", style = "background-color: #f7f7f7;border-radius:10px;height:50px;margin-top:1px", placeholder = "Nhập tên đăng nhập" ,required = "required" } })
+													<span id="taiKhoanError" class="error-message" style="display: none;margin-left:20px;">Tài khoản phải 4 kí tự trở lên!</span>
+												<span id="taiKhoanVietnameseError" class="error-message" style="display: none;margin-left:20px;">Tài khoản không được ghi dấu!</span>
+
+												</div>
+											<script>
+												document.getElementById('username').addEventListener('blur', function (e) {
+													var taiKhoan = e.target.value.trim();
+													var errorElement = document.getElementById('taiKhoanError');
+													var vietnameseErrorElement = document.getElementById('taiKhoanVietnameseError');
+													var vietnameseDiacriticsRegex = /[\u00C0-\u1EF9]/; // Regular expression to match Vietnamese diacritics
+
+													if (taiKhoan.length < 4 ) {
+														errorElement.textContent = 'Tài khoản phải 4 kí tự trở lên!';
+														errorElement.style.display = 'block';
+													} else {
+														errorElement.style.display = 'none';
+
+													}
+													if (vietnameseDiacriticsRegex.test(taiKhoan)) {
+														vietnameseErrorElement.textContent = 'Tài khoản không được ghi dấu!';
+														vietnameseErrorElement.style.display = 'block';
+													}
+													else {
+														vietnameseErrorElement.style.display = 'none';
+													}
+												});
+											</script>
+
+													<div class="col-12 mb-3">
+														<label style="margin-right: 290px; white-space: nowrap;" class="form-label" for="typeNameX">Họ Tên</label>
+												@Html.EditorFor(model => model.Name, new { htmlAttributes = new { @class = "form-control", id = "name", style = "background-color: #f7f7f7;border-radius:10px;height:50px;margin-top:1px", placeholder = "Nhập họ tên" ,required = "required"} })
+												<span id="hoTenError" class="error-message" style="display: none;margin-left:20px;">Họ tên phải 5 kí tự trở lên!</span>
+													</div>
+											<script>
+												document.getElementById('name').addEventListener('blur', function (e) {
+													var input = e.target.value.trim();
+													var errorElement = document.getElementById('hoTenError');
+													if (input.length < 4) {
+														errorElement.textContent = 'Họ tên phải 5 kí tự trở lên!';
+														errorElement.style.display = 'block';
+													} else {
+														errorElement.style.display = 'none';
+													}
+												});
+											</script>
+													<div class="col-12 mb-3">
+														<div class="input-group mb-4">
+															<label style="margin-right: 260px; white-space: nowrap;" class="form-label" for="typePasswordX">Mật Khẩu</label>
+													@Html.EditorFor(model => model.Password, new { htmlAttributes = new { @class = "form-control", id = "password", style = "background-color: #f7f7f7;border-radius:10px;height:50px;margin-top:1px;", placeholder = "Nhập mật khẩu", type = "password",required = "required" } })
+															<div class="input-group-prepend" style="border-radius:30px;height:50px;">
+																<span class="input-group-text" onclick="password_show_hide();">
+																	<i class="" id="show_eye"><img style="height:20px;width:20px" src="~/images/show.png" /></i>
+																	<i class="d-none" id="hide_eye"><img style="height:20px;width:20px" src="~/images/hide.png" /></i>
+																</span>
+															</div>
+													
+
+
+														</div>
+												
+														<div class="row" id="password-strength-row" style="display: none;">
+															<div class="col-4">
+																<div class="progress mb-3" style="height: 10px;width:100px">
+																	<div id="weak-bar" class="progress-bar bg-danger" role="progressbar" style="width: 0%;"></div>
+																</div>
+															</div>
+															<div class="col-4">
+																<div class="progress mb-3" style="height: 10px; width: 100px;margin-right:10px;">
+																	<div id="medium-bar" class="progress-bar bg-warning" role="progressbar" style="width: 0%;"></div>
+																</div>
+															</div>
+															<div class="col-4">
+																<div class="progress mb-3" style="height: 10px; width: 90px;margin-right:20px;">
+																	<div id="strong-bar" class="progress-bar bg-success" role="progressbar" style="width: 0%;"></div>
+																</div>
+															</div>
+													<div id="password-strength"></div>
+															<p style="color:#ff0000">
+																*mật khẩu phải chứa ít nhất 8 ký tự
+																trong đó có ít nhất một ký tự viết hoa và một ký tự đặc biệt
+															</p>
+														</div>
+														</div>
+
+
+													</div>
+
+												<div class="col-6" style="">
+													<!-- Bên phải -->
+													<div class="form-outline form-white mb-3">
+														<label style="margin-right: 290px; white-space: nowrap;" class="form-label" for="typeEmailX">Email</label>
+												@Html.EditorFor(model => model.Email, new { htmlAttributes = new { @class = "form-control", id = "email",type="email", style = "background-color: #f7f7f7;border-radius:10px;height:50px;margin-top:1px", placeholder = "Nhập email" ,required = "required"} })
+													</div>
+													<div class="form-outline form-white mb-3">
+														<label style="margin-right: 290px; white-space: nowrap;" class="form-label" for="typeSDT">Số điện thoại</label>
+												@Html.EditorFor(model => model.SDT, new { htmlAttributes = new { @class = "form-control", id = "Sdt",name = "Sdt", type = "number",style = "background-color: #f7f7f7;border-radius:10px;height:50px;margin-top:1px",pattern = "[0-9]{10,11}", placeholder = "Nhập số điện thoại" ,required="required"} })
+														<span id="phoneNumberError" class="error-message" style="display: none;">Số điện thoại không hợp lệ!</span>
+													</div>
+												<script>
+												document.getElementById('Sdt').addEventListener('blur', function (e) {
+													var input = e.target.value;
+													var errorElement = document.getElementById('phoneNumberError');
+													if (!/^\d{10,11}$/.test(input)) {
+														errorElement.textContent = 'Số điện thoại không hợp lệ!';
+														errorElement.style.display = 'block';
+													} else {
+														errorElement.style.display = 'none';
+													}
+												});
+												</script>
+													<div class="form-outline form-white mb-3">
+														<label style="margin-right: 290px; white-space: nowrap;" class="form-label" for="typeAddressX">Địa Chỉ</label>
+												@Html.EditorFor(model => model.Diachi, new { htmlAttributes = new { @class = "form-control", id = "DiaChi", style = "background-color: #f7f7f7;border-radius:10px;height:50px;margin-top:1px;", placeholder = "Nhập địa chỉ",required = "required" } })
+												<span id="diaChiError" class="error-message" style="display: none;">Địa chỉ phải 4 kí tự trở lên!</span>
+													</div>
+											<script>
+												document.getElementById('DiaChi').addEventListener('blur', function (e) {
+													var diaChi = e.target.value.trim();
+													var errorElement = document.getElementById('diaChiError');
+
+													if (diaChi.length < 4) {
+														errorElement.textContent = 'Địa chỉ phải 4 kí tự trở lên!';
+														errorElement.style.display = 'block';
+													} else {
+														errorElement.style.display = 'none';
+													}
+												});
+											</script>
+												</div>
+										
+											</div>
+
+
+											<div class="d-flex justify-content-between align-items-center" style="margin-left:40px">
+												<!-- Checkbox -->
+												<div class="form-check mb-0">
+													<input class="form-check-input me-2" type="checkbox" id="agreeCheckbox" name="agreeCheckbox" required />
+											<label class="form-check-label" for="agreeCheckbox">Tôi đồng ý với các chính sách<a href="#" style="color: #343A40;"> Của KDKShop</a></label>
+												</div>
+										
+											</div>
+									<div style="margin-right:600px;padding:10px;">
+										@* <a asp-action="DangNhap">Đăng Nhập</a> *@
+										<button class="Btn" onclick="window.location.href='@Url.Action("DangNhap", "Account")'">
+
+											<div class="sign"><svg viewBox="0 0 512 512"><path d="M217.9 105.9L340.7 228.7c7.2 7.2 11.3 17.1 11.3 27.3s-4.1 20.1-11.3 27.3L217.9 406.1c-6.4 6.4-15 9.9-24 9.9c-18.7 0-33.9-15.2-33.9-33.9l0-62.1L32 320c-17.7 0-32-14.3-32-32l0-64c0-17.7 14.3-32 32-32l128 0 0-62.1c0-18.7 15.2-33.9 33.9-33.9c9 0 17.6 3.6 24 9.9zM352 416l64 0c17.7 0 32-14.3 32-32l0-256c0-17.7-14.3-32-32-32l-64 0c-17.7 0-32-14.3-32-32s14.3-32 32-32l64 0c53 0 96 43 96 96l0 256c0 53-43 96-96 96l-64 0c-17.7 0-32-14.3-32-32s14.3-32 32-32z"></path></svg></div>
+
+											<div class="text">Đăng Nhập</div>
+										</button>
+
+
+
+									</div>
+									@* <button id="registerButton" style="background-color: #343A40;border-radius:40px;" class="btn btn-lg btn-dark rounded-0 fs-6" type="submit">Đăng Ký</button> *@
+									<button class="btndangky" id="registerButton" style="margin-left:300px;">
+										<svg height="24" width="24" fill="#FFFFFF" viewBox="0 0 24 24" data-name="Layer 1" id="Layer_1" class="sparkle">
+											<path d="M10,21.236,6.755,14.745.264,11.5,6.755,8.255,10,1.764l3.245,6.491L19.736,11.5l-6.491,3.245ZM18,21l1.5,3L21,21l3-1.5L21,18l-1.5-3L18,18l-3,1.5ZM19.333,4.667,20.5,7l1.167-2.333L24,3.5,21.667,2.333,20.5,0,19.333,2.333,17,3.5Z"></path>
+										</svg>
+
+										<span class="text">Đăng Ký</span>
+									</button>
+									
+
+								}
+
+									 </div>
+							</div>
+
+
+
+						</div>
+					</div>
+				</div>
+
+			</div>
+		
+	</section>
+
+	
+	@* ẩn hiện pass *@
+	<script>
+		function password_show_hide() {
+			var x = document.getElementById("password");
+			var show_eye = document.getElementById("show_eye");
+			var hide_eye = document.getElementById("hide_eye");
+			hide_eye.classList.remove("d-none");
+			if (x.type === "password") {
+				x.type = "text";
+				show_eye.style.display = "none";
+				hide_eye.style.display = "block";
+			} else {
+				x.type = "password";
+				show_eye.style.display = "block";
+				hide_eye.style.display = "none";
+			}
+		}
+	</script>
+	<script>
+		document.getElementById('registerButton').addEventListener('click', function (e) {
+			var taiKhoan = document.getElementById('username').value.trim();
+			var hoTen = document.getElementById('name').value.trim();
+			var diaChi = document.getElementById('DiaChi').value.trim(); // Get the address value
+			var sdt = document.getElementById('Sdt').value.trim(); // Get the phone number value
+			
+
+			var phoneNumberErrorElement = document.getElementById('phoneNumberError');
+			var hoTenErrorElement = document.getElementById('hoTenError');
+
+		
+			var taiKhoanErrorElement = document.getElementById('taiKhoanError');
+			
+			
+			var vietnameseDiacriticsRegex = /[\u00C0-\u1EF9]/; // Regular expression to match Vietnamese diacritics
+			var specialCharRegex = /[!#$%^&*(),.?":{}|<>]/; // Regular expression to match special characters
+			var diaChiErrorElement = document.getElementById('diaChiError'); // Error element for address
+			
+
+
+			// Validate Phone Number
+			if (!/^\d{10,11}$/.test(sdt)) {
+				phoneNumberErrorElement.textContent = 'Số điện thoại không hợp lệ!';
+				phoneNumberErrorElement.style.display = 'block';
+				e.preventDefault(); // Prevent form submission
+			} else {
+				phoneNumberErrorElement.style.display = 'none';
+			}
+			// Validate Ho Ten
+			if (hoTen.length < 5) {
+				hoTenErrorElement.textContent = 'Họ tên phải 5 kí tự trở lên!';
+				hoTenErrorElement.style.display = 'block';
+				e.preventDefault(); // Prevent form submission
+			} else {
+				hoTenErrorElement.style.display = 'none';
+			}
+			// Validate Tai Khoan
+			if (taiKhoan.length < 4) {
+				taiKhoanErrorElement.textContent = 'Tài khoản phải 4 kí tự trở lên!';
+				taiKhoanErrorElement.style.display = 'block';
+				e.preventDefault(); // Prevent form submission
+			} else {
+				taiKhoanErrorElement.style.display = 'none';
+			}
+			if (diaChi.length < 4) {
+				diaChiErrorElement.textContent = 'Địa chỉ phải 4 kí tự trở lên!';
+				diaChiErrorElement.style.display = 'block';
+				e.preventDefault(); // Prevent form submission
+			} else {
+				diaChiErrorElement.style.display = 'none';
+			}
+			if (vietnameseDiacriticsRegex.test(taiKhoan)) {
+				vietnameseErrorElement.textContent = 'Tài khoản không được ghi dấu!';
+				vietnameseErrorElement.style.display = 'block';
+				e.preventDefault(); // Prevent form submission
+			} else {
+				vietnameseErrorElement.style.display = 'none';
+			}
+
+			
+
+			
+			
+		});
+
+</script>
+
+	<script src="~/js/password_strength.js"></script>
+
+	<script src="https://cdn.jsdelivr.net/npm/jquery@3.7.1/dist/jquery.slim.min.js"></script>
+	<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
+	<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.bundle.min.js"></script>
+
+</body>
+</html>

@@ -1,0 +1,272 @@
+﻿@model IEnumerable<LoaiSp>
+
+<link rel="stylesheet" href="../css/sanphamloai.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.theme.default.min.css">
+<link href="../css/gia-sale.css" rel="stylesheet" />
+
+
+
+
+<div class="featured__controls">
+    <ul>
+        @* <li class="active" data-filter="*"><a href="@Url.Action("Index", "Home")">Tất Cả</a></li> *@
+        <li class="active" data-filter="*"><a href="javascript:void(0)" onclick="showAllProducts()">Tất Cả</a></li>
+
+        @foreach (var item in Model)
+        {
+            
+            var getUrl = "http://localhost:5208/api/productapi/category/" + item.MaLoaiSp;
+            @* <li class="filter-link" data-filter><a asp-action="Index" asp-controller="Category" asp-route-Slug="@item.MaLoaiSp">@item.TenLoaiSp</a></li> *@
+            <li><a style="cursor:pointer" onclick="showProductByCategory('@getUrl')">@item.TenLoaiSp</a></li>
+
+        }
+    </ul>
+</div>
+@*Hiện thông báo*@
+<div id="cart-notification" class="cart-notification" style="display: none;">
+    <span id="cart-message" class="cart-message">Sản phẩm đã được thêm vào giỏ hàng </span>
+</div>
+@* Hiển thị thông báo lỗi *@
+<div id="error-notification" class="error-notification" style="display: none;">
+    <span id="error-message" class="error-message">Sản phẩm đã có trong WishList</span>
+</div>
+@* Hiển thị thông báo lỗi *@
+<div id="wishlist-notification" class="wishlist-notification" style="display: none;">
+    <span id="wishlist-message" class="wishlist-message">Sản phẩm đã được thêm vào danh sách yêu thích</span>
+</div>
+
+<script>
+    function showProductByCategory(getUrl) {
+
+        var str = '';
+
+        $.ajax({
+            type: 'GET',
+            url: getUrl,
+            dataType: 'json',
+            success: function (data) {
+
+                $.each(data, function (key, val) {
+                    str += '<div class="item">';
+                    str += '<div class="col-lg-3 col-md-4 col-sm-6 mix oranges fresh-meat">';
+                    str += '<div class="featured__item">';
+                    str += '<div class="featured__item__pic set-bg product-image" data - setbg=\"';
+                    var linkImage = "../Images/" + $.trim(val.hinhAnh); // Fixed variable name and corrected syntax
+                    str += linkImage;
+                    str += '\" style ="background-image: url(&quot;';
+                    str += linkImage;
+                    str += '&quot;)">';
+                    str += '<ul class="featured__item__pic__hover">';
+                    str += '<li>';
+                    str += '<a href="javascript:void(0)" onclick="addToWishlist(' + val.maSanPham + ')">';
+                    str += '<i class="fa fa-heart"></i>';
+                    str += '</a>';
+                    str += '</li>';
+                    str += '<li><a  href="/Product/Detail?maSP=' + val.maSanPham + '"><i class="fa fa-retweet"></i></a></li>';
+                    str += '<li>';
+                    str += '<a href="javascript:void(0)" onclick="addToCart(' + val.maSanPham + ')">';
+                    str += '<i class="fa fa-shopping-cart"></i>';
+                    str += '</a>';
+                    str += '</li>';
+                    str += '</ul>';
+                    if (val.phanTram!=0){
+                        str += '<div class="discount-percentage"> -' + val.phanTram + '% </div>';
+ 
+                    }
+                            
+    
+                    str += '</div>';
+                    str += '<a href="/Product/Detail?maSP=' + val.maSanPham + '">'; // Changed to a static link
+                    str += '<div class="featured__item__text">';
+                    // str += '<h5  style="margin-right:30px">' + val.tenSanPham + '</h5>'; // Changed to use data from AJAX response
+
+                   
+                    // Kiểm tra xem sản phẩm có giảm giá không
+                    if (val.gia != val.giaSale) {
+                        str += '<h5 class="price-container">';
+                        str += '<span class="original-price">' + val.gia.toLocaleString() + '₫</span>'; // Giá gốc46
+
+                        str += '<span>' + val.giaSale.toLocaleString() + '₫</span>'; // Giá gốc
+                        str += '</h5>';
+                       
+                    }
+                    else{
+                        str += '<h5>';
+                        str += '<span>' + val.gia.toLocaleString() + '₫</span>'; // Giá gốc
+                        str += '</h5>';
+                    }
+
+                    str += '</div>';
+                    
+                    str += '</a>';
+                    str += '</div>';
+                    str += '</div>';
+                    str += '</div>';
+
+                });
+
+                // Append all product HTML to the Owl Carousel container
+                $('#displayProducts').html('<div class="owl-carousel owl-theme">' + str + '</div>');
+
+                // Initialize Owl Carousel
+                $(".owl-carousel").owlCarousel({
+                    loop: true,
+                    margin: 0,
+                    nav: true,
+                    
+                    responsive: {
+                        0: {
+                            items: 1
+                        },
+                        600: {
+                            items: 3
+                        },
+                        1000: {
+                            items: 5
+                        }
+                    }
+                });
+            },
+            error: function (xhr) {
+                alert(xhr.responseText);
+            }
+        });
+    }
+</script>
+@* <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js?v=1.0"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.js?v=1.0"></script>
+<link href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.css?v=1.0" rel="stylesheet" /> *@
+<script>
+    function showAllProducts() {
+        // Gọi hàm showProductByCategory với URL tương ứng cho tất cả sản phẩm
+        var allProductsUrl = "http://localhost:5208/api/productapi/all"; // Thay đổi URL này nếu cần
+        showProductByCategory(allProductsUrl);
+    }
+</script>
+@* <script>
+    function addToCart(productId) {
+        var url = '/Cart/ThemGio?MaSanPham=' + productId;
+
+        $.ajax({
+            type: 'GET',
+            url: url,
+            dataType: 'json',
+            success: function (result) {
+                if (result.success) {
+                    // Thêm sản phẩm thành công, hiển thị thông báo thành công
+                    $("#cart-notification").fadeIn();
+                    // Cập nhật số lượng sản phẩm trong giỏ hàng
+                    $("#cart-item-count").text(result.cartItemCount);
+                    $("#cart-item-sum").text(result.cartItemSum);
+                    setTimeout(function () {
+                        $("#cart-notification").fadeOut();
+                    }, 2500);
+                } else {
+                    // Thêm sản phẩm thất bại, hiển thị thông báo lỗi
+                    $("#error-message").text(result.error);
+                    $("#error-notification").fadeIn();
+                    setTimeout(function () {
+                        $("#error-notification").fadeOut();
+                    }, 2500);
+                }
+            },
+            error: function () {
+                // Hiển thị thông báo lỗi khi có lỗi xảy ra trong AJAX request
+                $("#error-message").text("Đã xảy ra lỗi, vui lòng thử lại sau");
+                $("#error-notification").fadeIn();
+                setTimeout(function () {
+                    $("#error-notification").fadeOut();
+                }, 2500);
+            }
+        });
+    }
+    function addToWishlist(productId) {
+        var url = '/Wishlist/AddToWishlist?MaSanPham=' + productId;
+
+        $.ajax({
+            type: 'GET',
+            url: url,
+            dataType: 'json',
+            success: function (result) {
+                if (result.success) {
+                    // Thêm sản phẩm thành công, hiển thị thông báo thành công
+                    $("#wishlist-notification").fadeIn();
+                    // Cập nhật số lượng sản phẩm trong giỏ hàng
+                    $("#wishlist-item-count").text(result.cartItemCount);
+
+                    setTimeout(function () {
+                        $("#wishlist-notification").fadeOut();
+                    }, 2500);
+                } else {
+                    // Thêm sản phẩm thất bại, hiển thị thông báo lỗi
+                    $("#error-message").text(result.error);
+                    $("#error-notification").fadeIn();
+                    setTimeout(function () {
+                        $("#error-notification").fadeOut();
+                    }, 2500);
+                }
+            },
+            error: function () {
+                // Hiển thị thông báo lỗi khi có lỗi xảy ra trong AJAX request
+                $("#error-message").text("Đã xảy ra lỗi, vui lòng thử lại sau");
+                $("#error-notification").fadeIn();
+                setTimeout(function () {
+                    $("#error-notification").fadeOut();
+                }, 2500);
+            }
+        });
+    }
+</script> *@
+<script>
+    function addToCart(productId) {
+        var url = '/Cart/ThemGio?MaSanPham=' + productId;
+
+        $.ajax({
+            type: 'GET',
+            url: url,
+            dataType: 'json',
+            success: function (result) {
+                if (result.success) {
+                    // Thêm sản phẩm thành công, hiển thị thông báo thành công
+                    toastr.success('Sản phẩm đã được thêm vào giỏ hàng');
+                    // Cập nhật số lượng sản phẩm trong giỏ hàng
+                    $("#cart-item-count").text(result.cartItemCount);
+                    $("#cart-item-sum").text(result.cartItemSum);
+                } else {
+                    // Thêm sản phẩm thất bại, hiển thị thông báo lỗi
+                    toastr.error(result.error);
+                }
+            },
+            error: function () {
+                // Hiển thị thông báo lỗi khi có lỗi xảy ra trong AJAX request
+                toastr.error('Đã xảy ra lỗi, vui lòng thử lại sau');
+            }
+        });
+    }
+
+    function addToWishlist(productId) {
+        var url = '/Wishlist/AddToWishlist?MaSanPham=' + productId;
+
+        $.ajax({
+            type: 'GET',
+            url: url,
+            dataType: 'json',
+            success: function (result) {
+                if (result.success) {
+                    toastr.success("Thêm sản phẩm vào Wishlist thành công!");
+                    $('#wishlist-item-count').text(result.wishlistItemCount);
+                } else {
+                    // Thêm sản phẩm thất bại, hiển thị thông báo lỗi
+                    toastr.error(result.error);
+
+
+                }
+            },
+            error: function () {
+                // Hiển thị thông báo lỗi khi có lỗi xảy ra trong AJAX request
+                toastr.error("Đã xảy ra lỗi, vui lòng thử lại sau");
+            }
+        });
+    }
+</script>

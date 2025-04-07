@@ -1,0 +1,211 @@
+﻿@using KDKMenShop.Models.ViewModels
+@model List<OrdersViewModel>
+
+@{
+	ViewBag.Title = "Thông tin đơn hàng";
+	int tongĐH = ViewBag.OrderItemCount;
+	string TongTienDH = ViewBag.OrderSum != null ? ViewBag.OrderSum.ToString("N0") + " VNĐ" : "0 VNĐ";
+	
+}
+
+</div>
+	
+<section class="shoping-cart spad">
+	
+	<div class="container">
+		<div class="row">
+			<div class="col-lg-12">
+				<div class="shoping__cart__table">
+					<table>
+						<thead>
+							<tr rowspan=12>
+								<td colspan="12"><h3>Đơn Hàng(<span id="tongsoluong"><strong> @tongĐH</strong> </span>) Tổng Tiền:<strong>@TongTienDH</strong></h3> </td>
+								
+									
+									
+
+								
+
+								@* <td><a class="btn btn-danger btn-sm" asp-controller="Cart" asp-action="XoaHetGioHang">Xóa Giỏ</a> </td> *@
+							</tr>
+							<tr>
+
+
+								<th>Mã đơn hàng</th>
+								<th>Tên Sản Phẩm</th>
+								<th>Kích Thước</th>
+								<th>Số Lượng</th>
+								<th>Ngày lập</th>
+								<th>Tổng tiền</th>
+								<th>Trạng thái</th>
+								<th>Thông tin</th>
+								
+								
+
+
+							</tr>
+						</thead>
+						<tbody>
+
+
+							@if (Model.Count > 0)
+							{
+								@foreach (var item in Model)
+								{
+
+
+									<tr class="order-item" data-id="@item.MaDH">
+
+										<td class="shoping__cart__price">
+											@item.MaDH
+										</td>
+										<td class="shoping__cart__price">
+											@foreach (var tenSanPham in @item.TenSanPham.Split(',')) // Sử dụng phương thức Split để tách các tên sản phẩm
+											{
+												<div>@tenSanPham.Trim()</div>
+											}
+											@* @item.TenSanPham *@
+										</td>
+
+										<td class="shoping__cart__price">
+
+											@item.KichThuoc
+										</td>
+										<td class="shoping__cart__price">
+											@item.SoLuong <!-- Định dạng số nguyên không có dấu phẩy -->
+										</td>
+										<td class="shoping__cart__price">
+											@item.NgayLap <!-- Định dạng số nguyên không có dấu phẩy -->
+										</td>
+
+										<td class="shoping__cart__price">
+											@string.Format("{0:N0}", item.TongTien) <!-- Định dạng số nguyên không có dấu phẩy -->
+										</td>
+										<td class="shoping__cart__price">
+											@item.TrangThaiDH <!-- Định dạng số nguyên không có dấu phẩy -->
+										</td>
+										
+										<td class="shoping__cart__price">
+											@item.ThongTinDH <!-- Định dạng số nguyên không có dấu phẩy -->
+											@if (@item.ThongTinDH == "Đang Chuẩn Bị" )
+											{
+												<button class="btn btn-danger btn-sm" onclick="cancelDonHang('@item.MaDH')">X</button>
+											}
+											else if (@item.ThongTinDH == "Đã Giao" && @item.TrangThaiDH == "Đã đánh giá")
+											{
+												<!-- Do nothing, or you can add a placeholder button here -->
+											}
+											else if (@item.ThongTinDH == "Đã Giao")
+											{
+												<button class="btn btn-primary btn-sm" onclick="rateOrder('@item.MaDH','@item.MaSanPham')">Đánh Giá Đơn Hàng</button>
+											}
+										</td>
+									</tr>
+									
+								}
+
+							}
+
+							else
+							{
+								<tr>
+									<td colspan=12>
+										<h4>Đơn Hàng Trống</h4>
+									</td>
+								</tr>
+							}
+						</tbody>
+					</table>
+				</div>
+			</div>
+		</div>
+	</div>
+	
+		<div class="row">
+			<div class="col-lg-12">
+				@* <div class="shoping__cart__btns">
+					<a href="~/trang-chu" class="primary-btn cart-btn">CONTINUE SHOPPING</a>
+					<a href="#" class="primary-btn cart-btn cart-btn-right" onclick="updateCart()"><span class="icon_loading"></span> Update Cart</a>
+
+				</div> *@
+			</div>
+		</div>
+				
+			@* <div class="col-lg-6">
+				<div class="shoping__continue">
+					<div class="shoping__discount">
+						<h5>Tìm Kiếm Đơn Hàng</h5>
+						<form action="#">
+							<input type="text" placeholder="Enter your coupon code">
+							<button type="submit" class="site-btn">APPLY COUPON</button>
+						</form>
+					</div>
+				</div>
+			</div> *@
+			<div class="col-lg-6">
+
+				
+			</div>
+
+		</div>
+	</div>
+
+</section>
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+@section Scripts {
+
+	
+	<script>
+		function rateOrder(maDH, maSP) {
+			// Remove whitespace from the maSP parameter
+			var sanitizedMaSP = maSP.split(/\s*,\s*/).join(',');
+			// Chuyển hướng đến trang đánh giá và truyền id của đơn hàng
+			window.location.href = "/Order/RateOrder?orderId=" + maDH + "&productId=" + sanitizedMaSP;;
+		}
+		function cancelDonHang(maDH) {
+			// Hiển thị hộp thoại xác nhận
+			Swal.fire({
+				title: 'Xác nhận xóa',
+				text: 'Bạn có chắc chắn muốn hủy đơn hàng này?',
+				icon: 'warning',
+				showCancelButton: true,
+				confirmButtonColor: '#d33',
+				cancelButtonColor: '#3085d6',
+				confirmButtonText: 'Xóa',
+				cancelButtonText: 'Hủy'
+			}).then((result) => {
+				// Nếu người dùng xác nhận muốn xóa
+				if (result.isConfirmed) {
+					// Gọi hành động xóa thông qua AJAX
+					$.ajax({
+						type: "POST",
+						url: "/Order/DeleteOrder?orderId=" + maDH,
+						success: function (response) {
+							if (response.success) {
+								
+
+								// Cập nhật giao diện người dùng
+								$('.order-item[data-id="' + maDH + '"]').remove(); // Xóa đơn hàng khỏi giao diện
+								Swal.fire({
+									icon: 'success',
+									title: 'Thành công!',
+									text: response.message,
+									timer: 1500,
+									showConfirmButton: false
+								});
+								
+							} else {
+								// Xử lý các trường hợp khác nếu cần
+							}
+						},
+						error: function (xhr, status, error) {
+							console.error(xhr.responseText);
+							// Xử lý lỗi nếu yêu cầu AJAX thất bại
+						}
+					});
+				}
+			});
+		}
+		
+	</script>
+}

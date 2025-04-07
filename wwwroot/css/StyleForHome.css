@@ -1,0 +1,253 @@
+﻿.featured__item__text h6 {
+    margin: 0;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.featured__item__pic {
+    height: 280px;
+    width: 230px;
+    position: relative;
+    background-position: center center;
+}
+
+.notification {
+    display: none;
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background-color: #4CAF50;
+    color: white;
+    padding: 15px;
+    border-radius: 5px;
+    z-index: 9999;
+    animation: slideIn 0.5s, slideOut 0.5s 2.5s forwards;
+}
+
+.featured {
+    padding-top: 20px;
+    padding-bottom: 20px;
+}
+
+.featured__item__text h6 {
+    margin: 0;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.cart-notification {
+    display: none;
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background-color: #4CAF50;
+    color: white;
+    padding: 15px;
+    border-radius: 5px;
+    z-index: 9999;
+    animation: slideIn 0.5s, slideOut 0.5s 2.5s forwards;
+}
+
+.error-notification {
+    display: none;
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background-color: red;
+    color: white;
+    padding: 15px;
+    border-radius: 5px;
+    z-index: 9999;
+    animation: slideIn 0.5s, slideOut 0.5s 2.5s forwards;
+}
+
+.wishlist-notification {
+    display: none;
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background-color: #4CAF50;
+    color: white;
+    padding: 15px;
+    border-radius: 5px;
+    z-index: 9999;
+    animation: slideIn 0.5s, slideOut 0.5s 2.5s forwards;
+}
+
+.errorwishlist-notification {
+    display: none;
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background-color: red;
+    color: white;
+    padding: 15px;
+    border-radius: 5px;
+    z-index: 9999;
+    animation: slideIn 0.5s, slideOut 0.5s 2.5s forwards;
+}
+
+/*Lam slide quảng cáo*/
+* {
+    box-sizing: border-box
+}
+
+.mySlides {
+    display: none;
+}
+
+.mySlidesBST {
+    display: none;
+}
+/* CSS for Regular Slideshow */
+#prevRegular, #nextRegular {
+    cursor: pointer;
+    position: absolute;
+    top: 50%;
+    width: auto;
+    padding: 16px;
+    margin-top: -22px;
+    color: white;
+    font-weight: bold;
+    font-size: 18px;
+    transition: 0.6s ease;
+    border-radius: 0 3px 3px 0;
+    user-select: none;
+}
+
+/* Move the next button to the right */
+#nextRegular {
+    right: 0;
+    border-radius: 3px 0 0 3px;
+}
+
+    /* Show effect on hover */
+    #prevRegular:hover, #nextRegular:hover {
+        background-color: #f1f1f1;
+        color: black;
+    }
+
+/* CSS for BST Slideshow */
+#prevBST, #nextBST {
+    cursor: pointer;
+    position: absolute;
+    top: 50%;
+    width: auto;
+    padding: 16px;
+    margin-top: -22px;
+    color: white;
+    font-weight: bold;
+    font-size: 18px;
+    transition: 0.6s ease;
+    border-radius: 0 3px 3px 0;
+    user-select: none;
+}
+
+/* Move the next button to the right */
+#nextBST {
+    right: 0;
+    border-radius: 3px 0 0 3px;
+}
+
+    /* Show effect on hover */
+    #prevBST:hover, #nextBST:hover {
+        background-color: #f1f1f1;
+        color: black;
+    }
+
+
+
+.slideshow-container {
+    width: 100%;
+    height: auto;
+    position: relative;
+    margin: auto;
+}
+
+.slideshowBST-container {
+    width: 100%;
+    height: auto;
+    position: relative;
+    margin: auto;
+}
+
+/*Hieu ung lam mo*/
+@keyframes fade {
+    from {
+        opacity: .4
+    }
+
+    to {
+        opacity: 1
+    }
+}
+
+.ads {
+    object-fit: cover;
+    max-width: 100%;
+}
+
+.btn-link {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    z-index: 1;
+    color: black;
+    background-color: white;
+    padding: 5px;
+}
+
+.heart-icon {
+    color: black;
+    border: 1px solid white;
+    transition: color 0.3s, border-color 0.3s;
+}
+
+    .heart-icon:hover {
+        color: black;
+        border-color: black;
+    }
+
+.search-suggestions {
+    position: absolute;
+    width: calc(100% - 2px);
+    max-height: 350px;
+    overflow-y: auto;
+    border: 1px solid #ccc;
+    border-top: none;
+    background-color: #fff;
+    z-index: 1002; /* Set a higher z-index */
+    box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.2);
+    color: #000;
+    left: 0; /* Align suggestions with the left edge of the search form */
+    top: 100%; /* Position the suggestions below the search form */
+}
+
+    .search-suggestions li {
+        padding: 10px;
+        cursor: pointer;
+        transition: background-color 0.3s;
+        height: 47px;
+        position: relative;
+        z-index: 1002; /* Set a higher z-index */
+    }
+
+        .search-suggestions li:hover {
+            background-color: #f0f0f0;
+            z-index: 1002; /* Set a higher z-index */
+        }
+
+.search-container {
+    position: relative;
+}
+
+.search-input {
+    width: 70%;
+    border: none;
+    height: 48px;
+    font-size: 16px;
+    color: #b2b2b2;
+    padding-left: 20px;
+}

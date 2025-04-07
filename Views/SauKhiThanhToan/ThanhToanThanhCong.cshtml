@@ -1,0 +1,48 @@
+﻿@using Newtonsoft.Json
+@{
+    ViewBag.Title = "ThanhToanThanhCong";
+}
+
+<style>
+    .body, .html {
+        height: 100%;
+        margin: 0;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    img {
+        vertical-align: middle;
+        height: 75px;
+    }
+
+    .payment-success {
+        text-align: center;
+    }
+</style>
+<div class="container">
+    <div class="payment-success">
+        <img src="~/Images/Success.jpg" alt="Payment Unsuccessful" />
+        <h2>Thanh toán thành công!</h2>
+        <p>Cảm ơn bạn đã đặt hàng với KDKSHop. Hóa đơn thanh toán sẽ sớm được gửi tới E-mail của bạn.</p>
+        
+    </div>
+    <a href="@Url.Action("Index", "Home")" class="btn btn-primary">Quay về trang chủ</a>
+</div>
+<!-- Hiển thị thời gian thanh toán trên giao diện -->
+<div>
+    Tổng thời gian thanh toán: <span id="totalTimeDisplay">@ViewBag.TotalTime</span> ms
+</div>
+
+<script>
+    // Lấy tổng thời gian từ ViewBag
+    var totalTime = @Html.Raw(ViewBag.TotalTime);
+
+    // Kiểm tra xem totalTime có phải là số hay không
+    if (!isNaN(totalTime)) {
+        console.log("Tổng thời gian thanh toán: " + totalTime + " ms");
+    } else {
+        console.log("Không có dữ liệu tổng thời gian.");
+    }
+</script>

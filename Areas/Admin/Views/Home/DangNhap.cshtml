@@ -1,0 +1,70 @@
+﻿@{
+    ViewData["title"] = "Đăng Nhập - Admin";
+    Layout = null;
+   
+}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="~/kdkadmin/dangnhap/css/dangnhapadmin.css" rel="stylesheet" />
+    <title>@ViewData["title"]</title>
+    <style>
+        .toggle-password {
+            background:#171717;
+            color:white;
+            cursor: pointer;
+            position: absolute;
+            right: 10px;
+            top: 50%;
+            transform: translateY(-50%);
+        }
+    </style>
+</head>
+<body>
+    <div class="card">
+        <div class="card2">
+            <form class="form" role="form" method="post">
+                <p id="heading">Đăng Nhập</p>
+                <div class="field">
+                    <svg viewBox="0 0 16 16" fill="currentColor" height="16" width="16" xmlns="http://www.w3.org/2000/svg" class="input-icon">
+                        <path d="M13.106 7.222c0-2.967-2.249-5.032-5.482-5.032-3.35 0-5.646 2.318-5.646 5.702 0 3.493 2.235 5.708 5.762 5.708.862 0 1.689-.123 2.304-.335v-.862c-.43.199-1.354.328-2.29.328-2.926 0-4.813-1.88-4.813-4.798 0-2.844 1.921-4.881 4.594-4.881 2.735 0 4.608 1.688 4.608 4.156 0 1.682-.554 2.769-1.416 2.769-.492 0-.772-.28-.772-.76V5.206H8.923v.834h-.11c-.266-.595-.881-.964-1.6-.964-1.4 0-2.378 1.162-2.378 2.823 0 1.737.957 2.906 2.379 2.906.8 0 1.415-.39 1.709-1.087h.11c.081.67.703 1.148 1.503 1.148 1.572 0 2.57-1.415 2.57-3.643zm-7.177.704c0-1.197.54-1.907 1.456-1.907.93 0 1.524.738 1.524 1.907S8.308 9.84 7.371 9.84c-.895 0-1.442-.725-1.442-1.914z"></path>
+                    </svg>
+                    <input type="text" class="input-field" placeholder="Tên Đăng Nhập" autocomplete="off" name="taiKhoan" autofocus />
+                </div>
+
+                <div class="field" style="position: relative;">
+                    <svg viewBox="0 0 16 16" fill="currentColor" height="16" width="16" xmlns="http://www.w3.org/2000/svg" class="input-icon">
+                        <path d="M8 1a2 2 0 0 1 2 2v4H6V3a2 2 0 0 1 2-2zm3 6V3a3 3 0 0 0-6 0v4a2 2 0 0 0-2 2v5a2 2 0 0 0 2 2h6a2 2 0 0 0 2-2V9a2 2 0 0 0-2-2z"></path>
+                    </svg>
+                    <input type="password" placeholder="Mật Khẩu" name="matKhau" class="input-field" value="" id="password-field" />
+                    <svg viewBox="0 0 16 16" fill="currentColor" height="16" width="16" xmlns="http://www.w3.org/2000/svg" class="toggle-password" id="toggle-password">
+                        <path d="M8 3.293a6.787 6.787 0 0 1 4.758 1.975L13.207 3.5a1 1 0 1 1 1.414 1.414l-1.024 1.024a6.817 6.817 0 0 1 1.394 3.01c.027.2.037.403.037.605s-.01.405-.037.605a6.797 6.797 0 0 1-1.034 2.727l1.213 1.213a1 1 0 0 1-1.414 1.414L2.293 2.293a1 1 0 0 1 1.414-1.414L5.41 4.588A6.757 6.757 0 0 1 8 3.293zm0 1.414a5.344 5.344 0 0 0-3.758 1.59l8.651 8.65A5.344 5.344 0 0 0 8 12.293a5.344 5.344 0 0 0-1.46-.197c-.452 0-.902.06-1.346.174a1.002 1.002 0 0 1-.724-1.88A3.456 3.456 0 0 1 8 10.293a3.456 3.456 0 0 1 2.464 1.025 1 1 0 0 1-1.414 1.414A1.456 1.456 0 0 0 8 12.293a1.456 1.456 0 0 0-1.025.42A1 1 0 0 1 6.964 11.3a3.455 3.455 0 0 1-1.682-1.82 1 1 0 0 1 1.732-.992A1.456 1.456 0 0 0 8 10.293a1.456 1.456 0 0 0 1.025-.42A1 1 0 0 1 9.414 9.293a1.456 1.456 0 0 0-.42-1.025A1 1 0 0 1 10.72 6.533a3.456 3.456 0 0 1 .79.637 1 1 0 0 1-1.413 1.414A5.344 5.344 0 0 0 8 4.707z"></path>
+                    </svg>
+                </div>
+                <div class="text-danger" style="color:white;margin-left:20px;">
+                    @TempData["error"]
+                    @if (ViewBag.RemainingTime != null && ViewBag.RemainingTime.TotalSeconds > 0)
+                    {
+                        
+                        <h5>Thời gian còn lại: @ViewBag.RemainingTime.ToString("dd' ngày 'hh' giờ 'mm' phút 'ss' giây'")</h5>
+                    }
+                </div>
+                <button style="margin-top:20px;" type="submit" href="index.html" class="button3">Đăng Nhập</button>
+            </form>
+        </div>
+    </div>
+
+    <script>
+        const togglePassword = document.getElementById('toggle-password');
+        const passwordField = document.getElementById('password-field');
+
+        togglePassword.addEventListener('click', function () {
+            // toggle the type attribute
+            const type = passwordField.getAttribute('type') === 'password' ? 'text' : 'password';
+            passwordField.setAttribute('type', type);
+        });
+    </script>
+</body>
+</html>

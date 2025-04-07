@@ -1,0 +1,165 @@
+﻿@model List<KDKMenShop.Models.ViewModels.OrdersViewModel>
+@{
+    ViewData["Title"] = "Danh Sách Đơn Hàng";
+    Layout = "~/Areas/Admin/Views/Shared/_Layout-admin.cshtml";
+    // Số lượng đơn hàng giao
+    var giaoCount = Model.Count(item =>
+        item.ThongTinDH.IndexOf("đã giao", StringComparison.OrdinalIgnoreCase) >= 0
+    );
+
+    // Số lượng đơn hàng bị hủy
+    var huyCount = Model.Count(item =>
+        item.ThongTinDH.IndexOf("hủy", StringComparison.OrdinalIgnoreCase) >= 0
+    );
+
+    // Số lượng đơn hàng đã đánh giá
+    var daDanhGia = Model.Count(item =>
+        item.ThongTinDH.IndexOf("giá", StringComparison.OrdinalIgnoreCase) >= 0
+    );
+}
+
+@section Scripts {
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/numeral.js/2.0.6/numeral.min.js"></script>
+    <script>
+        $(document).ready(function () {
+            // Lặp qua từng hàng trong bảng
+            $('.tongtien').each(function () {
+                // Lấy giá trị của Tổng Tiền từ từng hàng
+                var totalAmount = $(this).text();
+
+                // Định dạng số thành định dạng tiền tệ 200.00
+                var formattedAmount = numeral(totalAmount).format('0,0 đ');
+
+                // Hiển thị giá trị đã định dạng vào từng hàng
+                $(this).text(formattedAmount);
+            });
+        });
+    </script>
+}
+<style>
+    th, td {
+        text-align: left;
+        padding: 8px;
+    }
+
+        /* Đặt width cho từng cột */
+        th:nth-child(1),
+        td:nth-child(1) {
+            width: 5%; /* width cho cột số thứ tự */
+            white-space: normal; /* Cho phép xuống dòng nếu nội dung quá dài */
+        }
+
+        th:nth-child(2),
+        td:nth-child(2) {
+            width: 40%; /* width cho cột số thứ tự */
+            white-space: normal; /* Cho phép xuống dòng nếu nội dung quá dài */
+            
+     
+        }
+
+        th:nth-child(3),
+        td:nth-child(3) {
+            width: 5%; /* width cho cột số thứ tự */
+        }
+
+        th:nth-child(4),
+        td:nth-child(4) {
+            width: 5%; /* width cho cột số thứ tự */
+        }
+
+        th:nth-child(5),
+        td:nth-child(5) {
+            width: 5%; /* width cho cột số thứ tự */
+        }
+        th:nth-child(6),
+        td:nth-child(6) {
+            width: 5%; /* width cho cột số thứ tự */
+            white-space: normal; /* Cho phép xuống dòng nếu nội dung quá dài */
+        }
+
+        th:nth-child(7),
+        td:nth-child(7) {
+            width: 5%; /* width cho cột số thứ tự */
+            white-space: normal; /* Cho phép xuống dòng nếu nội dung quá dài */
+        }
+
+        th:nth-child(8),
+        td:nth-child(8) {
+            width: 5%; /* width cho cột số thứ tự */
+            white-space: normal; /* Cho phép xuống dòng nếu nội dung quá dài */
+        }
+
+        th:nth-child(9),
+        td:nth-child(9) {
+            width: 5%; /* width cho cột số thứ tự */
+            white-space: normal; /* Cho phép xuống dòng nếu nội dung quá dài */
+        }
+
+    /* Thêm scrollbar ngang */
+    .table-container {
+        overflow-x: auto;
+    }
+
+    
+    
+</style>
+
+
+
+<h2>Danh sách đơn hàng</h2>
+<div style="margin-top: 10px; margin-bottom: 10px;">
+    <!-- Thêm phần tử div và margin-top -->
+    <a asp-action="ThemMoiDonHang" class="btn btn-success btn-sm" asp-controller="Product">Thêm Mới Đơn Hàng</a>
+</div>
+@* @Html.ActionLink("Thêm mới đơn hàng", "ThemMoiDonHang") *@
+<div class="" style="text-align:center">
+    Tổng số đơn hàng: <strong>@Model.Count()</strong>
+    - Tổng số tiền: <strong>@Model.Sum(item => item.TongTien).ToString("#,##0")</strong>
+    -  Đơn hàng giao thành công: <strong>@giaoCount</strong><br />
+    Đơn hàng bị hủy: <strong>@huyCount</strong> -  Đơn hàng đã đánh giá: <strong>@daDanhGia</strong>
+</div>
+<div class="table-responsive">
+    <table class="table table-striped">
+        <thead class="thead-dark">
+            <tr>
+                <th scope="col">Mã Đơn Hàng</th>
+                <th scope="col" class="wide-column">Tên Sản Phẩm</th>
+                <th scope="col">Kích Thước</th>
+                <th scope="col">Số Lượng</th>
+                <th scope="col">Tổng Tiền</th>
+                <th scope="col">Ngày Lập</th>
+                <th scope="col">Địa Chỉ</th>
+                <th scope="col">Trạng Thái</th>
+                <th scope="col">Thông Tin</th>
+                     <th scope="col">Chức Năng</th>
+
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var item in Model)
+            {
+                <tr>
+
+                    <td>@item.MaDH</td>
+                    <td>@item.TenSanPham</td>
+                    <td>@item.KichThuoc</td>
+                    <td>@item.SoLuong</td>
+                    <td class="tongtien">@item.TongTien</td>
+                    <td>@item.NgayLap</td>
+                    <td>@item.DiaChiGiaoHang</td>
+                    <td>@item.TrangThaiDH</td>
+                    <td>@item.ThongTinDH</td>
+                    
+                    <td>
+                        <a asp-controller="Product" class="btn btn-warning btn-sm" asp-action="SuaDonHang" asp-route-id="@item.MaDH.Trim()">Sửa</a>
+                        @* <a style="" asp-controller="Product" class="btn btn-danger btn-sm confirmDeletion" asp-action="XoaDonHang" asp-route-id="@item.MaDH">Xóa</a> *@
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+</div>
+</div>
+
+
+

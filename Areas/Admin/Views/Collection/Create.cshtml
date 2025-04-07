@@ -1,0 +1,176 @@
+﻿@model BoSuuTap
+@{
+	ViewData["title"] = "Thêm Mới Bộ Sưu Tập";
+
+}
+
+<div class="col-md-12 ">
+	<h3>Thêm Mới Bộ Sưu Tập</h3>
+	<style>
+		.custom-select {
+			width: 100%;
+		}
+
+		.btn {
+			margin-top: 20px;
+		}
+	</style>
+
+	<div class="col-md-12" style="margin-left:150px;">
+
+		<form asp-action="Create" enctype="multipart/form-data" id="collectionForm">
+			<div asp-validation-summary="ModelOnly" class="text-danger"></div>
+
+			<div class="form-group">
+				<label>Mã Bộ Sưu Tập</label>
+				<input asp-for="MaBoSuuTap" class="form-control" style="width:500px;" />
+				<span id="mabosuuTapError" class="text-danger"></span>
+			</div>
+			<script>
+				// Lấy thẻ input và span hiển thị lỗi
+				var mabosuuTapInput = document.querySelector('input[name="MaBoSuuTap"]');
+				var mabosuuTapError = document.getElementById('mabosuuTapError');
+
+				// Lắng nghe sự kiện khi mất focus khỏi input
+				mabosuuTapInput.addEventListener('blur', function () {
+					// Kiểm tra nếu giá trị của input không hợp lệ
+					if (mabosuuTapInput.value.trim() === '') {
+						// Hiển thị thông báo lỗi tùy chỉnh
+						mabosuuTapError.textContent = 'Vui lòng nhập mã bộ sưu tập.';
+					} else {
+						// Nếu hợp lệ, xóa thông báo lỗi
+						mabosuuTapError.textContent = '';
+					}
+				});
+			</script>
+			<div class="form-group ">
+				<label>Tên Bộ Sưu Tập</label>
+				<input asp-for="TenBoSuuTap" class="form-control" style="width:500px;" />
+				<span id="tenbosuuTapError" class="text-danger"></span>
+			</div>
+			<script>
+				// Lấy thẻ input và span hiển thị lỗi
+				var tenbosuuTapInput = document.querySelector('input[name="TenBoSuuTap"]');
+				var tenbosuuTapError = document.getElementById('tenbosuuTapError');
+
+				// Lắng nghe sự kiện khi mất focus khỏi input
+				tenbosuuTapInput.addEventListener('blur', function () {
+					// Kiểm tra nếu giá trị của input không hợp lệ
+					if (tenbosuuTapInput.value.trim() === '') {
+						// Hiển thị thông báo lỗi tùy chỉnh
+						tenbosuuTapError.textContent = 'Vui lòng nhập tên bộ sưu tập.';
+					} else {
+						// Nếu hợp lệ, xóa thông báo lỗi
+						tenbosuuTapError.textContent = '';
+					}
+				});
+			</script>
+			<div class="form-group">
+				<label>Hình Ảnh</label>
+				<input asp-for="ImageUpload" class="form-control" style="width:500px;" />
+				<span id="imageUploadError" class="text-danger"></span>
+				<img id="imgpreview" class"pt-2" />
+			</div>
+			<script>
+				// Lấy thẻ input và span hiển thị lỗi
+				var imageUploadInput = document.querySelector('input[name="ImageUpload"]');
+				var imageUploadError = document.getElementById('imageUploadError');
+
+				// Lắng nghe sự kiện khi mất focus khỏi input
+				imageUploadInput.addEventListener('blur', function () {
+					// Kiểm tra nếu giá trị của input không hợp lệ
+					if (imageUploadInput.value.trim() === '') {
+						// Hiển thị thông báo lỗi tùy chỉnh
+						imageUploadError.textContent = 'Vui lòng nhập hình ảnh.';
+					} else {
+						// Nếu hợp lệ, xóa thông báo lỗi
+						imageUploadError.textContent = '';
+					}
+				});
+			</script>
+			<div class="form-group">
+				<label>Slug</label>
+				<input asp-for="Slug" class="form-control" style="width:500px;" />
+				<span id="slugError" class="text-danger"></span>
+			</div>
+			<script>
+				// Lấy thẻ input và span hiển thị lỗi
+				var slugInput = document.querySelector('input[name="Slug"]');
+				var slugError = document.getElementById('slugError');
+
+				// Lắng nghe sự kiện khi mất focus khỏi input
+				slugInput.addEventListener('blur', function () {
+					// Kiểm tra nếu giá trị của input không hợp lệ
+					if (slugInput.value.trim() === '') {
+						// Hiển thị thông báo lỗi tùy chỉnh
+						slugError.textContent = 'Vui lòng nhập slug.';
+					} else {
+						// Nếu hợp lệ, xóa thông báo lỗi
+						slugError.textContent = '';
+					}
+				});
+			</script>
+			<div class="form-group btn" style="margin-top:20px">
+				<button class="btn btn-primary">Thêm mới</button>
+			</div>
+		</form>
+	</div>
+
+	<a asp-action="Index">Trở về</a>
+</div>
+</div>
+@section Scripts{
+	@{
+		await Html.RenderPartialAsync("_ValidationScriptsPartial");
+	}
+	<!-- jQuery library -->
+	<script>
+	$("#ImageUpload").change(function () {
+		readURL(this);
+	})
+	</script >
+	<script>
+		document.querySelector('.btn.btn-primary').addEventListener('click', function (event) {
+			event.preventDefault();
+
+			var mabosuuTapInput = document.querySelector('input[name="MaBoSuuTap"]');
+			var mabosuuTapError = document.getElementById('mabosuuTapError');
+			if (mabosuuTapInput.value.trim() === '') {
+				mabosuuTapError.textContent = 'Vui lòng nhập mã bộ sưu tập.';
+			} else {
+				mabosuuTapError.textContent = '';
+			}
+
+			var tenbosuuTapInput = document.querySelector('input[name="TenBoSuuTap"]');
+			var tenbosuuTapError = document.getElementById('tenbosuuTapError');
+			if (tenbosuuTapInput.value.trim() === '') {
+				tenbosuuTapError.textContent = 'Vui lòng nhập vật liệu.';
+			} else {
+				tenbosuuTapError.textContent = '';
+			}
+
+			var slugInput = document.querySelector('input[name="Slug"]');
+			var slugError = document.getElementById('slugError');
+			if (slugInput.value.trim() === '') {
+				slugError.textContent = 'Vui lòng nhập giá.';
+			} else {
+				slugError.textContent = '';
+			}
+
+			var imageInput = document.querySelector('input[name="ImageUpload"]');
+			var imageError = document.getElementById('imageUploadError');
+			if (imageInput.value.trim() === '') {
+				imageError.textContent = 'Vui lòng chọn hình ảnh.';
+			} else {
+				imageError.textContent = '';
+			}
+
+			
+
+			// Chỉ submit form nếu tất cả các trường đều hợp lệ
+			if (mabosuuTapInput.value.trim() !== '' && tenbosuuTapInput.value.trim() !== '' && slugInput.value.trim() !== '' && imageInput.value.trim() !== '') {
+				document.getElementById('collectionForm').submit();
+			}
+		});
+	</script>
+}

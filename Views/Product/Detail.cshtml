@@ -1,0 +1,883 @@
+﻿<link rel="stylesheet" type="text/css" href="~/css/StyleForHome.css" />
+<script src="~/js/XuLyGoiSanPham.js"></script>
+@using System.Text;
+@using System.Linq
+@{
+	var firstDanhGiaSp = Model.DanhGiaSps.Count > 0 ? Model.DanhGiaSps[0] : null;
+
+	int totalReviews = Model.FiveStarCount + Model.FourStarCount + Model.ThreeStarCount + Model.TwoStarCount + Model.OneStarCount;
+
+	//Tính sao
+	double percentFiveStar = totalReviews > 0 ? (double)Model.FiveStarCount / totalReviews * 100 : 0;
+	double percentFourStar = totalReviews > 0 ? (double)Model.FourStarCount / totalReviews * 100 : 0;
+	double percentThreeStar = totalReviews > 0 ? (double)Model.ThreeStarCount / totalReviews * 100 : 0;
+	double percentTwoStar = totalReviews > 0 ? (double)Model.TwoStarCount / totalReviews * 100 : 0;
+	double percentOneStar = totalReviews > 0 ? (double)Model.OneStarCount / totalReviews * 100 : 0;
+
+
+
+	// Tính tổng điểm từ tất cả các đánh giá
+	int totalPoints = (5 * Model.FiveStarCount) + (4 * Model.FourStarCount) + (3 * Model.ThreeStarCount) + (2 * Model.TwoStarCount) + (1 * Model.OneStarCount);
+
+	// Tránh chia cho 0
+	double averageRating = totalReviews > 0 ? (double)totalPoints / totalReviews : 0;
+	double roundedAverage = Math.Round(averageRating * 10.0) / 10.0;
+	// Chuyển đổi điểm trung bình thành dạng sao
+	string GetStarRating(double averageRating)
+	{
+		int integerPart = (int)averageRating; //Lấy phần nguyên của averageRating
+		StringBuilder stars = new StringBuilder();
+
+		// Tạo sao cho averageRating
+		for (int i = 0; i < integerPart; i++)
+		{
+			stars.Append("<i class=\"fa fa-star\"></i>");
+		}
+
+		// Kiểm tra xem phần thập phân có lớn hơn 0 không, nếu có, hãy thêm nửa sao hoặc một ngôi sao trống
+		if (averageRating - integerPart > 0)
+		{
+			stars.Append("<i class=\"fa fa-star-half-o\"></i>");
+		}
+
+		//Đảm bảo có 5 sao bằng cách thêm các ngôi sao trống nếu cần thiết
+		for (int i = (int)stars.Length / 18; i < 5; i++)
+		{
+			stars.Append("<i class=\"fa fa-star-o\"></i>");
+		}
+
+		return stars.ToString();
+	}
+
+	// Sử dụng hàm GetStarRating để chuyển đổi averageRating thành dạng sao
+	string starRating = GetStarRating(averageRating);
+
+
+
+
+	//lấy ra kích thước của sản phẩm
+	var validSizes = new List<ChiTietKichThuoc>();
+
+	foreach (var chiTietKichThuocViewModels in Model.ChiTietKichThuocs)
+	{
+		if (chiTietKichThuocViewModels.SoLuong > 0)
+		{
+			validSizes.Add(chiTietKichThuocViewModels);
+		}
+	}
+
+
+}
+<style>
+
+	.product-details {
+		display: flex;
+		align-items: flex-start; /* căn chiều dọc lên trên */
+	}
+
+	.chi-tiet {
+		margin-right: 20px; /* Tạo khoảng cách giữa chi tiết và phần chọn kích thước */
+	}
+
+	.rating {
+		unicode-bidi: bidi-override;
+		direction: rtl;
+		text-align: left;
+	}
+
+	.star {
+		display: inline-block;
+		font-size: 20px;
+		color: #f5f5f5; /* màu của ngôi sao */
+	}
+
+	.checked {
+		color: #ff9f00; /* màu của ngôi sao được tô đậm */
+	}
+
+
+	/* Custom styles for the star rating buttons */
+	.stars-filter {
+		background-color: #f8f9fa !important;
+		color: #007bff; /* Adjust the text color if needed */
+		border: none !important; /* Remove the border */
+	}
+
+		.stars-filter:hover {
+			background-color: #1f1f1f; /* Optional: lighter shade on hover */
+			color: #0056b3; /* Optional: darker text color on hover */
+			border-color: #1f1f1f; /* Optional: darker border color on hover */
+		}
+
+	.stars-counters {
+		background-color: #f8f9fa; /* Optional: lighter shade on hover */
+	}
+	/* Progress bar container */
+	.progress-bar-container {
+		width: 89%;
+		height: 2px; /* Change this value to make the progress bar thinner */
+	}
+
+
+	/* Background of the progress bar */
+	.fit-progressbar-background {
+		background-color: #e9ecef; /* Light grey */
+		border-radius: 0.25rem;
+		height: 1rem; /* Adjust height as needed */
+		position: relative;
+		width: 100%;
+	}
+
+
+
+
+	/* Adjust the height of the progress fill */
+
+	/* Fill of the progress bar */
+	.progress-fill {
+		background-color: #ff9f00; /* Blue */
+		border-radius: 0.25rem;
+		height: 100%;
+		display: block;
+		transition: width 0.6s ease;
+	}
+
+	/* Adjust the color and appearance as necessary */
+	.price-container {
+		text-decoration: line-through;
+		margin-right: 10px;
+		color: #DD2222;
+	}
+
+	.cmt {
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
+		position: relative;
+	}
+
+	.ngay-danh-gia {
+		position: absolute;
+		flex: 1;
+		text-align: left;
+	}
+
+	.phan-hoi-danh-gia {
+		flex: 1;
+		text-align: right;
+	}
+
+	.phan-hoi {
+		/* Đảm bảo rằng phần phản hồi đánh giá không làm thay đổi vị trí của ngày đánh giá */
+		/* position: absolute; */
+		text-align: left;
+		top: 100%; /* Đặt vị trí của phản hồi đánh giá bên dưới nút "Phản hồi đánh giá" */
+		left: 0;
+		display: none;
+	}
+
+	.phan-hoi {
+		display: none;
+		padding: 10px;
+		margin-top: 10px;
+		background-color: #f9f9f9;
+		border: 1px solid #ddd;
+		border-radius: 5px;
+		box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+	}
+
+		.phan-hoi p {
+			margin: 0;
+			font-size: 14px;
+		}
+
+		.phan-hoi button {
+			background-color: #4CAF50;
+			color: white;
+			padding: 8px 16px;
+			border: none;
+			border-radius: 4px;
+			cursor: pointer;
+		}
+
+			.phan-hoi button:hover {
+				background-color: #45a049;
+			}
+
+	.ngay-danh-gia {
+		font-size: 12px;
+		color: #888;
+	}
+
+</style>
+<section class="hero hero-normal">
+	<div class="container">
+		<div class="row">
+			@*  <div class="col-lg-3">
+			<div class="hero__categories">
+			<div class="hero__categories__all">
+			<i class="fa fa-bars"></i>
+			<span>Danh Sách Sản Phẩm</span>
+			</div> *@
+			<vc:categories></vc:categories>
+			@*</div>
+			</div>*@
+			<div class="col-lg-9">
+				<div class="hero__search">
+					<div class="hero__search__form">
+						@* <form action="/Product/Search" method="get">
+						<input class="search-input"
+						type="text"
+						name="searchString"
+						placeholder="@KDKMenShop.Resrources.lang.Bạn_cần_tìm_">
+						<button type="submit" class="site-btn">@KDKMenShop.Resrources.lang.Tìm_kiếm</button>
+						<div class="search-suggestions"></div>
+						</form> *@
+						@Html.Partial("_SearchPartial")
+					</div>
+					<div class="hero__search__phone">
+						<div class="hero__search__phone__icon">
+							<i class="fa fa-phone"></i>
+						</div>
+						<div class="hero__search__phone__text">
+							<h5>+84 999999999</h5>
+							<span>Hỗ trợ 24/7</span>
+						</div>
+					</div>
+				</div>
+
+			</div>
+		</div>
+	</div>
+</section>
+
+
+<!-- Breadcrumb Section End -->
+<!-- Product Details Section Begin -->
+<section class="product-details spad">
+	<div class="container">
+		<div class="row">
+			@*Hình ẢNh*@
+			<div class="col-lg-6 col-md-6">
+				<div class="product__details__pic">
+					<div class="product__details__pic__item">
+						<img class="product__details__pic__item--large"
+							 src="~/images/@Model.Product.HinhAnh" alt="@Model.Product.HinhAnh">
+					</div>
+					<div class="product__details__pic__slider owl-carousel">
+
+						<img data-imgbigurl="../images/@Model.Product.HinhAnh"
+							 src="../images/@Model.Product.HinhAnh" alt="">
+
+						@foreach (var image in Model.Images)
+						{
+							<img data-imgbigurl="../images/@image.HinhAnh"
+								 src="../images/@image.HinhAnh" alt="">
+						}
+					</div>
+
+				</div>
+			</div>
+			@*Đánh giá*@
+			<div class="col-lg-6 col-md-6">
+				<div class="product__details__text">
+					<h3>@Model.Product.TenSanPham</h3>
+					<div class="product__details__rating">
+						@Html.Raw(starRating)/
+						@if (firstDanhGiaSp != null)
+						{
+							@firstDanhGiaSp.LuotMua
+
+						}
+
+						else
+						{
+							<span>0</span>
+						}
+						Lượt Bán
+						<span>
+							(@if (firstDanhGiaSp != null)
+							{
+								<span> @firstDanhGiaSp.LuotDanhGia Lượt Đánh Giá</span>
+							}
+							else
+							{
+								<span> 0 Lượt Đánh Giá</span>
+							})
+						</span>
+					</div>
+					<div class="product__details__price">
+
+						@*Điều chỉnh giá ở đây*@
+
+						@if (Model.Product.Ma != null && Model.Product.Ma.MaVoucherNavigation != null
+								&& Model.Product.Ma.MaVoucherNavigation.ThoiGianBatDau <= DateTime.Now && Model.Product.Ma.MaVoucherNavigation.ThoiGianKetThuc >= DateTime.Now)
+						{
+							<h5 class="price-container">
+								Giá gốc:@(String.Format("{0:N0}", Model.Product.Gia))₫
+							</h5>
+
+
+							<span>Giá sale: @(String.Format("{0:N0}", Model.Product.Gia * (100 - Model.Product.Ma.MaVoucherNavigation.PhanTramGiam) / 100))₫</span>
+
+						}
+						else
+						{
+							@(String.Format("{0:N0}₫", Model.Product.Gia))
+
+						}
+					</div>
+					@*Mô tả*@
+					<p>
+						<strong>Mô tả sản phẩm </strong>
+						<br>
+
+						@{
+							bool firstDash = true;
+							foreach (char c in Model.Product.MoTa)
+							{
+								if (c == '-')
+								{
+									if (!firstDash)
+									{
+										<br>
+									}
+									else
+									{
+										firstDash = false;
+									}
+								}
+								else
+								{
+									@c
+								}
+							}
+						}
+						<br>
+						@{
+
+							@if (Model.Product?.MaVatLieuNavigation?.TenVatLieu != null)
+							{
+								
+								foreach (char c in Model.Product.MaVatLieuNavigation.TenVatLieu)
+								{
+									if (c == '-')
+									{
+										if (!firstDash)
+										{
+											<br />
+										}
+										else
+										{
+											firstDash = false;
+										}
+									}
+									else
+									{
+										@c
+									}
+								}
+							}
+							else
+							{
+							<p>Material information is not available.</p>
+							}
+
+						}
+
+
+					</p>
+					@*Kích THước*@
+					<div>
+						@foreach (var chiTietKichThuocViewModels in validSizes)
+						{
+
+							<div class="chi-tiet">
+								<span class="kich-thuoc">Kích thước: @chiTietKichThuocViewModels.KichThuoc</span>
+								<span class="so-luong">Số lượng: @chiTietKichThuocViewModels.SoLuong</span>
+							</div>
+						}
+						<span id="quantityError" style="color: red; display: none;">Số lượng không hợp lệ!</span>
+						<div class="size">
+							<select id="sizeSelect">
+								@foreach (var chiTietKichThuocViewModel in validSizes)
+								{
+									<option value="@chiTietKichThuocViewModel.KichThuoc" data-stock="@chiTietKichThuocViewModel.SoLuong">
+										@chiTietKichThuocViewModel.KichThuoc
+
+									</option>
+								}
+							</select>
+						</div>
+						@*SỐ lượng*@
+						<div class="product__details__quantity">
+							<div class="quantity">
+								<div class="pro-qt">
+									<span style="cursor:pointer" class="qtybtn" onclick="decrement()">-</span>
+									<input type="number" min="1" value="1" id="quantityInput" onchange="validateQuantity()">
+									<span style="cursor:pointer" class="qtybtn" onclick="increment()">+</span>
+								</div>
+
+							</div>
+						</div>
+
+
+						@*Thêm giỏ -- ---- danh sách yêu thích*@
+
+						<a href="javascript:void(0);" data-ma-san-pham="@Model.Product.MaSanPham" class="primary-btn">THÊM GIỎ HÀNG</a>
+
+
+
+						<a href="javascript:void(0);" class="add-to-wishlist" data-ma-san-pham="@Model.Product.MaSanPham" title="Thêm vào WishList">
+							<i class="fa fa-heart heart-icon"></i>
+						</a>
+
+
+
+						@*Chọn size*@
+						<button class="btn-outline-dark btn-sm" role="button" id="huongDanChonSize">Hướng dẫn chọn size</button>
+						<!-- Modal -->
+						<div class="modal" id="huongDanChonSizeModal">
+							<div class="modal-dialog ">
+								<div class="modal-content">
+
+									<!-- Modal Header -->
+									<div class="modal-header">
+										<h4 class="modal-title">Hướng dẫn chọn size</h4>
+										<button type="button" class="close" data-dismiss="modal">&times;</button>
+									</div>
+									@*Hướng dẫn chọn size*@
+									<!-- Modal body -->
+									<div class="modal-body">
+										<img src="~/images/size-chart-01.jpg" alt="Hướng dẫn chọn size">
+									</div>
+
+								</div>
+							</div>
+						</div>
+						@*Hiển thị ảnh của hướng dẫn chọn size*@
+						<script>
+							document.addEventListener("DOMContentLoaded", function () {
+								var button = document.getElementById("huongDanChonSize");
+
+								// Gán sự kiện click cho nút
+								button.addEventListener("click", function () {
+									// Hiển thị modal
+									$('#huongDanChonSizeModal').modal('show');
+								});
+							});
+						</script>
+
+
+					</div>
+				</div>
+				@* phần sản phẩm , mô tả và đánh giá----------*@
+				<div class="col-lg-12">
+					<div class="product__details__tab">
+						<ul class="nav nav-tabs" role="tablist">
+							<br>
+							<li class="nav-item">
+
+								<a class="nav-link active" data-toggle="tab" href="#tabs-1" role="tab"
+								   aria-selected="true">Mô Tả</a>
+							</li>
+							<li class="nav-item">
+								<a class="nav-link" data-toggle="tab" href="#tabs-2" role="tab"
+								   aria-selected="false">Thông Tin</a>
+							</li>
+							<li class="nav-item">
+
+								<a class="nav-link" data-toggle="tab" href="#tabs-3" role="tab"
+								   aria-selected="false">
+									Đánh Giá
+									@if (firstDanhGiaSp != null)
+									{
+										<span> (@firstDanhGiaSp.LuotDanhGia)</span>
+									}
+									else
+									{
+										<span> (0)</span>
+									}
+
+
+
+								</a>
+
+							</li>
+						</ul>
+						<div class="tab-content">
+							<div class="tab-pane active" id="tabs-1" role="tabpanel">
+								<div class="product__details__tab__desc">
+									<h6>Mô Tả Sản Phẩm</h6><p>
+										@{
+
+											foreach (char c in Model.Product.MoTa)
+											{
+												if (c == '-')
+												{
+													if (!firstDash)
+													{
+														<br>
+													}
+													else
+													{
+														firstDash = false;
+													}
+												}
+												else
+												{
+													@c
+												}
+											}
+										}
+									</p>
+								</div>
+							</div>
+							<div class="tab-pane" id="tabs-2" role="tabpanel">
+								<div class="product__details__tab__desc">
+									<h6>Chất Liệu</h6>
+									<p>
+										@{
+
+											@if (Model.Product?.MaVatLieuNavigation?.TenVatLieu != null)
+											{
+												
+											
+												foreach (char c in Model.Product.MaVatLieuNavigation.TenVatLieu)
+												{
+													if (c == '-')
+													{
+														if (!firstDash)
+														{
+															<br />
+														}
+														else
+														{
+															firstDash = false;
+														}
+													}
+													else
+													{
+														@c
+													}
+												}
+											}
+											else
+											{
+											<p>Material information is not available.</p>
+											}
+
+										}
+									</p>
+
+								</div>
+							</div>
+							@*Đánh giá*@
+							<div class="tab-pane" id="tabs-3" role="tabpanel">
+								<div class="product__details__tab__desc">
+									<span class="star checked">
+										Tổng: @Html.Raw(starRating)/@if (firstDanhGiaSp != null)
+										{
+											<span> @firstDanhGiaSp.LuotDanhGia Lượt Đánh Giá</span>
+										}
+										else
+										{
+											<span> 0 Lượt Đánh Giá</span>
+										} - @roundedAverage/5 &#9733;
+									</span>
+
+									<div class="col-md-12" style="background-color:#f8f9fa">
+
+										<table class="stars-counters">
+											<tbody>
+												<tr>
+													<td>
+														<span>
+															<button class="fit-button fit-button-color-blue fit-button-fill-ghost fit-button-size-medium stars-filter">5 Sao</button>
+														</span>
+													</td>
+													<td class="progress-bar-container">
+														<div class="fit-progressbar fit-progressbar-bar star-progress-bar">
+															<div class="fit-progressbar-background">
+																<span class="progress-fill" style="width: @percentFiveStar%;"></span>
+															</div>
+														</div>
+
+													</td>
+													<td class="star-num">(@Model.FiveStarCount)</td>
+												</tr>
+												<tr>
+													<td>
+														<span>
+															<button class="fit-button fit-button-color-blue fit-button-fill-ghost fit-button-size-medium stars-filter">4 Sao</button>
+														</span>
+													</td>
+													<td class="progress-bar-container">
+														<div class="fit-progressbar fit-progressbar-bar star-progress-bar">
+															<div class="fit-progressbar-background">
+																<span class="progress-fill" style="width: @percentFourStar%;"></span>
+															</div>
+														</div>
+													</td>
+													<td class="star-num">(@Model.FourStarCount)</td>
+												</tr>
+												<tr>
+													<td>
+														<span>
+															<button class="fit-button fit-button-color-blue fit-button-fill-ghost fit-button-size-medium stars-filter">3 Sao</button>
+														</span>
+													</td>
+													<td class="progress-bar-container">
+														<div class="fit-progressbar fit-progressbar-bar star-progress-bar">
+															<div class="fit-progressbar-background">
+																<span class="progress-fill" style="width: @percentThreeStar%;"></span>
+															</div>
+														</div>
+													</td>
+													<td class="star-num">(@Model.ThreeStarCount)</td>
+												</tr>
+												<tr>
+													<td>
+														<span>
+															<button class="fit-button fit-button-color-blue fit-button-fill-ghost fit-button-size-medium stars-filter">2 Sao</button>
+														</span>
+													</td>
+													<td class="progress-bar-container">
+														<div class="fit-progressbar fit-progressbar-bar star-progress-bar">
+															<div class="fit-progressbar-background">
+																<span class="progress-fill" style="width: @percentTwoStar%;"></span>
+															</div>
+														</div>
+													</td>
+													<td class="star-num">(@Model.TwoStarCount)</td>
+												</tr>
+												<tr>
+													<td>
+														<span>
+															<button class="fit-button fit-button-color-blue fit-button-fill-ghost fit-button-size-medium stars-filter">1 Sao</button>
+														</span>
+													</td>
+													<td class="progress-bar-container">
+														<div class="fit-progressbar fit-progressbar-bar star-progress-bar">
+															<div class="fit-progressbar-background">
+																<span class="progress-fill" style="width: @percentOneStar%;"></span>
+															</div>
+														</div>
+													</td>
+													<td class="star-num">(@Model.OneStarCount)</td>
+												</tr>
+											</tbody>
+										</table>
+									</div>
+									<br>
+									@*Hiển thị đánh giá*@
+									<h6>Đánh Giá</h6>
+									@foreach (var danhGiaSp in Model.DanhGiaSps)
+									{
+										<span>Người Dùng: @danhGiaSp.TenKhachHang</span>
+										<br>
+										<span>Phân Loại: @danhGiaSp.KichThuoc và Số Lượng: @danhGiaSp.SoLuong</span>
+										<div class="rating">
+											@for (int i = 5; i >= 1; i--)
+											{
+												@if (i <= danhGiaSp.DanhGia)
+												{
+													<span class="star checked">&#9733;</span>
+												}
+												else
+												{
+													<span class="star">&#9733;</span>
+												}
+											}
+
+										</div>
+										<span>@danhGiaSp.BinhLuan</span>
+
+										<br>
+										<img style="height:200px;width:200px;" src="~/images/@danhGiaSp.HinhAnh">
+										<br>
+										<div class="ngay-danh-gia">
+											<!-- Đây là nơi hiển thị ngày đánh giá -->
+											@danhGiaSp.NgayDanhGia
+
+										</div>
+										@if (@danhGiaSp.PhanHoi != null)
+										{
+											<div class="cmt">
+
+												<div class="phan-hoi-danh-gia">
+													<button>Phản hồi đánh giá</button>
+
+													<div class="phan-hoi" style="display: none;">
+														<!-- Hiển thị phản hồi đánh giá -->
+														@danhGiaSp.PhanHoi
+													</div>
+												</div>
+											</div>
+										}
+										<br>
+										<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+										<script>
+											$(document).ready(function () {
+												$(".phan-hoi-danh-gia button").click(function () {
+													$(this).siblings(".phan-hoi").toggle();
+												});
+											});
+										</script>
+									}
+
+								</div>
+							</div>
+
+
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+</section>
+
+
+@*Hiện thông báo*@
+<div id="cart-notification" class="cart-notification" style="display: none;">
+	<span id="cart-message" class="cart-message">Sản phẩm đã được thêm vào giỏ hàng </span>
+</div>
+@* Hiển thị thông báo lỗi *@
+<div id="error-notification" class="error-notification" style="display: none;">
+	<span id="error-message" class="error-message"></span>
+</div>
+
+<div id="wishlist-notification" class="wishlist-notification" style="display: none;">
+	<span id="wishlist-message" class="wishlist-message">Sản phẩm đã được thêm vào danh sách yêu thích</span>
+</div>
+
+@section Scripts {
+
+	<!-- Bootstrap JS -->
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.js?v=1.0"></script>
+	<link href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.css?v=1.0" rel="stylesheet" />
+
+	<script>
+		function validateQuantity() {
+			const selectedSize = document.getElementById("sizeSelect").value;
+			const selectedSizeStock = parseInt(document.querySelector(`option[value="${selectedSize}"]`).dataset.stock); // Improved stock retrieval
+			const quantityInput = document.getElementById("quantityInput");
+			const quantity = parseInt(quantityInput.value);
+			const quantityError = document.getElementById("quantityError");
+
+
+			// Lấy thẻ input theo id
+
+			// Show error message
+			const showError = (message) => {
+				quantityError.textContent = message;
+				quantityError.style.display = "inline";
+
+				// Hide error message after 3 seconds
+				setTimeout(() => {
+					quantityError.style.display = "none";
+				}, 3000);
+			};
+
+			if (quantity < 1 || quantity > selectedSizeStock) {
+				quantityInput.value = selectedSizeStock > 0 ? 1 : 0;
+				showError("Số lượng không hợp lệ");
+			} else if (soLuongCount >= selectedSizeStock) {
+				showError("Số lượng sản phẩm trong giỏ hàng đã đạt giới hạn của kích thước đã chọn");
+			} else {
+				quantityError.style.display = "none";
+			}
+		}
+
+		function increment() {
+			const quantityInput = document.getElementById("quantityInput");
+			let quantity = parseInt(quantityInput.value);
+			quantity++;
+			quantityInput.value = quantity;
+			validateQuantity(); // Call validation after increment
+		}
+
+		function decrement() {
+			const quantityInput = document.getElementById("quantityInput");
+			let quantity = parseInt(quantityInput.value);
+
+			if (quantity > 1) {
+				quantity--;
+			}
+			quantityInput.value = quantity;
+			validateQuantity(); // Call validation after decrement
+		}
+	</script>
+	<!-- Include Toastr CSS and JavaScript files -->
+
+
+	<script>
+		// Configure Toastr options
+		toastr.options = {
+			"closeButton": true,
+			"positionClass": "toast-bottom-right",
+			"progressBar": true,
+			"timeOut": "3000" // 3 seconds
+		};
+		// Thêm giỏ cho sản phẩm sale
+		$(document).ready(function () {
+			$(".primary-btn").click(function () {
+				var maSanPham = $(this).data('ma-san-pham');
+				var quantity = parseInt($("#quantityInput").val()); // Retrieve the quantity from the input field
+				var selectedSize = $("#sizeSelect").val(); // Lấy kích thước đã chọn từ dropdown
+				$.ajax({
+					url: '@Url.Action("ThemGio", "Cart")',
+					type: 'POST',
+					data: { MaSanPham: maSanPham, SoLuong: quantity, KichThuoc: selectedSize }, // Include the quantity parameter
+					success: function (result) {
+						if (result.success) {
+							// Thêm sản phẩm thành công, hiển thị thông báo thành công
+							toastr.success('Sản phẩm đã được thêm vào giỏ hàng');
+							// Cập nhật số lượng sản phẩm trong giỏ hàng
+							$("#cart-item-count").text(result.cartItemCount);
+							$("#cart-item-sum").text(result.cartItemSum);
+						} else {
+							// Thêm sản phẩm thất bại, hiển thị thông báo lỗi
+							toastr.error(result.error);
+						}
+					},
+					error: function () {
+						// Hiển thị thông báo lỗi khi có lỗi xảy ra trong AJAX request
+						toastr.error('Đã xảy ra lỗi, vui lòng thử lại sau');
+					}
+				});
+			});
+		});
+
+		// Wishlist
+		$(document).ready(function () {
+			$(".add-to-wishlist").click(function () {
+				var maSanPham = $(this).data('ma-san-pham');
+
+				$.ajax({
+					url: '@Url.Action("AddToWishlist", "Wishlist")',
+					type: "POST",
+					data: { MaSanPham: maSanPham },
+					success: function (result) {
+						if (result.success) {
+							// Thêm sản phẩm thành công, hiển thị thông báo thành công
+							toastr.success('Sản phẩm đã được thêm vào danh sách mong muốn');
+							$('#wishlist-item-count').text(result.wishlistItemCount);
+						} else {
+							// Thêm sản phẩm thất bại, hiển thị thông báo lỗi
+							toastr.error(result.error);
+						}
+					},
+					error: function () {
+						// Hiển thị thông báo lỗi khi có lỗi xảy ra trong AJAX request
+						toastr.error('Đã xảy ra lỗi, vui lòng thử lại sau');
+					}
+				});
+			});
+		});
+	</script>
+
+
+
+}

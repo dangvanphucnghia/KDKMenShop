@@ -1,0 +1,384 @@
+﻿@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+    var groupedCollections = Model.Where(s=>s.MaBoSuuTap!=0).GroupBy(item =>  item.MaBoSuuTap).OrderBy(g => g.Key);
+    var cacheBeforeRemove = ViewData["CacheBeforeRemove"];
+    var cacheAfterRemove = ViewData["CacheAfterRemove"];
+}
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.theme.default.min.css">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"></script>
+<script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+
+<link rel="stylesheet" type="text/css" href="~/css/StyleForHome.css" />
+<script src="~/js/XuLyGoiSanPham.js"></script>
+<link href="~/css/gia-sale.css" rel="stylesheet" />
+<style>
+
+    /*   banner hình ảnh */
+    .owl-carousel .owl-item img {
+        width: 100%;
+        height: auto;
+    }
+
+    .owl-carousel .owl-item {
+        display: flex;
+    }
+    /* Hình ảnh */
+    .product-image {
+        position: relative;
+        padding-bottom: 100%; /* Maintain aspect ratio */
+        width: 100%;
+        background-size: cover;
+        background-position: center;
+    }
+
+        .product-image img {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 220px;
+            height: 100%;
+            object-fit: cover;
+        }
+       /*  @*Giá sale*@ */
+    
+</style>
+@model IEnumerable<SanPham>
+<section class="hero">
+        <div class="container">
+            <div class="row" >
+                @* Loai san pham *@
+            @Html.Partial("_menuPartial")
+                <div class="col-lg-9">
+                    <div class="hero__search">
+                        <div class="hero__search__form">
+                            @* <form action="/Product/Search" method="get">
+                                <input class="search-input"
+                                       type="text"
+                                       name="searchString"
+                                       placeholder="@KDKMenShop.Resrources.lang.Bạn_cần_tìm_">
+                                <button type="submit" class="site-btn">@KDKMenShop.Resrources.lang.Tìm_kiếm</button>
+                                <div class="search-suggestions"></div>
+                            </form> *@
+                            @*Tim kiem sản phẩm*@
+                            @Html.Partial("_SearchPartial")
+                        </div>
+                        <div class="hero__search__phone">
+                            <div class="hero__search__phone__icon">
+                                <i class="fa fa-phone"></i>
+                            </div>
+                            <div class="hero__search__phone__text">
+                                <h5>+84 999999999</h5>
+                                <span>Hỗ trợ 24/7</span>
+                            </div>
+                        </div>
+                    </div>
+                    @* Slide quảng cáo *@
+                @Html.Partial("_SlidePartial")
+            </div>
+        </div>
+    </div>
+    </section>
+
+    <div class="col-lg-12">
+
+                    <div class="section-title">
+                        <h2><a asp-action="Index" asp-controller="Product">Sản Phẩm</a></h2>
+                    </div>
+                    @*Menu cho loai san pham*@
+    @Html.Partial("_SibarPartial")
+
+
+    <div class="row featured__filter" id="displayProducts">
+    <div class="owl-carousel owl-theme" >
+
+            @foreach (var item in Model)
+            {
+                @* @if (item.MaLoaiSp ==1)
+                { *@
+                    <div class="col-lg-3 col-md-4 col-sm-6 mix oranges fresh-meat">
+                        <div class="featured__item">
+                        <div class="featured__item__pic set-bg product-image" @* data-setbg="@Url.Content("~/Images/" + item.HinhAnh)" *@ style="width:225px;position: relative;">
+                           <img data-src="@($"{Url.Content("~/Images/" + item.HinhAnh)}")" class="owl-lazy" alt="Product Image" />
+                            <ul class="featured__item__pic__hover">
+                                    <li>
+                                        <a href="javascript:void(0);" class="add-to-wishlist" data-ma-san-pham="@item.MaSanPham" title="Thêm vào WishList">
+                                            <i class="fa fa-heart"></i>
+                                        </a>
+                                    </li>
+                                        <li><a asp-action="Detail" asp-controller="Product" asp-route-maSP="@item.MaSanPham"><i class="fa fa-retweet"></i></a></li>
+                                                                <li>
+                                    <a href="javascript:void(0);" class="add-to-cart" data-ma-san-pham="@item.MaSanPham">
+                                        <i class="fa fa-shopping-cart"></i>
+                                    </a>
+                                </li>
+                               
+                                </ul>
+                            <!-- hiển thị giảm giá ra màn hình sản phảm -->
+                            @if (item.Ma != null && item.Ma.MaVoucherNavigation != null && item.Ma.MaVoucherNavigation.ThoiGianBatDau <= DateTime.Now && item.Ma.MaVoucherNavigation.ThoiGianKetThuc >= DateTime.Now)
+                            {
+                                <div class="discount-percentage" >
+                                    -@item.Ma.MaVoucherNavigation.PhanTramGiam%
+                                </div>
+                            }
+                            </div>
+                            <a asp-action="Detail" asp-controller="Product" asp-route-maSP="@item.MaSanPham">
+                                <div class="featured__item__text">
+                                @* <h6>@item.TenSanPham</h6> *@
+
+                                @if (item.Ma != null && item.Ma.MaVoucherNavigation != null && 
+                                item.Ma.MaVoucherNavigation.ThoiGianBatDau <= DateTime.Now && item.Ma.MaVoucherNavigation.ThoiGianKetThuc >= DateTime.Now)
+                                {
+                                    <h5 class="price-container">
+                                        <span class="original-price">@String.Format("{0:N0}", item.Gia)    </span>
+                                        <span>@(String.Format("{0:N0}", item.Gia * (100 - item.Ma.MaVoucherNavigation.PhanTramGiam) / 100))₫</span>
+                                    </h5>
+                                }
+                                else
+                                {
+                                // Xử lý khi một hoặc nhiều đối tượng không được khởi tạo
+                                    <h5>@(String.Format("{0:N0}", item.Gia))₫</h5>
+                                }
+                                </div>
+                            </a>
+                        </div>
+                         </div>
+            @* } *@
+            }
+
+    </div>
+      </div>
+</div>
+
+
+
+
+
+
+
+
+      @*------------------Bộ sưu tập miền gió cát-----------------------*@
+@foreach (var group in groupedCollections)
+{
+    var collectionId = group.Key; // Mã bộ sưu tập
+    var products = group.ToList(); // Danh sách sản phẩm trong bộ sưu tập này
+     var collectionImage = ""; // Ảnh đại diện cho bộ sưu tập, bạn có thể lấy từ cơ sở dữ liệu hoặc sử dụng ảnh mặc định
+    var collectionName = ""; // Tên bộ sưu tập sẽ được lấy từ bảng BoSuuTap
+    var collectionSlug = ""; // Slug sẽ được lấy từ bảng BoSuuTap
+  
+    using (var db = new ThoiTrangNamKDKContext()) // Thay "YourDbContext" bằng tên của DbContext của bạn
+    {
+        var collection = db.BoSuuTaps.Where(s=>s.MaBoSuuTap!=0).FirstOrDefault(b => b.MaBoSuuTap == collectionId);
+        if (collection != null)
+        {
+            collectionImage = collection.HinhBoSuuTap.Trim();
+            collectionName = collection.TenBoSuuTap;
+            collectionSlug = collection.Slug;
+        }
+    }
+    if (collectionId != 0)
+    {
+        <div class="col-lg-12">
+
+            <div class="hero__item set-bg" data-setbg="@Url.Content($"../images_banner_bosuutap/{collectionImage}")"></div>
+            <div class="section-title">
+                @* <h2>@collectionName</h2> *@
+                <h2><a href="@Url.Action("Index", "Collection", new { Slug = collectionSlug })">@collectionName</a></h2>
+            </div>
+
+            <div class="row featured__filter">
+                <div class="owl-carousel owl-theme">
+                    @foreach (var product in products)
+                    {
+                        <div class="col-lg-3 col-md-4 col-sm-6 mix oranges fresh-meat">
+                            <div class="featured__item">
+                                <div class="featured__item__pic set-bg product-image" style="width:225px;" 
+                              @*   data-setbg="@Url.Content("~/Images/" + product.HinhAnh)" *@>
+                                    @* Việc thêm tham số này vào URL thường nhằm mục đích chống lại caching (lưu trữ) của trình duyệt hoặc máy chủ, 
+                                    đảm bảo rằng yêu cầu luôn được xử lý như một yêu cầu mới,
+                                    không sử dụng dữ liệu đã lưu. *@
+                                    <img data-src="@($"{Url.Content("~/Images/" + product.HinhAnh)}")" class="owl-lazy" alt="Product Image" />
+                                    <ul class="featured__item__pic__hover">
+                                        <li>
+                                            <a href="javascript:void(0);" class="add-to-wishlist" data-ma-san-pham="@product.MaSanPham" title="Thêm vào WishList">
+                                                <i class="fa fa-heart"></i>
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a asp-action="Detail" asp-controller="Product" asp-route-maSP="@product.MaSanPham"><i class="fa fa-retweet"></i></a>
+                                        </li>
+                                        <li>
+                                            <a href="javascript:void(0);" class="add-to-cart" data-ma-san-pham="@product.MaSanPham">
+                                                <i class="fa fa-shopping-cart"></i>
+                                            </a>
+                                        </li>
+                                    </ul>
+                                    <!-- hiển thị giảm giá ra màn hình sản phảm cho bộ sưu tập -->
+                                    @if (product.Ma != null && product.Ma.MaVoucherNavigation != null && product.Ma.MaVoucherNavigation.ThoiGianBatDau <= DateTime.Now && product.Ma.MaVoucherNavigation.ThoiGianKetThuc >= DateTime.Now)
+                                    {
+                                        <div class="discount-percentage">
+                                            -@product.Ma.MaVoucherNavigation.PhanTramGiam%
+                                        </div>
+                                    }
+                                </div>
+                                <a asp-action="Detail" asp-controller="Product" asp-route-maSP="@product.MaSanPham">
+                                    <div class="featured__item__text">
+                                        @if (product.Ma != null && product.Ma.MaVoucherNavigation != null&&
+                                       product.Ma.MaVoucherNavigation.ThoiGianBatDau <= DateTime.Now && product.Ma.MaVoucherNavigation.ThoiGianKetThuc >= DateTime.Now)
+                                        {
+                                            <h5 class="price-container">
+                                                <span class="original-price">@String.Format("{0:N0}", product.Gia)</span>
+                                                <span>@(String.Format("{0:N0}", product.Gia * (100 - product.Ma.MaVoucherNavigation.PhanTramGiam) / 100))₫</span>
+                                            </h5>
+                                        }
+                                        else
+                                        {
+                                            // Xử lý khi một hoặc nhiều đối tượng không được khởi tạo
+                                            <h5>@(String.Format("{0:N0}", product.Gia))₫</h5>
+                                        }
+                                    </div>
+                                </a>
+                            </div>
+                        </div>
+                    }
+                </div>
+            </div>
+        </div>
+    }
+} <p>Trước khi xóa cache: @cacheBeforeRemove</p>
+    <p>Sau khi xóa cache: @cacheAfterRemove</p>
+
+    @*Hiện thông báo*@
+<div id="cart-notification" class="cart-notification"  style="display: none;">
+    <span id="cart-message" class="cart-message">Sản phẩm đã được thêm vào giỏ hàng </span>
+</div>
+    @* Hiển thị thông báo lỗi *@
+<div id="error-notification" class="error-notification" style="display: none;">
+    <span id="error-message" class="error-message"></span>
+</div>
+
+    @* Hiển thị thông báo lỗi *@
+<div id="wishlist-notification" class="wishlist-notification" style="display: none;">
+    <span id="wishlist-message" class="wishlist-message">Sản phẩm đã được thêm vào danh sách yêu thích</span>
+</div>
+
+    @section Scripts {
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js?v=1.0"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js?v=1.0"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.js?v=1.0"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.css?v=1.0" rel="stylesheet" />
+
+
+            <script>
+                $(document).ready(function () {
+                    $(".owl-carousel").owlCarousel({
+                        loop: false,
+                        margin: 0,
+                        nav: true,
+                        lazyLoad: true,
+                        responsive: {
+                            0: {
+                                items: 1
+                            },
+                            600: {
+                                items: 3
+                            },
+                            1000: {
+                                items: 5
+                            }
+                        }
+                    });
+                });
+                
+        
+
+    </script>
+    <script>
+        $(document).ready(function () {
+            $('#filter-toggle').click(function () {
+                $('#filter-form-container').toggle();
+            });
+        });
+        $(document).ready(function () {
+            toastr.options = {
+                "closeButton": true,
+                "positionClass": "toast-bottom-right",
+                "progressBar": true,
+                "timeOut": "3000", // 3s
+            };
+            $(".add-to-cart").click(function () {
+                var maSanPham = $(this).data("ma-san-pham");
+
+                $.ajax({
+                    url: "@Url.Action("ThemGio", "Cart")",
+                    type: "POST",
+                    data: { MaSanPham: maSanPham },
+                    success: function (response) {
+                        if (response.success) {
+                            toastr.success("Đã thêm sản phẩm vào giỏ hàng!");
+                            // Update cart item count on success
+                            $("#cart-item-count").text(response.cartItemCount);
+                            $("#cart-item-sum").text(response.cartItemSum);
+
+                            // Hiển thị thông báo thành công
+
+                        } else {
+                            // Hiển thị thông báo lỗi
+                            toastr.error(response.error);
+                        }
+                    },
+                    error: function () {
+                        // Hiển thị thông báo lỗi khi có lỗi xảy ra trong AJAX request
+                        toastr.error("Đã xảy ra lỗi, vui lòng thử lại sau");
+
+                    }
+                });
+            });
+
+            $(".add-to-wishlist").click(function () {
+                var maSanPham = $(this).data('ma-san-pham');
+                $.ajax({
+                    url: '@Url.Action("AddToWishlist", "Wishlist")',
+                    type: "POST",
+                    data: { MaSanPham: maSanPham },
+                    success: function (result) {
+                        if (result.success) {
+                            toastr.success("Thêm sản phẩm vào Wishlist thành công!");
+                            $("#wishlist-item-count").text(result.wishlistItemCount);
+                        } else {
+                            // Thêm sản phẩm thất bại, hiển thị thông báo lỗi
+                            toastr.error(result.error);
+
+
+                        }
+                    },
+                    error: function () {
+                        // Hiển thị thông báo lỗi khi có lỗi xảy ra trong AJAX request
+                        toastr.error("Đã xảy ra lỗi, vui lòng thử lại sau");
+                    }
+                });
+            });
+        });
+    </script>
+
+    @* <script>
+        window.onload = function () {
+            // Get all link tags that have rel="stylesheet"
+            let links = document.querySelectorAll('link[rel="stylesheet"]');
+            links.forEach(link => {
+                if (link.href) {
+                    // Append cache-busting parameter
+                    link.href = `${link.href}?v=${new Date().getTime()}`;
+                }
+            });
+            let scripts = document.querySelectorAll('script[src]');
+            scripts.forEach(script => {
+                if (script.src) {
+                    script.src = `${script.src}?v=${new Date().getTime()}`;
+                }
+            });
+        }
+
+    </script> *@
+}
+
